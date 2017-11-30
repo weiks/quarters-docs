@@ -1,0 +1,6 @@
+site_name: Quarters
+theme:
+  name: 'material'
+  palette:
+    primary: 'grey'
+    accent: 'grey'
