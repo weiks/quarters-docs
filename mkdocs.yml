@@ -1,6 +1,29 @@
 site_name: Quarters
+site_description: 'Docs for the Quarters Project'
+repo_name: 'weiks/quarters-docs'
+repo_url: 'https://github.com/weiks/quarters-docs'
 theme:
   name: 'material'
   palette:
-    primary: 'grey'
-    accent: 'grey'
+    primary: 'blue grey'
+    accent: 'indigo'
+markdown_extensions:
+  - admonition
+  - codehilite
+extra_css:
+  - 'stylesheets/extra.css'
+pages:
+  - Introduction: 'index.md'
+  - Getting started: 'getting-started.md'
+  - Quarters OAuth:
+    - Introduction: 'oauth/introduction.md'
+    - Integrating: 'oauth/integrating.md'
+    - Refresh tokens: 'oauth/refresh-tokens.md'
+  - Quarters buttons: 'quarters-buttons.md'
+  - Javascript SDK: 'js-sdk.md'
+  - Node SDK: 'node-sdk.md'
+  - Guides:
+    - Create App: 'guides/create-app.md'
+    - Embed quarters button: 'guides/create-app.md'
+    - Login with Quarters (oauth v2): 'guides/create-app.md'
+    - Transfer quarters: 'guides/create-app.md'
