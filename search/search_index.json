@@ -92,8 +92,38 @@
         }, 
         {
             "location": "/quarters-buttons/", 
-            "text": "", 
+            "text": "Quarters Buttons\n\n\nIntegrate Quarters on your website in an embedded window\n\n\nSample Button\n\n\n\n\n\n\n  Play with quarters\n\n\n\n\n\n\nSample code\n\n\nWhen you create an quarters button, it will give you code like this example.\n\n\nbutton\n\n  \nclass\n=\nbuy-quarters-button\n\n  \ndata-widget-type\n=\nbutton\n\n  \ndata-order-name\n=\nSample docs\n\n  \ndata-order-description\n=\nSample quarters transfer\n\n  \ndata-order-code\n=\n1\n\n  \ndata-amount\n=\n5\n\n  \ndata-button-size\n=\nmedium\n\n  \ndata-button-type\n=\nblack\n\n  Play with quarters\n\n/\nbutton\n\n\n\nscript\n \nsrc\n=\nhttps://dev.pocketfulofquarters.com/embeds/button.js\n\n    \ndata-script-name\n=\nquarters-embeds\n\n    \ndata-app-id\n=\nKAYR7bXS3116XyV9vs6u\n\n    \ndata-app-key\n=\nqg05u8p50lof20z9y6b1jb6kf4hcfbdl\n\n    \ncharset\n=\nutf-8\n/\nscript\n\n\n\n\n\n\nHow to create Quarters Button\n\n\nQuarters buttons can be generated via our button generator (shown below) once you create \nyour first app\n\n\nThe button generator is the easiest way to get started.\n\n\n\n\nThis will create code like this.\n\n\n\n\nThe only required parameters amount. The rest can be set when you create the button or later via the \ndata-*\n attributes in the embed HTML. \ndata-*\n attributes will override any attributes you set in the button generator.\n\n\nOnce a button is generated, you'll be given a few lines of HTML code to copy and paste into your website. This will add the button to your page.\n\n\nButtons can be thought of as disposable (they are just a way to hard code a name and price into a code attribute) so if you mess up you can always start over with a new button.\n\n\nIntegration Details\n\n\nA separate \nrequestId\n is generated for each order and user. If a user is already signed in to a Quarters account, they can complete the checkout in two clicks - this is the fastest method of transfer.\n\n\n// Quarters button callback\n\n\nwndow\n.\nonQuartersCallback\n \n=\n \nfunction\n(\ndata\n)\n \n{\n\n  \nif\n \n(\ndata\n.\nerror\n)\n \n{\n\n    \n// data.message\n\n  \n}\n \nelse\n \nif\n \n(\ndata\n.\ncancel\n)\n \n{\n\n    \n// user canceled transfer\n\n  \n}\n \nelse\n \n{\n\n    \n// data.txId =\n Ethereum transaction tx id\n\n    \n// data.requestId =\n Request Id to get details about order (/v1/requests/:requestId)\n\n  \n}\n\n\n}\n\n\n\n\n\n\nOn successful transfer, following param will be generated:\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntxId\n\n\nEthereum transaction hash which you can use to validate confirmed transaction on blockchain\n\n\n\n\n\n\nrequestId\n\n\nOrder id which you can use to retrieve order details. \nOrder details can be fetched using \nclient_secret\n (server key) using \nNode SDK\n \nAPI: \n/v1/requests/:requestId\n\n\n\n\n\n\norder_code\n\n\nOrder code. Same as code supplied using \ndata-order-code\n. \nUsed when multiple buttons are there on a page to identify order.\n\n\n\n\n\n\n\n\nAdvanced Options\n\n\nCustomizing the Embed HTML\n\n\nThe embed html consists of one script tag referencing \nhttps://dev.pocketfulofquarters.com/embeds/button.js\n and an element with class \nbuy-quarters-button\n with \ndata-widget-type='button'\n.\n\n\nYou can have one or more elements with class \nbuy-quarters-button\n on the page (if you\u2019re including multiple buttons), but only one script tag is ever needed.\n\n\nAfter adding the \nbuy-quarters-button\n class, the only required parameters are \ndata-amount\n and \ndata-widget-type\n. The other params can be updated after the button is created by setting \ndata-*\n attributes on the element. This makes it easy to update fields without having to create a new button.\n\n\nThe div can have the following params:\n\n\n\n\n\n\n\n\nField\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ndata-amount\n\n\nRequired\n Integer amount of quarters for order.\n\n\n\n\n\n\ndata-button-size\n\n\nOptional\n one of \nmedium\n, \nlarge\n or \nsmall\n. \nThese different button styles can be previewed in the button generator. \nDefault is \nmedium\n.\n\n\n\n\n\n\ndata-button-type\n\n\nOptional\n one of \nblack\n, \ngreen\n, 'red' or \ngrey\n. \nThese different button types can be previewed in the button generator. \nDefault is \nblack\n.\n\n\n\n\n\n\ndata-order-name\n\n\nOptional\n Order name which be shown to user\n\n\n\n\n\n\ndata-order-code\n\n\nOptional\n Unique code per page. \nIt will be used to identify multiple orders on same page.", 
             "title": "Quarters buttons"
+        }, 
+        {
+            "location": "/quarters-buttons/#quarters-buttons", 
+            "text": "", 
+            "title": "Quarters Buttons"
+        }, 
+        {
+            "location": "/quarters-buttons/#integrate-quarters-on-your-website-in-an-embedded-window", 
+            "text": "Sample Button   \n  Play with quarters   Sample code  When you create an quarters button, it will give you code like this example.  button \n   class = buy-quarters-button \n   data-widget-type = button \n   data-order-name = Sample docs \n   data-order-description = Sample quarters transfer \n   data-order-code = 1 \n   data-amount = 5 \n   data-button-size = medium \n   data-button-type = black \n  Play with quarters / button  script   src = https://dev.pocketfulofquarters.com/embeds/button.js \n     data-script-name = quarters-embeds \n     data-app-id = KAYR7bXS3116XyV9vs6u \n     data-app-key = qg05u8p50lof20z9y6b1jb6kf4hcfbdl \n     charset = utf-8 / script", 
+            "title": "Integrate Quarters on your website in an embedded window"
+        }, 
+        {
+            "location": "/quarters-buttons/#how-to-create-quarters-button", 
+            "text": "Quarters buttons can be generated via our button generator (shown below) once you create  your first app  The button generator is the easiest way to get started.   This will create code like this.   The only required parameters amount. The rest can be set when you create the button or later via the  data-*  attributes in the embed HTML.  data-*  attributes will override any attributes you set in the button generator.  Once a button is generated, you'll be given a few lines of HTML code to copy and paste into your website. This will add the button to your page.  Buttons can be thought of as disposable (they are just a way to hard code a name and price into a code attribute) so if you mess up you can always start over with a new button.", 
+            "title": "How to create Quarters Button"
+        }, 
+        {
+            "location": "/quarters-buttons/#integration-details", 
+            "text": "A separate  requestId  is generated for each order and user. If a user is already signed in to a Quarters account, they can complete the checkout in two clicks - this is the fastest method of transfer.  // Quarters button callback  wndow . onQuartersCallback   =   function ( data )   { \n   if   ( data . error )   { \n     // data.message \n   }   else   if   ( data . cancel )   { \n     // user canceled transfer \n   }   else   { \n     // data.txId =  Ethereum transaction tx id \n     // data.requestId =  Request Id to get details about order (/v1/requests/:requestId) \n   }  }   On successful transfer, following param will be generated:     Parameter  Description      txId  Ethereum transaction hash which you can use to validate confirmed transaction on blockchain    requestId  Order id which you can use to retrieve order details.  Order details can be fetched using  client_secret  (server key) using  Node SDK   API:  /v1/requests/:requestId    order_code  Order code. Same as code supplied using  data-order-code .  Used when multiple buttons are there on a page to identify order.", 
+            "title": "Integration Details"
+        }, 
+        {
+            "location": "/quarters-buttons/#advanced-options", 
+            "text": "", 
+            "title": "Advanced Options"
+        }, 
+        {
+            "location": "/quarters-buttons/#customizing-the-embed-html", 
+            "text": "The embed html consists of one script tag referencing  https://dev.pocketfulofquarters.com/embeds/button.js  and an element with class  buy-quarters-button  with  data-widget-type='button' .  You can have one or more elements with class  buy-quarters-button  on the page (if you\u2019re including multiple buttons), but only one script tag is ever needed.  After adding the  buy-quarters-button  class, the only required parameters are  data-amount  and  data-widget-type . The other params can be updated after the button is created by setting  data-*  attributes on the element. This makes it easy to update fields without having to create a new button.  The div can have the following params:     Field  Description      data-amount  Required  Integer amount of quarters for order.    data-button-size  Optional  one of  medium ,  large  or  small .  These different button styles can be previewed in the button generator.  Default is  medium .    data-button-type  Optional  one of  black ,  green , 'red' or  grey .  These different button types can be previewed in the button generator.  Default is  black .    data-order-name  Optional  Order name which be shown to user    data-order-code  Optional  Unique code per page.  It will be used to identify multiple orders on same page.", 
+            "title": "Customizing the Embed HTML"
         }, 
         {
             "location": "/js-sdk/", 
@@ -107,42 +137,42 @@
         }, 
         {
             "location": "/guides/create-app/", 
-            "text": "Create App\n\n\nIn this short guide, you\u2019ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.\n\n\nTasks we will cover in this short tutorial:\n\n\n\n\nAuthenticate your account (create an API Key)\n\n\nRetrieve data from your bitcoin wallet", 
+            "text": "Create App\n\n\nIn this short guide, you'll learn how to create app, how to retrieve app information.\n\n\nTo create new app, visit \ncreate new app\n. You will be greeted following screen:\n\n\n\n\nApp name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.\n\n\nOnce you enter all the information needed and click \"create new app\", you will be greeted with following app details screen with app id (\nclient_id\n), app web secret (\nclient_web_secret\n) and app secret (\nclient_secret\n).", 
             "title": "Create App"
         }, 
         {
             "location": "/guides/create-app/#create-app", 
-            "text": "In this short guide, you\u2019ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.  Tasks we will cover in this short tutorial:   Authenticate your account (create an API Key)  Retrieve data from your bitcoin wallet", 
+            "text": "In this short guide, you'll learn how to create app, how to retrieve app information.  To create new app, visit  create new app . You will be greeted following screen:   App name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.  Once you enter all the information needed and click \"create new app\", you will be greeted with following app details screen with app id ( client_id ), app web secret ( client_web_secret ) and app secret ( client_secret ).", 
             "title": "Create App"
         }, 
         {
             "location": "/guides/create-app/", 
-            "text": "Create App\n\n\nIn this short guide, you\u2019ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.\n\n\nTasks we will cover in this short tutorial:\n\n\n\n\nAuthenticate your account (create an API Key)\n\n\nRetrieve data from your bitcoin wallet", 
+            "text": "Create App\n\n\nIn this short guide, you'll learn how to create app, how to retrieve app information.\n\n\nTo create new app, visit \ncreate new app\n. You will be greeted following screen:\n\n\n\n\nApp name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.\n\n\nOnce you enter all the information needed and click \"create new app\", you will be greeted with following app details screen with app id (\nclient_id\n), app web secret (\nclient_web_secret\n) and app secret (\nclient_secret\n).", 
             "title": "Embed quarters button"
         }, 
         {
             "location": "/guides/create-app/#create-app", 
-            "text": "In this short guide, you\u2019ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.  Tasks we will cover in this short tutorial:   Authenticate your account (create an API Key)  Retrieve data from your bitcoin wallet", 
+            "text": "In this short guide, you'll learn how to create app, how to retrieve app information.  To create new app, visit  create new app . You will be greeted following screen:   App name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.  Once you enter all the information needed and click \"create new app\", you will be greeted with following app details screen with app id ( client_id ), app web secret ( client_web_secret ) and app secret ( client_secret ).", 
             "title": "Create App"
         }, 
         {
             "location": "/guides/create-app/", 
-            "text": "Create App\n\n\nIn this short guide, you\u2019ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.\n\n\nTasks we will cover in this short tutorial:\n\n\n\n\nAuthenticate your account (create an API Key)\n\n\nRetrieve data from your bitcoin wallet", 
+            "text": "Create App\n\n\nIn this short guide, you'll learn how to create app, how to retrieve app information.\n\n\nTo create new app, visit \ncreate new app\n. You will be greeted following screen:\n\n\n\n\nApp name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.\n\n\nOnce you enter all the information needed and click \"create new app\", you will be greeted with following app details screen with app id (\nclient_id\n), app web secret (\nclient_web_secret\n) and app secret (\nclient_secret\n).", 
             "title": "Login with Quarters (oauth v2)"
         }, 
         {
             "location": "/guides/create-app/#create-app", 
-            "text": "In this short guide, you\u2019ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.  Tasks we will cover in this short tutorial:   Authenticate your account (create an API Key)  Retrieve data from your bitcoin wallet", 
+            "text": "In this short guide, you'll learn how to create app, how to retrieve app information.  To create new app, visit  create new app . You will be greeted following screen:   App name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.  Once you enter all the information needed and click \"create new app\", you will be greeted with following app details screen with app id ( client_id ), app web secret ( client_web_secret ) and app secret ( client_secret ).", 
             "title": "Create App"
         }, 
         {
             "location": "/guides/create-app/", 
-            "text": "Create App\n\n\nIn this short guide, you\u2019ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.\n\n\nTasks we will cover in this short tutorial:\n\n\n\n\nAuthenticate your account (create an API Key)\n\n\nRetrieve data from your bitcoin wallet", 
+            "text": "Create App\n\n\nIn this short guide, you'll learn how to create app, how to retrieve app information.\n\n\nTo create new app, visit \ncreate new app\n. You will be greeted following screen:\n\n\n\n\nApp name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.\n\n\nOnce you enter all the information needed and click \"create new app\", you will be greeted with following app details screen with app id (\nclient_id\n), app web secret (\nclient_web_secret\n) and app secret (\nclient_secret\n).", 
             "title": "Transfer quarters"
         }, 
         {
             "location": "/guides/create-app/#create-app", 
-            "text": "In this short guide, you\u2019ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.  Tasks we will cover in this short tutorial:   Authenticate your account (create an API Key)  Retrieve data from your bitcoin wallet", 
+            "text": "In this short guide, you'll learn how to create app, how to retrieve app information.  To create new app, visit  create new app . You will be greeted following screen:   App name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.  Once you enter all the information needed and click \"create new app\", you will be greeted with following app details screen with app id ( client_id ), app web secret ( client_web_secret ) and app secret ( client_secret ).", 
             "title": "Create App"
         }
     ]
