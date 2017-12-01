@@ -1,8 +1,13 @@
 # Create App
 
-In this short guide, you’ll learn how to programmatically create a bitcoin wallet, how to send bitcoin into that wallet, and how to retrieve data from that wallet.
+In this short guide, you'll learn how to create app, how to retrieve app information.
 
-Tasks we will cover in this short tutorial:
+To create new app, visit [create new app](https://dev.pocketfulofquarters.com/apps/new). You will be greeted following screen:
 
-* Authenticate your account (create an API Key)
-* Retrieve data from your bitcoin wallet
+![Create app](../img/create-app.png)
+
+App name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.
+
+Once you enter all the information needed and click "create new app", you will be greeted with following app details screen with app id (`client_id`), app web secret (`client_web_secret`) and app secret (`client_secret`).
+
+![Create app](../img/edit-app.png)
