@@ -70,8 +70,10 @@ Buttons can be thought of as disposable (they are just a way to hard code a name
 
 A separate `requestId` is generated for each order and user. If a user is already signed in to a Quarters account, they can complete the checkout in two clicks - this is the fastest method of transfer.
 
+Once a transfers completes, a `onQuartersCallback` window function will be fired along with a code param referencing the same button.
+
 ```js
-// Quarters button callback
+// Get quarters button callback
 wndow.onQuartersCallback = function(data) {
   if (data.error) {
     // data.message
@@ -80,6 +82,7 @@ wndow.onQuartersCallback = function(data) {
   } else {
     // data.txId => Ethereum transaction tx id
     // data.requestId => Request Id to get details about order (/v1/requests/:requestId)
+    // data.order_code => reference to button `data-order-code`
   }
 }
 ```
