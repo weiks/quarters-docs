@@ -20,8 +20,9 @@ pages:
     - Integrating: 'oauth/integrating.md'
     - Refresh tokens: 'oauth/refresh-tokens.md'
   - Quarters buttons: 'quarters-buttons.md'
-  - Javascript SDK: 'js-sdk.md'
-  - Node SDK: 'node-sdk.md'
+  - Libraries (SDK):
+    - Javascript (client): 'sdk/js.md'
+    - Node (server): 'sdk/node.md'
   - Guides:
     - Create App: 'guides/create-app.md'
     - Embed quarters button: 'guides/create-app.md'

@@ -92,7 +92,7 @@ On successful transfer, following param will be generated:
 Parameter | Description
 --- | ---
 `txId` | Ethereum transaction hash which you can use to validate confirmed transaction on blockchain
-`requestId` | Order id which you can use to retrieve order details. <br>Order details can be fetched using `client_secret` (server key) using [Node SDK](node-sdk) <br>API: `/v1/requests/:requestId`
+`requestId` | Order id which you can use to retrieve order details. <br>Order details can be fetched using `client_secret` (server key) using [Node SDK](sdk/node.md) <br>API: `/v1/requests/:requestId`
 `order_code` | Order code. Same as code supplied using `data-order-code`. <br>Used when multiple buttons are there on a page to identify order.
 
 ### Advanced Options
