@@ -44,7 +44,7 @@ var client = new Quarters({
 
 ### OAuth APIs
 
-If you're writing code that will act on behalf of another user, start by creating a new OAuth2 application. You will need to do some work to obtain OAuth credentials for your users; please refer to our [OAuth 2 tutorial and documentation](../oauth/introduction.md).
+If you're writing code that will act on behalf of another user, start by creating a new OAuth2 application. You will need to do some work to obtain OAuth credentials for your players; please refer to our [OAuth 2 tutorial and documentation](../oauth/introduction.md).
 
 Authorize user through Quarters.
 
@@ -84,19 +84,19 @@ client.setRefreshToken(refreshToken).then(function() {
 });
 ```
 
-#### User details
+#### Player details
 
-Once you have set `refresh_token` using `setAuthCode` or `setRefreshToken`, you can fetch user details and user related other informations.
+Once you have set `refresh_token` using `setAuthCode` or `setRefreshToken`, you can fetch player details and other player data.
 
 ```js
-client.me().then(function(user) {
-  console.log(user);
+client.me().then(function(player) {
+  console.log(player);
 });
 ```
 
 #### Transfer request
 
-When you want user to transfer quarters while playing game. You can create "transfer request"; it creates new `requestId` and then, you can ask user to authorize the transfer.
+When you want a player to transfer quarters while playing game. You can create "transfer request"; it creates new `requestId` and then, you can ask the player to authorize the transfer.
 
 ```js
 client.requestTransfer({
@@ -107,12 +107,12 @@ client.requestTransfer({
   // request related details
   console.log(request);
 
-  // add iframe on the page and ask user to authorize transfer
+  // add iframe on the page and ask player to authorize transfer
   client.authorizeTransfer(request.id, 'iframe', function(data) {
     if (data.error) {
       // data.message
     } else if (data.cancel) {
-      // user canceled transfer
+      // player canceled transfer
     } else {
       // data.txId => Ethereum transaction tx id
       // data.requestId => Request Id to get details about order (/v1/requests/:requestId)
@@ -146,7 +146,9 @@ client.authorize('iframe', function(data) {
       window.localStorage.setItem('quarters-refresh-token', refreshToken);
 
       // ...
-      // fetch user details
+      // fetch 
+      
+      details
       // ...
     });
   }
@@ -157,7 +159,7 @@ var refreshToken = window.localStorage.getItem();
 if (refreshToken) {
   client.setRefreshToken(refreshToken).then(function() {
     // ...
-    // fetch user details
+    // fetch player details
     // ...
   });
 }
