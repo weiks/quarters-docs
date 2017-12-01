@@ -10,6 +10,8 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="Docs for the Quarters Project">
+      
       
       
       
@@ -52,18 +54,22 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
+      <link rel="stylesheet" href="./stylesheets/extra.css">
+    
     
   </head>
   
     
     
     
-      <body data-md-color-primary="grey" data-md-color-accent="grey">
+      <body data-md-color-primary="blue-grey" data-md-color-accent="indigo">
     
   
     <svg class="md-svg">
       <defs>
         
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
         
       </defs>
     </svg>
@@ -92,7 +98,7 @@
                 Quarters
               </span>
               <span class="md-header-nav__topic">
-                Welcome to Quarters
+                Introduction
               </span>
             
           
@@ -127,6 +133,30 @@
         
       </div>
       
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/weiks/quarters-docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      weiks/quarters-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
     </div>
   </nav>
 </header>
@@ -153,6 +183,28 @@
     Quarters
   </label>
   
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/weiks/quarters-docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      weiks/quarters-docs
+    </div>
+  </a>
+
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
@@ -170,11 +222,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Welcome to Quarters
+        Introduction
       </label>
     
-    <a href="." title="Welcome to Quarters" class="md-nav__link md-nav__link--active">
-      Welcome to Quarters
+    <a href="." title="Introduction" class="md-nav__link md-nav__link--active">
+      Introduction
     </a>
     
       
@@ -188,15 +240,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" title="Commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" title="Project layout" class="md-nav__link">
-    Project layout
+  <a href="#development-tools-and-library" title="Development tools and library" class="md-nav__link">
+    Development tools and library
   </a>
   
 </li>
@@ -207,6 +252,186 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="getting-started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Quarters OAuth
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Quarters OAuth
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="oauth/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="oauth/integrating/" title="Integrating" class="md-nav__link">
+      Integrating
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="oauth/refresh-tokens/" title="Refresh tokens" class="md-nav__link">
+      Refresh tokens
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="quarters-buttons/" title="Quarters buttons" class="md-nav__link">
+      Quarters buttons
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="js-sdk/" title="Javascript SDK" class="md-nav__link">
+      Javascript SDK
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="node-sdk/" title="Node SDK" class="md-nav__link">
+      Node SDK
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="guides/create-app/" title="Create App" class="md-nav__link">
+      Create App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="guides/create-app/" title="Embed quarters button" class="md-nav__link">
+      Embed quarters button
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="guides/create-app/" title="Login with Quarters (oauth v2)" class="md-nav__link">
+      Login with Quarters (oauth v2)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="guides/create-app/" title="Transfer quarters" class="md-nav__link">
+      Transfer quarters
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -231,15 +456,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" title="Commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" title="Project layout" class="md-nav__link">
-    Project layout
+  <a href="#development-tools-and-library" title="Development tools and library" class="md-nav__link">
+    Development tools and library
   </a>
   
 </li>
@@ -258,22 +476,67 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/weiks/quarters-docs/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                 <h1 id="welcome-to-quarters">Welcome to Quarters</h1>
-<p>For full documentation visit <a href="http://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+<p>Welcome to the Quarters documentation! Quarters is a universal cryptocurrency
+for games. This document includes SDK, APIs and code snippets. With them, you
+can easily integrate Quarters tokens to your games.</p>
+<p>If you feel like contributing to the docs, like changing or adding things, feel
+free to submit a <a href="https://github.com/weiks/quarters-docs/pulls">Pull Request</a> at
+<a href="https://github.com/weiks/quarters-docs">https://github.com/weiks/quarters-docs</a></p>
+<p>For our website visit
+<a href="https://dev.pocketfulofquarters.com">Pocketful of Quarters</a>.</p>
+<h3 id="development-tools-and-library">Development tools and library</h3>
+<p>Here is the list of tools and libraries quarters project provides to get
+started.</p>
+<p><strong>Quarters contract</strong></p>
+<p>Quarters contract is Ethereum smart contract and written in solidity. It
+includes ERC20 token and withdraw functions. You can check code and ABI here on
+etherscan.</p>
+<p>Mainnet: <em>[Yet to be deployed]</em></p>
+<p>Ropsten:
+<a href="https://ropsten.etherscan.io/address/0x8c05ebef0b4419416e8efb4c26edb4aa6cd7bb27#code">0x8c05ebef0b4419416e8efb4c26edb4aa6cd7bb27</a></p>
+<p><strong>Quarters buttons</strong></p>
+<p>Quarters buttons are small snippets. It is easy and fastest way to integrate
+"Play with Quarters" feature on game. Here is quick setup to embed buttons on
+any web based game to accept Quarters.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dev.pocketfulofquarters.com/embeds/button.js&quot;</span>
+    <span class="na">data-script-name</span><span class="o">=</span><span class="s">&quot;quarters-embeds&quot;</span>
+    <span class="na">data-app-id</span><span class="o">=</span><span class="s">&quot;&lt;APP-ID&gt;&quot;</span>
+    <span class="na">data-app-key</span><span class="o">=</span><span class="s">&quot;&lt;APP-KEY&gt;&quot;</span>
+    <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">button</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">&quot;buy-quarters-button&quot;</span>
+    <span class="na">data-widget-type</span><span class="o">=</span><span class="s">&quot;button&quot;</span>
+    <span class="na">data-order-code</span><span class="o">=</span><span class="s">&quot;1&quot;</span>
+    <span class="na">data-amount</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>
+  Play with 2 Quarters
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>To check complete documentation, <a href="quarters-buttons/">visit Quarters Buttons</a>.</p>
+<p><strong>Javascript SDK</strong></p>
+<p>Javascript SDK provides rich API interface to help build oauth on Quarters.
+Developers can use <code>Quarters oauth</code> to add authentication to the game and
+retrieve information for client-only games.</p>
+<div class="codehilite"><pre><span></span>  npm install --save quarters-js
+</pre></div>
+
+
+<p>To check complete documentation, <a href="js-sdk/">visit Javascript SDK</a>.</p>
+<p><strong>Node SDK (for server)</strong></p>
+<p>Node SDK provides helpers to interact with Quarters server and contract.</p>
+<div class="codehilite"><pre><span></span>  npm install --save node-quarters
+</pre></div>
+
+
+<p>To check complete documentation, <a href="node-sdk/">visit Node SDK</a>.</p>
                 
                   
                 
@@ -288,6 +551,27 @@ docs/
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="getting-started/" title="Getting started" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Getting started
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

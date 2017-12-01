@@ -1,0 +1,727 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Docs for the Quarters Project">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.0">
+    
+    
+      
+        <title>Integrating - Quarters</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.5d3fffba.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.fbd935c7.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Quarters" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Quarters
+              </span>
+              <span class="md-header-nav__topic">
+                Integrating
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/weiks/quarters-docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      weiks/quarters-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Quarters
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/weiks/quarters-docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      weiks/quarters-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Quarters OAuth
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Quarters OAuth
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Integrating
+      </label>
+    
+    <a href="./" title="Integrating" class="md-nav__link md-nav__link--active">
+      Integrating
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-redirect-users-to-request-quarters-access" title="1. Redirect users to request Quarters access" class="md-nav__link">
+    1. Redirect users to request Quarters access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-quarters-redirects-back-to-your-site" title="2. Quarters redirects back to your site" class="md-nav__link">
+    2. Quarters redirects back to your site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-exchange-code-for-an-access-token" title="3. Exchange code for an access token" class="md-nav__link">
+    3. Exchange code for an access token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-make-an-api-call" title="4. Make an API call" class="md-nav__link">
+    4. Make an API call
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../refresh-tokens/" title="Refresh tokens" class="md-nav__link">
+      Refresh tokens
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quarters-buttons/" title="Quarters buttons" class="md-nav__link">
+      Quarters buttons
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../js-sdk/" title="Javascript SDK" class="md-nav__link">
+      Javascript SDK
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../node-sdk/" title="Node SDK" class="md-nav__link">
+      Node SDK
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/create-app/" title="Create App" class="md-nav__link">
+      Create App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/create-app/" title="Embed quarters button" class="md-nav__link">
+      Embed quarters button
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/create-app/" title="Login with Quarters (oauth v2)" class="md-nav__link">
+      Login with Quarters (oauth v2)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/create-app/" title="Transfer quarters" class="md-nav__link">
+      Transfer quarters
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-redirect-users-to-request-quarters-access" title="1. Redirect users to request Quarters access" class="md-nav__link">
+    1. Redirect users to request Quarters access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-quarters-redirects-back-to-your-site" title="2. Quarters redirects back to your site" class="md-nav__link">
+    2. Quarters redirects back to your site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-exchange-code-for-an-access-token" title="3. Exchange code for an access token" class="md-nav__link">
+    3. Exchange code for an access token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-make-an-api-call" title="4. Make an API call" class="md-nav__link">
+    4. Make an API call
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/weiks/quarters-docs/edit/master/docs/oauth/integrating.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="integrating-quarters-oauth-with-your-web-game-apps">Integrating Quarters OAuth with your web game apps</h1>
+<p>Before integrating Quarters OAuth, you'll need to register a new OAuth2 application under <a href="https://dev.pocketfulofquarters.com/apps/new">your profile</a>. If you're using a previous OAuth2 implementation, you may need to configure the following settings:</p>
+<ul>
+<li><strong>Authorize URL</strong>: <code>https://dev.pocketfulofquarters.com/oauth/authorize</code></li>
+<li><strong>Access Token URL</strong>: <code>https://dev.pocketfulofquarters.com/oauth/token</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Quarters is still in beta. API may change in stable version.</p>
+</div>
+<p>To integrate your third-party web server application with Quarters, use the following flow:</p>
+<h3 id="1-redirect-users-to-request-quarters-access">1. Redirect users to request Quarters access</h3>
+<div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_REDIRECT_URL&amp;inline=true
+</pre></div>
+
+
+<p>When redirecting a user to Quarters to authorize access to your application, you'll need to construct the authorization URL with the correct parameters. Here's a list of parameters you should always specify:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response_type</code></td>
+<td><strong>Required</strong> Value <code>code</code></td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><strong>Required</strong> The client ID you received after registering your application.</td>
+</tr>
+<tr>
+<td><code>inline</code></td>
+<td><strong>Required</strong> Value <code>true</code></td>
+</tr>
+<tr>
+<td><code>redirect_uri</code></td>
+<td><strong>Optional</strong> The URL (encoded) in your app where users will be sent after authorization.</td>
+</tr>
+</tbody>
+</table>
+<p>Example of an authorization URL:</p>
+<div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=Lpk5sPrA7P59HFlN7obS&amp;inline=true&amp;redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
+</pre></div>
+
+
+<h3 id="2-quarters-redirects-back-to-your-site">2. Quarters redirects back to your site</h3>
+<p>If the user approves your application, Quarters will redirect them back to your <code>redirect_uri</code> with a temporary code parameter.</p>
+<p>Example of the redirect:</p>
+<div class="codehilite"><pre><span></span>GET https://example.com/oauth/callback?success=true&amp;code=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiNmFkODI2ZjAtZDY1ZS0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsInRva2VuVHlwZSI6Imp3dDphdXRob3JpemF0aW9uX2NvZGUiLCJpYXQiOjE1MTIxMDg2NjYsImV4cCI6MTUxMjEwODcyNn0.Pwl3Mt_RN5Qut5VpCshP32FkZ_lES84PrDnzIGDG8J0
+</pre></div>
+
+
+<p><strong>OAuth2 Redirect URI</strong></p>
+<p>For added security, all <code>redirect_uri</code> must use SSL (i.e. begin with <code>https://</code>). URIs without SSL can only be used for development and testing and will not be supported in production.</p>
+<h3 id="3-exchange-code-for-an-access-token">3. Exchange code for an access token</h3>
+<p>After you have received the temporary code, you can exchange it for valid access and refresh tokens. This can be done by making a <code>POST</code> call:</p>
+<div class="codehilite"><pre><span></span>POST https://api.dev.pocketfulofquarters/v1/oauth/token
+</pre></div>
+
+
+<p>With following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grant_type</code></td>
+<td><strong>Required</strong> Value <code>authorization_code</code></td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td><strong>Required</strong> Value from step 2</td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><strong>Required</strong> The app ID you received after registering your application</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><strong>Required</strong> The <strong>web secret</strong> you received after registering your application</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<div class="codehilite"><pre><span></span><span class="nt">curl</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">dev</span><span class="p">.</span><span class="nc">pocketfulofquarters</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span><span class="nt">v1</span><span class="o">/</span><span class="nt">oauth</span><span class="o">/</span><span class="nt">token</span> <span class="err">\</span>
+  <span class="nt">-X</span> <span class="nt">POST</span> <span class="err">\</span>
+  <span class="nt">-H</span> <span class="s1">&#39;Content-Type: application/json;charset=UTF-8&#39;</span> <span class="err">\</span>
+  <span class="nt">--data-binary</span> <span class="s1">&#39;{&quot;client_id&quot;:&quot;Lpk5sPrA7P59HFlN7obS&quot;,&quot;client_secret&quot;:&quot;1s4x2v8h3b9ollw1pt2afj8knheamvmvv&quot;,&quot;grant_type&quot;:&quot;authorization_code&quot;,&quot;code&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMDgxMmMxNTAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsInRva2VuVHlwZSI6Imp3dDphdXRob3JpemF0aW9uX2NvZGUiLCJpYXQiOjE1MTIxMTEwNzcsImV4cCI6MTUxMjExMTEzN30.Jljjd7yjk-cr1uYSq0kSTwCpK8zNq8YGrVk_AQu6u4c&quot;}&#39;</span>
+</pre></div>
+
+
+<p>After a successful request, a valid access token will be returned in the response:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;client_id&quot;</span><span class="p">:</span><span class="s2">&quot;Lpk5sPrA7P59HFlN7obS&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;refresh_token&quot;</span><span class="p">:</span><span class="s2">&quot;d832e7c419869...5918b96&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="s2">&quot;eyJhbGciOiJIU...81plg&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="4-make-an-api-call">4. Make an API call</h3>
+<p>After you have a valid access token, you can make your first API call:</p>
+<div class="codehilite"><pre><span></span>curl https://api.dev.pocketfulofquarters.com/v1/me \
+  -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMWE5Njk3YzAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsImFkbWluIjpmYWxzZSwiZGV2ZWxvcGVyIjpmYWxzZSwidG9rZW5UeXBlIjoiand0OnVzZXIiLCJpYXQiOjE1MTIxMTExMDgsImV4cCI6MTUxMjExMTcwOH0.PFlJjGoN3xza1Qk3ZIBaOzMPyYbrQvnjyvyvQf81plg&#39;
+</pre></div>
+
+
+<p>Example response:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;vGiLGvwPDXTu3VyEBTrJcIu2a702&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;vGiLGvwPDXTu3VyEBTrJcIu2a702&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="s2">&quot;User1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;user1@example.com&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;emailVerified&quot;</span><span class="p">:</span><span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../introduction/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../refresh-tokens/" title="Refresh tokens" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Refresh tokens
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

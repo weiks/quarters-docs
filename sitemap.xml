@@ -4,9 +4,91 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-11-30</lastmod>
+     <lastmod>2017-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+    <url>
+     <loc>/getting-started/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/oauth/introduction/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/oauth/integrating/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/oauth/refresh-tokens/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/quarters-buttons/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/js-sdk/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/node-sdk/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/guides/create-app/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/guides/create-app/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/guides/create-app/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/guides/create-app/</loc>
+     <lastmod>2017-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>
