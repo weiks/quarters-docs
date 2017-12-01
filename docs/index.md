@@ -63,7 +63,7 @@ retrieve information for client-only games.
   npm install --save quarters-js
 ```
 
-To check complete documentation, [visit Javascript SDK](js-sdk.md).
+To check complete documentation, [visit Javascript SDK](sdk/js.md).
 
 **Node SDK (for server)**
 
@@ -73,4 +73,4 @@ Node SDK provides helpers to interact with Quarters server and contract.
   npm install --save node-quarters
 ```
 
-To check complete documentation, [visit Node SDK](node-sdk.md).
+To check complete documentation, [visit Node SDK](sdk/node.md).

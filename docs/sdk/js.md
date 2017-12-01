@@ -26,7 +26,7 @@ Using npm
 ```bash
 npm install --save quarters-js
 
-# Quarter = require("Quarters")
+# Quarters = require("Quarters")
 ```
 
 ### Get started
@@ -39,7 +39,7 @@ var client = new Quarters({
   appSecret: <APP_WEB_SECRET>,
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
-})
+});
 ```
 
 ### OAuth APIs
@@ -51,7 +51,7 @@ Authorize user through Quarters.
 ```js
 client.authorize('iframe', function(data) {
   // data.code => temporary auth code
-})
+});
 ```
 
 If you have `code` through `authorize`, you can get `refresh_token` and `access_token` using `setAuthCode` method. This method also set `refresh_token` in `client`
@@ -64,7 +64,7 @@ client.setAuthCode(code).then(function(data) {
   // ...
   // ....
   // start making API calls
-})
+});
 ```
 
 !!! Warning
@@ -81,20 +81,48 @@ client.setRefreshToken(refreshToken).then(function() {
   // ...
   // ....
   // start making API calls
-})
+});
 ```
 
 #### User details
 
-If you already have `refresh_token`, you can skip `authorize` and `setAuthCode`, and set refresh token to client by calling `setRefreshToken`.
+Once you have set `refresh_token` using `setAuthCode` or `setRefreshToken`, you can fetch user details and user related other informations.
 
 ```js
-client.setRefreshToken(refreshToken).then(function() {
-  // ...
-  // ....
-  // start making API calls
-})
+client.me().then(function(user) {
+  console.log(user);
+});
 ```
+
+#### Transfer request
+
+When you want user to transfer quarters while playing game. You can create "transfer request"; it creates new `requestId` and then, you can ask user to authorize the transfer.
+
+```js
+client.requestTransfer({
+  tokens: 10, // 10 quarters
+  description: 'Power ups' // transfer description
+}).then(function(request) {
+
+  // request related details
+  console.log(request);
+
+  // add iframe on the page and ask user to authorize transfer
+  client.authorizeTransfer(request.id, 'iframe', function(data) {
+    if (data.error) {
+      // data.message
+    } else if (data.cancel) {
+      // user canceled transfer
+    } else {
+      // data.txId => Ethereum transaction tx id
+      // data.requestId => Request Id to get details about order (/v1/requests/:requestId)
+    }
+  });
+});
+```
+
+!!! info
+    You can use [Quarters Buttons](../quarters-buttons.md) to get `txId` and `requestId` without creating `requestTransfer` and `authorizeTransfer`. In much complex apps, this might comes handy.
 
 ### Examples
 
@@ -106,7 +134,7 @@ var client = new Quarters({
   appSecret: <APP_WEB_SECRET>,
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
-})
+});
 
 client.authorize('iframe', function(data) {
   if (data.error) {
@@ -120,9 +148,9 @@ client.authorize('iframe', function(data) {
       // ...
       // fetch user details
       // ...
-    })
+    });
   }
-})
+});
 
 // if you have refresh token already in storage or cookie
 var refreshToken = window.localStorage.getItem();
@@ -131,6 +159,6 @@ if (refreshToken) {
     // ...
     // fetch user details
     // ...
-  })
+  });
 }
 ```
