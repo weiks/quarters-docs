@@ -48,19 +48,19 @@
     
 
     
+        
     <url>
-     <loc>/js-sdk/</loc>
+     <loc>/sdk/js/</loc>
      <lastmod>2017-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>/node-sdk/</loc>
+     <loc>/sdk/node/</loc>
      <lastmod>2017-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     
 
     
