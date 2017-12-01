@@ -369,6 +369,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#features" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" title="Installation" class="md-nav__link">
     Installation
   </a>
@@ -379,6 +386,67 @@
   <a href="#get-started" title="Get started" class="md-nav__link">
     Get started
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth-apis" title="OAuth APIs" class="md-nav__link">
+    OAuth APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apis" title="APIs" class="md-nav__link">
+    APIs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-access-token" title="Create access token" class="md-nav__link">
+    Create access token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-details" title="User details" class="md-nav__link">
+    User details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-quarters-to-user-reward-and-refund" title="Transfer quarters to user (reward and refund)" class="md-nav__link">
+    Transfer quarters to user (reward and refund)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-based-apps" title="server based apps" class="md-nav__link">
+    server based apps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -489,6 +557,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#features" title="Features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" title="Installation" class="md-nav__link">
     Installation
   </a>
@@ -499,6 +574,67 @@
   <a href="#get-started" title="Get started" class="md-nav__link">
     Get started
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth-apis" title="OAuth APIs" class="md-nav__link">
+    OAuth APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apis" title="APIs" class="md-nav__link">
+    APIs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-access-token" title="Create access token" class="md-nav__link">
+    Create access token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-details" title="User details" class="md-nav__link">
+    User details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-quarters-to-user-reward-and-refund" title="Transfer quarters to user (reward and refund)" class="md-nav__link">
+    Transfer quarters to user (reward and refund)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-based-apps" title="server based apps" class="md-nav__link">
+    server based apps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -520,9 +656,103 @@
                 
                 
                 <h1 id="node-sdk">Node SDK</h1>
-<p>Support for both API Key + Secret and OAuth2 authentication</p>
+<p>Node SDK provides helpers for Quarters APIs and OAuth2. It requires
+<code>appId</code> (<code>client_id</code>) and <code>app_secret</code> (Server API key).</p>
+<p>The first thing you'll need to do is sign up for <a href="https://dev.pocketfulofquarters.com">Quarters</a> to <a href="../../guides/create-app/">create app</a></p>
+<h3 id="features">Features</h3>
+<ul>
+<li>Support for both API Key + Secret and OAuth 2 authentication.</li>
+<li>Convenient methods for making calls to the API.</li>
+<li>Automatic parsing of API responses into relevant Javascript objects.</li>
+</ul>
 <h3 id="installation">Installation</h3>
+<div class="codehilite"><pre><span></span>npm install --save node-quarters
+</pre></div>
+
+
 <h3 id="get-started">Get started</h3>
+<p>Create client using <code>app_id</code> and <code>app_secret</code>.</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_SECRET</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">address</span><span class="o">:</span> <span class="nx">options</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="c1">// Your ethereum account address (from app page)</span>
+  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
+  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3 id="oauth-apis">OAuth APIs</h3>
+<p>You will need to do some work to obtain OAuth credentials for your users; please refer to our <a href="../../oauth/introduction/">OAuth 2 tutorial and documentation</a>.</p>
+<p>Validate <code>code</code> and fetch <code>refresh_token</code> and <code>access_token</code></p>
+<div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">createRefreshToken</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// data.refresh_token</span>
+  <span class="c1">// data.access_token</span>
+
+  <span class="c1">//</span>
+  <span class="c1">// send to UI</span>
+  <span class="c1">//</span>
+<span class="p">})</span>
+</pre></div>
+
+
+<h3 id="apis">APIs</h3>
+<h4 id="create-access-token">Create access token</h4>
+<p>If you already have <code>refresh_token</code>, you can generate <code>access_token</code> for player.</p>
+<div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">createAccessToken</span><span class="p">(</span><span class="nx">refreshToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// data.access_token</span>
+
+  <span class="c1">// ...</span>
+  <span class="c1">// ....</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h4 id="user-details">User details</h4>
+<p>Once you have <code>access_token</code>, you can fetch user details and user related other informations.</p>
+<div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">fetchUser</span><span class="p">(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h4 id="transfer-quarters-to-user-reward-and-refund">Transfer quarters to user (reward and refund)</h4>
+<div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">transferQuarters</span><span class="p">({</span>
+  <span class="nx">user</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">USER</span><span class="o">-</span><span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="c1">// user id</span>
+  <span class="nx">amount</span><span class="o">:</span> <span class="mi">10</span> <span class="c1">// 10 quarters</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// data.txId =&gt; Ethereum transaction hash of quarters transfers</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3 id="examples">Examples</h3>
+<h4 id="server-based-apps">server based apps</h4>
+<div class="codehilite"><pre><span></span><span class="c1">// On node server</span>
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_SECRET</span><span class="o">&gt;</span><span class="p">,</span> <span class="c1">// Server API key</span>
+  <span class="nx">address</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">ETH_ADDRESS</span><span class="o">&gt;</span>
+  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
+  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
+<span class="p">});</span>
+
+<span class="c1">// Validate code and fetch refresh token for user</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">createRefreshToken</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// fetch user details</span>
+  <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">fetchUser</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">access_token</span><span class="p">)</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+<span class="p">})</span>
+
+<span class="c1">// refund/reward user the quarters</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">transferQuarters</span><span class="p">({</span>
+  <span class="nx">user</span><span class="o">:</span> <span class="nx">userId</span><span class="p">,</span>
+  <span class="nx">amount</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// data.txId =&gt; transaction id</span>
+<span class="p">})</span>
+</pre></div>
                 
                   
                 

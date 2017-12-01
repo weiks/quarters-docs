@@ -400,8 +400,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#user-details" title="User details" class="md-nav__link">
-    User details
+  <a href="#player-details" title="Player details" class="md-nav__link">
+    Player details
   </a>
   
 </li>
@@ -600,8 +600,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#user-details" title="User details" class="md-nav__link">
-    User details
+  <a href="#player-details" title="Player details" class="md-nav__link">
+    Player details
   </a>
   
 </li>
@@ -694,7 +694,7 @@ passed to Javascript SDK as it will be used on browser.</p>
 
 
 <h3 id="oauth-apis">OAuth APIs</h3>
-<p>If you're writing code that will act on behalf of another user, start by creating a new OAuth2 application. You will need to do some work to obtain OAuth credentials for your users; please refer to our <a href="../../oauth/introduction/">OAuth 2 tutorial and documentation</a>.</p>
+<p>If you're writing code that will act on behalf of another user, start by creating a new OAuth2 application. You will need to do some work to obtain OAuth credentials for your players; please refer to our <a href="../../oauth/introduction/">OAuth 2 tutorial and documentation</a>.</p>
 <p>Authorize user through Quarters.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">&#39;iframe&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// data.code =&gt; temporary auth code</span>
@@ -729,16 +729,16 @@ passed to Javascript SDK as it will be used on browser.</p>
 </pre></div>
 
 
-<h4 id="user-details">User details</h4>
-<p>Once you have set <code>refresh_token</code> using <code>setAuthCode</code> or <code>setRefreshToken</code>, you can fetch user details and user related other informations.</p>
-<div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">me</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<h4 id="player-details">Player details</h4>
+<p>Once you have set <code>refresh_token</code> using <code>setAuthCode</code> or <code>setRefreshToken</code>, you can fetch player details and other player data.</p>
+<div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">me</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 
 
 <h4 id="transfer-request">Transfer request</h4>
-<p>When you want user to transfer quarters while playing game. You can create "transfer request"; it creates new <code>requestId</code> and then, you can ask user to authorize the transfer.</p>
+<p>When you want a player to transfer quarters while playing game. You can create "transfer request"; it creates new <code>requestId</code> and then, you can ask the player to authorize the transfer.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">requestTransfer</span><span class="p">({</span>
   <span class="nx">tokens</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 10 quarters</span>
   <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Power ups&#39;</span> <span class="c1">// transfer description</span>
@@ -747,12 +747,12 @@ passed to Javascript SDK as it will be used on browser.</p>
   <span class="c1">// request related details</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
 
-  <span class="c1">// add iframe on the page and ask user to authorize transfer</span>
+  <span class="c1">// add iframe on the page and ask player to authorize transfer</span>
   <span class="nx">client</span><span class="p">.</span><span class="nx">authorizeTransfer</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="s1">&#39;iframe&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// data.message</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">cancel</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// user canceled transfer</span>
+      <span class="c1">// player canceled transfer</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="c1">// data.txId =&gt; Ethereum transaction tx id</span>
       <span class="c1">// data.requestId =&gt; Request Id to get details about order (/v1/requests/:requestId)</span>
@@ -785,7 +785,9 @@ passed to Javascript SDK as it will be used on browser.</p>
       <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;quarters-refresh-token&#39;</span><span class="p">,</span> <span class="nx">refreshToken</span><span class="p">);</span>
 
       <span class="c1">// ...</span>
-      <span class="c1">// fetch user details</span>
+      <span class="c1">// fetch </span>
+
+      <span class="nx">details</span>
       <span class="c1">// ...</span>
     <span class="p">});</span>
   <span class="p">}</span>
@@ -796,7 +798,7 @@ passed to Javascript SDK as it will be used on browser.</p>
 <span class="k">if</span> <span class="p">(</span><span class="nx">refreshToken</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">client</span><span class="p">.</span><span class="nx">setRefreshToken</span><span class="p">(</span><span class="nx">refreshToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-    <span class="c1">// fetch user details</span>
+    <span class="c1">// fetch player details</span>
     <span class="c1">// ...</span>
   <span class="p">});</span>
 <span class="p">}</span>
