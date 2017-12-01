@@ -602,7 +602,8 @@
 <p>Buttons can be thought of as disposable (they are just a way to hard code a name and price into a code attribute) so if you mess up you can always start over with a new button.</p>
 <h3 id="integration-details">Integration Details</h3>
 <p>A separate <code>requestId</code> is generated for each order and user. If a user is already signed in to a Quarters account, they can complete the checkout in two clicks - this is the fastest method of transfer.</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Quarters button callback</span>
+<p>Once a transfers completes, a <code>onQuartersCallback</code> window function will be fired along with a code param referencing the same button.</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Get quarters button callback</span>
 <span class="nx">wndow</span><span class="p">.</span><span class="nx">onQuartersCallback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// data.message</span>
@@ -611,6 +612,7 @@
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="c1">// data.txId =&gt; Ethereum transaction tx id</span>
     <span class="c1">// data.requestId =&gt; Request Id to get details about order (/v1/requests/:requestId)</span>
+    <span class="c1">// data.order_code =&gt; reference to button `data-order-code`</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
