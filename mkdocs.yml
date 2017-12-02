@@ -25,6 +25,5 @@ pages:
     - Node (server): 'sdk/node.md'
   - Guides:
     - Create App: 'guides/create-app.md'
-    - Embed quarters button: 'guides/create-app.md'
-    - Login with Quarters (oauth v2): 'guides/create-app.md'
+    - Login with Quarters (oauth v2): 'guides/login-quarters.md'
     - Transfer quarters: 'guides/create-app.md'

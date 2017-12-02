@@ -33,7 +33,7 @@ var client = new Quarters({
 
 ### OAuth APIs
 
-You will need to do some work to obtain OAuth credentials for your users; please refer to our [OAuth 2 tutorial and documentation](../oauth/introduction.md).
+You will need to do some work to obtain OAuth credentials for your players; please refer to our [OAuth 2 tutorial and documentation](../oauth/introduction.md).
 
 Validate `code` and fetch `refresh_token` and `access_token`
 
@@ -63,7 +63,7 @@ client.createAccessToken(refreshToken).then(function(data) {
 });
 ```
 
-#### User details
+#### Player details
 
 Once you have `access_token`, you can fetch user details and user related other informations.
 
@@ -73,7 +73,7 @@ client.fetchUser(accessToken).then(function(user) {
 });
 ```
 
-#### Transfer quarters to user (reward and refund)
+#### Transfer quarters to player (reward and refund)
 
 ```js
 client.transferQuarters({
@@ -106,7 +106,7 @@ client.createRefreshToken(code).then(function(data) {
   var userId = user.id;
 })
 
-// refund/reward user the quarters
+// refund/reward player the quarters
 client.transferQuarters({
   user: userId,
   amount: 10
