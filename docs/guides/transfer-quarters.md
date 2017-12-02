@@ -1,12 +1,16 @@
 # Login with Quarters
 
-In this short guide, you'll learn how to add "Login with Quarters" and how to
-retrieve player details. We are going to use OAuth for authentication. If you
-want to know more about how OAuth works, check out
+In this short guide, you'll learn how to transfer quarters as reward or refund
+to users.
+
+Once users log in, let's transfer them 2 quarters as login reward.
+
+We are going to use OAuth for authentication. If you want to know more about how
+OAuth works, check out
 [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2).
 
-Now, let's create simple login functionality and fetch user information from
-Quarters server. This example uses node server to validate OAuth generated code.
+If you can want to know how to add "Login with Quarters" in your app,
+[checkout our guide here](./login-quarters.md).
 
 Let's start with client side. First add [Quarters Javascript SDK](../sdk/js.md)
 in `index.html`:
@@ -31,30 +35,12 @@ Once user click on login button you can `authorize` with `iframe`. Authorizing
 with user generates temporary `code` which you can use to generate
 `refresh_token`.
 
-After receiving `refresh_token`, you can set `refresh_token` to
-`setRefreshToken` SDK API.
-
 ```js
 client.authorize('iframe', function(data) {
   var code = data.code
 
   // send this code to our node server to validate and generate refresh_token
-
-  // set refresh_token to client
-  client.setRefreshToken(refresh_token).then(function() {
-    // start using client object to fetch user details
-  })
-})
-```
-
-Once you have set `refresh_token` to `client`, you can now use `client` object
-to fetch user details, create transfer request, etc...
-
-Fetch user:
-
-```js
-client.me().then(function(user) {
-  // Use user object
+  // on successful validation of code, transfer 2 quarters to user
 })
 ```
 
@@ -91,8 +77,18 @@ quartersClient.createRefreshToken(code).then(function(data) {
   // data.access_token
 
   // you can use access_token to fetch user details
-  // quartersClient.fetchUser(access_token)
-});
+  return quartersClient.fetchUser(access_token).then(function(user) {
+    // let's transfer 2 quarters to user
+    return quartersClient
+      .transferQuarters({
+        user: user.id, // user id
+        amount: 2 // 2 quarters
+      })
+      .then(function(data) {
+        // data.txId => Ethereum transaction hash
+      })
+  })
+})
 ```
 
 ### Example
@@ -157,22 +153,11 @@ var login = function () {
 
         // set refresh token to quarters client
         return client.setRefreshToken(res.refresh_token);
-      }).then(function() {
-        // fetch user details
-        return fetchUserDetails();
       }).catch(function(e) {
         console.log(e);
       });
     }
   })
-}
-
-
-// Fetch user details using client after setting refresh_token
-var fetchUserDetails = function () {
-  return client.me().then(function(user) {
-    console.log(user);
-  });
 }
 ```
 
@@ -217,13 +202,16 @@ app.post('/code', function (req, res) {
       var access_token = data.access_token;
 
       // fetch user using access token
-      // quartersClient.fetchUser(access_token);
+      return quartersClient.fetchUser(access_token).then(function(user) {
 
-      // return tokens to UI
-      return res.json({
-        access_token: access_token,
-        refresh_token: refresh_token
-      });
+        // transfer 2 quarters to user
+        return quartersClient.transferQuarters({
+          user: user.id,
+          amount: 2 // amount to transfer
+        }).then(function() {
+          res.json({success: true});
+        })
+      })
    })
    .catch(function (e) {
      return res.status(400).json({

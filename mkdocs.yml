@@ -26,4 +26,4 @@ pages:
   - Guides:
     - Create App: 'guides/create-app.md'
     - Login with Quarters (oauth v2): 'guides/login-quarters.md'
-    - Transfer quarters: 'guides/create-app.md'
+    - Transfer quarters: 'guides/transfer-quarters.md'
