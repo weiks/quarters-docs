@@ -1,4 +1,4 @@
-# Login with Quarters
+# Transfer quarters as reward or refund
 
 In this short guide, you'll learn how to transfer quarters as reward or refund
 to users.
