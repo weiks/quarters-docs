@@ -34,7 +34,7 @@
     
     
       
-        <title>Login with Quarters (oauth v2) - Quarters</title>
+        <title>Transfer quarters - Quarters</title>
       
     
     
@@ -98,7 +98,7 @@
                 Quarters
               </span>
               <span class="md-header-nav__topic">
-                Login with Quarters (oauth v2)
+                Transfer quarters
               </span>
             
           
@@ -388,6 +388,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../login-quarters/" title="Login with Quarters (oauth v2)" class="md-nav__link">
+      Login with Quarters (oauth v2)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -399,11 +411,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Login with Quarters (oauth v2)
+        Transfer quarters
       </label>
     
-    <a href="./" title="Login with Quarters (oauth v2)" class="md-nav__link md-nav__link--active">
-      Login with Quarters (oauth v2)
+    <a href="./" title="Transfer quarters" class="md-nav__link md-nav__link--active">
+      Transfer quarters
     </a>
     
       
@@ -489,18 +501,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../transfer-quarters/" title="Transfer quarters" class="md-nav__link">
-      Transfer quarters
-    </a>
   </li>
 
         
@@ -610,16 +610,18 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/weiks/quarters-docs/edit/master/docs/guides/login-quarters.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/weiks/quarters-docs/edit/master/docs/guides/transfer-quarters.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="login-with-quarters">Login with Quarters</h1>
-<p>In this short guide, you'll learn how to add "Login with Quarters" and how to
-retrieve player details. We are going to use OAuth for authentication. If you
-want to know more about how OAuth works, check out
+<p>In this short guide, you'll learn how to transfer quarters as reward or refund
+to users.</p>
+<p>Once users log in, let's transfer them 2 quarters as login reward.</p>
+<p>We are going to use OAuth for authentication. If you want to know more about how
+OAuth works, check out
 <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2">Digital Ocean's tutorial</a>.</p>
-<p>Now, let's create simple login functionality and fetch user information from
-Quarters server. This example uses node server to validate OAuth generated code.</p>
+<p>If you can want to know how to add "Login with Quarters" in your app,
+<a href="../login-quarters/">checkout our guide here</a>.</p>
 <p>Let's start with client side. First add <a href="../../sdk/js/">Quarters Javascript SDK</a>
 in <code>index.html</code>:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://raw.githubusercontent.com/weiks/quarters-js/master/lib/Quarters.min.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -640,26 +642,11 @@ in <code>index.html</code>:</p>
 <p>Once user click on login button you can <code>authorize</code> with <code>iframe</code>. Authorizing
 with user generates temporary <code>code</code> which you can use to generate
 <code>refresh_token</code>.</p>
-<p>After receiving <code>refresh_token</code>, you can set <code>refresh_token</code> to
-<code>setRefreshToken</code> SDK API.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">&#39;iframe&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">code</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">code</span>
 
   <span class="c1">// send this code to our node server to validate and generate refresh_token</span>
-
-  <span class="c1">// set refresh_token to client</span>
-  <span class="nx">client</span><span class="p">.</span><span class="nx">setRefreshToken</span><span class="p">(</span><span class="nx">refresh_token</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// start using client object to fetch user details</span>
-  <span class="p">})</span>
-<span class="p">})</span>
-</pre></div>
-
-
-<p>Once you have set <code>refresh_token</code> to <code>client</code>, you can now use <code>client</code> object
-to fetch user details, create transfer request, etc...</p>
-<p>Fetch user:</p>
-<div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">me</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Use user object</span>
+  <span class="c1">// on successful validation of code, transfer 2 quarters to user</span>
 <span class="p">})</span>
 </pre></div>
 
@@ -693,8 +680,18 @@ generated <code>code</code></p>
   <span class="c1">// data.access_token</span>
 
   <span class="c1">// you can use access_token to fetch user details</span>
-  <span class="c1">// quartersClient.fetchUser(access_token)</span>
-<span class="p">});</span>
+  <span class="k">return</span> <span class="nx">quartersClient</span><span class="p">.</span><span class="nx">fetchUser</span><span class="p">(</span><span class="nx">access_token</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// let&#39;s transfer 2 quarters to user</span>
+    <span class="k">return</span> <span class="nx">quartersClient</span>
+      <span class="p">.</span><span class="nx">transferQuarters</span><span class="p">({</span>
+        <span class="nx">user</span><span class="o">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="c1">// user id</span>
+        <span class="nx">amount</span><span class="o">:</span> <span class="mi">2</span> <span class="c1">// 2 quarters</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// data.txId =&gt; Ethereum transaction hash</span>
+      <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">})</span>
 </pre></div>
 
 
@@ -753,22 +750,11 @@ generated <code>code</code></p>
 
         <span class="c1">// set refresh token to quarters client</span>
         <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">setRefreshToken</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">refresh_token</span><span class="p">);</span>
-      <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// fetch user details</span>
-        <span class="k">return</span> <span class="nx">fetchUserDetails</span><span class="p">();</span>
       <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
       <span class="p">});</span>
     <span class="p">}</span>
   <span class="p">})</span>
-<span class="p">}</span>
-
-
-<span class="c1">// Fetch user details using client after setting refresh_token</span>
-<span class="kd">var</span> <span class="nx">fetchUserDetails</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">me</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
-  <span class="p">});</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -810,13 +796,16 @@ generated <code>code</code></p>
       <span class="kd">var</span> <span class="nx">access_token</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
 
       <span class="c1">// fetch user using access token</span>
-      <span class="c1">// quartersClient.fetchUser(access_token);</span>
+      <span class="k">return</span> <span class="nx">quartersClient</span><span class="p">.</span><span class="nx">fetchUser</span><span class="p">(</span><span class="nx">access_token</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
 
-      <span class="c1">// return tokens to UI</span>
-      <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
-        <span class="nx">access_token</span><span class="o">:</span> <span class="nx">access_token</span><span class="p">,</span>
-        <span class="nx">refresh_token</span><span class="o">:</span> <span class="nx">refresh_token</span>
-      <span class="p">});</span>
+        <span class="c1">// transfer 2 quarters to user</span>
+        <span class="k">return</span> <span class="nx">quartersClient</span><span class="p">.</span><span class="nx">transferQuarters</span><span class="p">({</span>
+          <span class="nx">user</span><span class="o">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="nx">amount</span><span class="o">:</span> <span class="mi">2</span> <span class="c1">// amount to transfer</span>
+        <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="nx">success</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
    <span class="p">})</span>
    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
      <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span>
@@ -843,7 +832,7 @@ generated <code>code</code></p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../create-app/" title="Create App" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../login-quarters/" title="Login with Quarters (oauth v2)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -852,25 +841,11 @@ generated <code>code</code></p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Create App
+                Login with Quarters (oauth v2)
               </span>
             </div>
           </a>
         
-        
-          <a href="../transfer-quarters/" title="Transfer quarters" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Transfer quarters
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
