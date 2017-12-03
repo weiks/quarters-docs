@@ -1,9 +1,11 @@
 # Node SDK
 
-Node SDK provides helpers for Quarters APIs and OAuth2. It requires
-`appId` (`client_id`) and `app_secret` (Server API key).
+Node SDK provides helpers for Quarters APIs and OAuth2. It requires `appId`
+(`client_id`) and `app_secret` (Server API key).
 
-The first thing you'll need to do is sign up for [Quarters](https://dev.pocketfulofquarters.com) to [create app](../guides/create-app.md)
+The first thing you'll need to do is sign up for
+[Quarters](https://dev.pocketfulofquarters.com) to
+[create app](../guides/create-app.md)
 
 ### Features
 
@@ -23,8 +25,9 @@ Create client using `app_id` and `app_secret`.
 
 ```js
 var client = new Quarters({
-  appKey: <APP_ID>,
-  appSecret: <APP_SECRET>,
+  key: <APP_ID>,
+  secret: <APP_SECRET>,
+  webSecret: <APP_WEB_SECRET>,
   address: options.address, // Your ethereum account address (from app page)
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
@@ -33,7 +36,9 @@ var client = new Quarters({
 
 ### OAuth APIs
 
-You will need to do some work to obtain OAuth credentials for your players; please refer to our [OAuth 2 tutorial and documentation](../oauth/introduction.md).
+You will need to do some work to obtain OAuth credentials for your players;
+please refer to our
+[OAuth 2 tutorial and documentation](../oauth/introduction.md).
 
 Validate `code` and fetch `refresh_token` and `access_token`
 
@@ -41,7 +46,6 @@ Validate `code` and fetch `refresh_token` and `access_token`
 client.createRefreshToken(code).then(function(data) {
   // data.refresh_token
   // data.access_token
-
   //
   // send to UI
   //
@@ -57,20 +61,20 @@ If you already have `refresh_token`, you can generate `access_token` for player.
 ```js
 client.createAccessToken(refreshToken).then(function(data) {
   // data.access_token
-
   // ...
   // ....
-});
+})
 ```
 
 #### Player details
 
-Once you have `access_token`, you can fetch user details and user related other informations.
+Once you have `access_token`, you can fetch user details and user related other
+informations.
 
 ```js
 client.fetchUser(accessToken).then(function(user) {
-  console.log(user);
-});
+  console.log(user)
+})
 ```
 
 #### Transfer quarters to player (reward and refund)
