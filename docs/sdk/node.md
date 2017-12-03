@@ -95,9 +95,10 @@ client.transferQuarters({
 ```js
 // On node server
 var client = new Quarters({
-  appKey: <APP_ID>,
-  appSecret: <APP_SECRET>, // Server API key
-  address: <ETH_ADDRESS>
+  key: <APP_ID>,
+  secret: <APP_SECRET>, // Server API key
+  webSecret: <APP_WEB_SECRET>,
+  address: <APP_ETH_ADDRESS>,
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
 });
