@@ -644,9 +644,11 @@
                 
                 
                 <h1 id="node-sdk">Node SDK</h1>
-<p>Node SDK provides helpers for Quarters APIs and OAuth2. It requires
-<code>appId</code> (<code>client_id</code>) and <code>app_secret</code> (Server API key).</p>
-<p>The first thing you'll need to do is sign up for <a href="https://dev.pocketfulofquarters.com">Quarters</a> to <a href="../../guides/create-app/">create app</a></p>
+<p>Node SDK provides helpers for Quarters APIs and OAuth2. It requires <code>appId</code>
+(<code>client_id</code>) and <code>app_secret</code> (Server API key).</p>
+<p>The first thing you'll need to do is sign up for
+<a href="https://dev.pocketfulofquarters.com">Quarters</a> to
+<a href="../../guides/create-app/">create app</a></p>
 <h3 id="features">Features</h3>
 <ul>
 <li>Support for both API Key + Secret and OAuth 2 authentication.</li>
@@ -661,8 +663,9 @@
 <h3 id="get-started">Get started</h3>
 <p>Create client using <code>app_id</code> and <code>app_secret</code>.</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">({</span>
-  <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">appSecret</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_SECRET</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">key</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">secret</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_SECRET</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">webSecret</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_WEB_SECRET</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">address</span><span class="o">:</span> <span class="nx">options</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="c1">// Your ethereum account address (from app page)</span>
   <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
   <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
@@ -671,12 +674,13 @@
 
 
 <h3 id="oauth-apis">OAuth APIs</h3>
-<p>You will need to do some work to obtain OAuth credentials for your players; please refer to our <a href="../../oauth/introduction/">OAuth 2 tutorial and documentation</a>.</p>
+<p>You will need to do some work to obtain OAuth credentials for your players;
+please refer to our
+<a href="../../oauth/introduction/">OAuth 2 tutorial and documentation</a>.</p>
 <p>Validate <code>code</code> and fetch <code>refresh_token</code> and <code>access_token</code></p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">createRefreshToken</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// data.refresh_token</span>
   <span class="c1">// data.access_token</span>
-
   <span class="c1">//</span>
   <span class="c1">// send to UI</span>
   <span class="c1">//</span>
@@ -689,18 +693,18 @@
 <p>If you already have <code>refresh_token</code>, you can generate <code>access_token</code> for player.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">createAccessToken</span><span class="p">(</span><span class="nx">refreshToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// data.access_token</span>
-
   <span class="c1">// ...</span>
   <span class="c1">// ....</span>
-<span class="p">});</span>
+<span class="p">})</span>
 </pre></div>
 
 
 <h4 id="player-details">Player details</h4>
-<p>Once you have <code>access_token</code>, you can fetch user details and user related other informations.</p>
+<p>Once you have <code>access_token</code>, you can fetch user details and user related other
+informations.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">fetchUser</span><span class="p">(</span><span class="nx">accessToken</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
-<span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
+<span class="p">})</span>
 </pre></div>
 
 
