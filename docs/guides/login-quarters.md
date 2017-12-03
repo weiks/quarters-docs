@@ -72,8 +72,9 @@ Create `quartersClient` on server. This uses `app secret` (Server API key), not
 ```js
 // Create quarters client
 var quartersClient = new Quarters({
-  appKey: <APP_ID>,
-  appSecret: <APP_SECRET>,
+  key: <APP_ID>,
+  secret: <APP_SECRET>,
+  webSecret: <APP_WEB_SECRET>,
   address: <APP_ETH_ADDRESS>,
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
@@ -89,10 +90,9 @@ quartersClient.createRefreshToken(code).then(function(data) {
   // get refresh_token (and access_token) and return to UI
   // data.refresh_token
   // data.access_token
-
   // you can use access_token to fetch user details
   // quartersClient.fetchUser(access_token)
-});
+})
 ```
 
 ### Example

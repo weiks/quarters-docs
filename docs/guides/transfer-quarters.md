@@ -58,8 +58,9 @@ Create `quartersClient` on server. This uses `app secret` (Server API key), not
 ```js
 // Create quarters client
 var quartersClient = new Quarters({
-  appKey: <APP_ID>,
-  appSecret: <APP_SECRET>,
+  key: <APP_ID>,
+  secret: <APP_SECRET>,
+  webSecret: <APP_WEB_SECRET>,
   address: <APP_ETH_ADDRESS>,
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
