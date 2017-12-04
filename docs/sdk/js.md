@@ -94,6 +94,31 @@ client.me().then(function(player) {
 });
 ```
 
+#### Account details
+
+Fetch player account details.
+
+```js
+client.getAccount().then(function(account) {
+  console.log(account);
+
+  // account.address => ETH address for player
+});
+```
+
+#### Balance details
+
+Fetch player balance details.
+
+```js
+client.getBalance().then(function(balance) {
+  console.log(balance);
+
+  // balance.quarters => Number of quarters player has
+  // balance.formattedQuarters => formatted quarters to show on UI
+});
+```
+
 #### Transfer request
 
 When you want a player to transfer quarters while playing game. You can create "transfer request"; it creates new `requestId` and then, you can ask the player to authorize the transfer.
@@ -146,8 +171,8 @@ client.authorize('iframe', function(data) {
       window.localStorage.setItem('quarters-refresh-token', refreshToken);
 
       // ...
-      // fetch 
-      
+      // fetch
+
       details
       // ...
     });
