@@ -673,13 +673,13 @@
                 
                 <h1 id="javascript-sdk">Javascript SDK</h1>
 <p>Javascript SDK provides helpers for Quarters APIs and OAuth2. It requires
-<code>appId</code> (<code>client_id</code>) and <code>app_web_secret</code>.</p>
+<code>appId</code> (<code>client_id</code>) and <code>app_key</code>.</p>
 <p>The first thing you'll need to do is sign up for <a href="https://dev.pocketfulofquarters.com">Quarters</a> to <a href="../../guides/create-app/">create app</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not use <code>app_secret</code> (Server API Key). Anyone can see parameters
-passed to Javascript SDK as it will be used on browser.</p>
 </div>
+<p>Do not use <code>server_api_key</code> (Server API Key). Anyone can see parameters
+passed to Javascript SDK as it will be used on browser.</p>
 <h3 id="features">Features</h3>
 <ul>
 <li>Support for both API Key + Secret and OAuth 2 authentication.</li>
@@ -699,10 +699,10 @@ passed to Javascript SDK as it will be used on browser.</p>
 
 
 <h3 id="get-started">Get started</h3>
-<p>Create client using <code>app_id</code> and <code>app_web_secret</code>.</p>
+<p>Create client using <code>app_id</code> and <code>app_key</code>.</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">({</span>
-  <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">appSecret</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_WEB_SECRET</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">appId</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_KEY</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
   <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
 <span class="p">});</span>
@@ -714,7 +714,7 @@ passed to Javascript SDK as it will be used on browser.</p>
 <p>Authorize user through Quarters.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">&#39;iframe&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// data.code =&gt; temporary auth code</span>
-<span class="p">});</span>
+<span class="p">})</span>
 </pre></div>
 
 
@@ -722,18 +722,17 @@ passed to Javascript SDK as it will be used on browser.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">setAuthCode</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// data.refresh_token =&gt; refresh token for client</span>
   <span class="c1">// data.access_token =&gt; access token for subsequent APIs calls</span>
-
   <span class="c1">// ...</span>
   <span class="c1">// ....</span>
   <span class="c1">// start making API calls</span>
-<span class="p">});</span>
+<span class="p">})</span>
 </pre></div>
 
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Setting <code>code</code> directly through SDK without validating at server is not safe. Use this method only for web-only applications. For server based applications, use server (Node SDK or APIs) to validate and get <code>refresh_token</code> and <code>access_token</code> from quarters server. Then, use <code>setRefreshToken</code> to set <code>refresh_token</code> to quarters client object.</p>
 </div>
+<p>Setting <code>code</code> directly through SDK without validating at server is not safe. Use this method only for web-only applications. For server based applications, use server (Node SDK or APIs) to validate and get <code>refresh_token</code> and <code>access_token</code> from quarters server. Then, use <code>setRefreshToken</code> to set <code>refresh_token</code> to quarters client object.</p>
 <h3 id="apis">APIs</h3>
 <h4 id="set-refresh-token">Set refresh token</h4>
 <p>If you already have <code>refresh_token</code>, you can skip <code>authorize</code> and <code>setAuthCode</code>, and set refresh token to client by calling <code>setRefreshToken</code>.</p>
@@ -741,73 +740,74 @@ passed to Javascript SDK as it will be used on browser.</p>
   <span class="c1">// ...</span>
   <span class="c1">// ....</span>
   <span class="c1">// start making API calls</span>
-<span class="p">});</span>
+<span class="p">})</span>
 </pre></div>
 
 
 <h4 id="player-details">Player details</h4>
 <p>Once you have set <code>refresh_token</code> using <code>setAuthCode</code> or <code>setRefreshToken</code>, you can fetch player details and other player data.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">me</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">);</span>
-<span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">)</span>
+<span class="p">})</span>
 </pre></div>
 
 
 <h4 id="account-details">Account details</h4>
 <p>Fetch player account details.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">getAccount</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">account</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">account</span><span class="p">)</span>
 
   <span class="c1">// account.address =&gt; ETH address for player</span>
-<span class="p">});</span>
+<span class="p">})</span>
 </pre></div>
 
 
 <h4 id="balance-details">Balance details</h4>
 <p>Fetch player balance details.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">balance</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">balance</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">balance</span><span class="p">)</span>
 
   <span class="c1">// balance.quarters =&gt; Number of quarters player has</span>
   <span class="c1">// balance.formattedQuarters =&gt; formatted quarters to show on UI</span>
-<span class="p">});</span>
+<span class="p">})</span>
 </pre></div>
 
 
 <h4 id="transfer-request">Transfer request</h4>
 <p>When you want a player to transfer quarters while playing game. You can create "transfer request"; it creates new <code>requestId</code> and then, you can ask the player to authorize the transfer.</p>
-<div class="codehilite"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">requestTransfer</span><span class="p">({</span>
-  <span class="nx">tokens</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 10 quarters</span>
-  <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Power ups&#39;</span> <span class="c1">// transfer description</span>
-<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="nx">client</span>
+  <span class="p">.</span><span class="nx">requestTransfer</span><span class="p">({</span>
+    <span class="nx">tokens</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 10 quarters</span>
+    <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Power ups&#39;</span> <span class="c1">// transfer description</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// request related details</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
 
-  <span class="c1">// request related details</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
-
-  <span class="c1">// add iframe on the page and ask player to authorize transfer</span>
-  <span class="nx">client</span><span class="p">.</span><span class="nx">authorizeTransfer</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="s1">&#39;iframe&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// data.message</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">cancel</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// player canceled transfer</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">// data.txId =&gt; Ethereum transaction tx id</span>
-      <span class="c1">// data.requestId =&gt; Request Id to get details about order (/v1/requests/:requestId)</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-<span class="p">});</span>
+    <span class="c1">// add iframe on the page and ask player to authorize transfer</span>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">authorizeTransfer</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="s1">&#39;iframe&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// data.message</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">cancel</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// player canceled transfer</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// data.txId =&gt; Ethereum transaction tx id</span>
+        <span class="c1">// data.requestId =&gt; Request Id to get details about order (/v1/requests/:requestId)</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
 </pre></div>
 
 
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You can use <a href="../../quarters-buttons/">Quarters Buttons</a> to get <code>txId</code> and <code>requestId</code> without creating <code>requestTransfer</code> and <code>authorizeTransfer</code>. In much complex apps, this might comes handy.</p>
 </div>
+<p>You can use <a href="../../quarters-buttons/">Quarters Buttons</a> to get <code>txId</code> and <code>requestId</code> without creating <code>requestTransfer</code> and <code>authorizeTransfer</code>. In much complex apps, this might comes handy.</p>
 <h3 id="examples">Examples</h3>
 <h4 id="web-only-app">web-only app</h4>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">({</span>
-  <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">appSecret</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_WEB_SECRET</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">appId</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_KEY</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
   <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
 <span class="p">});</span>
