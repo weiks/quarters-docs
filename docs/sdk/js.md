@@ -1,13 +1,13 @@
 # Javascript SDK
 
 Javascript SDK provides helpers for Quarters APIs and OAuth2. It requires
-`appId` (`client_id`) and `app_web_secret`.
+`appId` (`client_id`) and `app_key`.
 
 The first thing you'll need to do is sign up for [Quarters](https://dev.pocketfulofquarters.com) to [create app](../guides/create-app.md)
 
 !!! Warning
-    Do not use `app_secret` (Server API Key). Anyone can see parameters
-    passed to Javascript SDK as it will be used on browser.
+Do not use `server_api_key` (Server API Key). Anyone can see parameters
+passed to Javascript SDK as it will be used on browser.
 
 ### Features
 
@@ -31,12 +31,12 @@ npm install --save quarters-js
 
 ### Get started
 
-Create client using `app_id` and `app_web_secret`.
+Create client using `app_id` and `app_key`.
 
 ```js
 var client = new Quarters({
-  appKey: <APP_ID>,
-  appSecret: <APP_WEB_SECRET>,
+  appId: <APP_ID>,
+  appKey: <APP_KEY>,
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
 });
@@ -51,7 +51,7 @@ Authorize user through Quarters.
 ```js
 client.authorize('iframe', function(data) {
   // data.code => temporary auth code
-});
+})
 ```
 
 If you have `code` through `authorize`, you can get `refresh_token` and `access_token` using `setAuthCode` method. This method also set `refresh_token` in `client`
@@ -60,15 +60,14 @@ If you have `code` through `authorize`, you can get `refresh_token` and `access_
 client.setAuthCode(code).then(function(data) {
   // data.refresh_token => refresh token for client
   // data.access_token => access token for subsequent APIs calls
-
   // ...
   // ....
   // start making API calls
-});
+})
 ```
 
 !!! Warning
-    Setting `code` directly through SDK without validating at server is not safe. Use this method only for web-only applications. For server based applications, use server (Node SDK or APIs) to validate and get `refresh_token` and `access_token` from quarters server. Then, use `setRefreshToken` to set `refresh_token` to quarters client object.
+Setting `code` directly through SDK without validating at server is not safe. Use this method only for web-only applications. For server based applications, use server (Node SDK or APIs) to validate and get `refresh_token` and `access_token` from quarters server. Then, use `setRefreshToken` to set `refresh_token` to quarters client object.
 
 ### APIs
 
@@ -81,7 +80,7 @@ client.setRefreshToken(refreshToken).then(function() {
   // ...
   // ....
   // start making API calls
-});
+})
 ```
 
 #### Player details
@@ -90,8 +89,8 @@ Once you have set `refresh_token` using `setAuthCode` or `setRefreshToken`, you 
 
 ```js
 client.me().then(function(player) {
-  console.log(player);
-});
+  console.log(player)
+})
 ```
 
 #### Account details
@@ -100,10 +99,10 @@ Fetch player account details.
 
 ```js
 client.getAccount().then(function(account) {
-  console.log(account);
+  console.log(account)
 
   // account.address => ETH address for player
-});
+})
 ```
 
 #### Balance details
@@ -112,11 +111,11 @@ Fetch player balance details.
 
 ```js
 client.getBalance().then(function(balance) {
-  console.log(balance);
+  console.log(balance)
 
   // balance.quarters => Number of quarters player has
   // balance.formattedQuarters => formatted quarters to show on UI
-});
+})
 ```
 
 #### Transfer request
@@ -124,30 +123,31 @@ client.getBalance().then(function(balance) {
 When you want a player to transfer quarters while playing game. You can create "transfer request"; it creates new `requestId` and then, you can ask the player to authorize the transfer.
 
 ```js
-client.requestTransfer({
-  tokens: 10, // 10 quarters
-  description: 'Power ups' // transfer description
-}).then(function(request) {
+client
+  .requestTransfer({
+    tokens: 10, // 10 quarters
+    description: 'Power ups' // transfer description
+  })
+  .then(function(request) {
+    // request related details
+    console.log(request)
 
-  // request related details
-  console.log(request);
-
-  // add iframe on the page and ask player to authorize transfer
-  client.authorizeTransfer(request.id, 'iframe', function(data) {
-    if (data.error) {
-      // data.message
-    } else if (data.cancel) {
-      // player canceled transfer
-    } else {
-      // data.txId => Ethereum transaction tx id
-      // data.requestId => Request Id to get details about order (/v1/requests/:requestId)
-    }
-  });
-});
+    // add iframe on the page and ask player to authorize transfer
+    client.authorizeTransfer(request.id, 'iframe', function(data) {
+      if (data.error) {
+        // data.message
+      } else if (data.cancel) {
+        // player canceled transfer
+      } else {
+        // data.txId => Ethereum transaction tx id
+        // data.requestId => Request Id to get details about order (/v1/requests/:requestId)
+      }
+    })
+  })
 ```
 
 !!! info
-    You can use [Quarters Buttons](../quarters-buttons.md) to get `txId` and `requestId` without creating `requestTransfer` and `authorizeTransfer`. In much complex apps, this might comes handy.
+You can use [Quarters Buttons](../quarters-buttons.md) to get `txId` and `requestId` without creating `requestTransfer` and `authorizeTransfer`. In much complex apps, this might comes handy.
 
 ### Examples
 
@@ -155,8 +155,8 @@ client.requestTransfer({
 
 ```js
 var client = new Quarters({
-  appKey: <APP_ID>,
-  appSecret: <APP_WEB_SECRET>,
+  appId: <APP_ID>,
+  appKey: <APP_KEY>,
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
 });

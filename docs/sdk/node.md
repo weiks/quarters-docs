@@ -21,13 +21,13 @@ npm install --save node-quarters
 
 ### Get started
 
-Create client using `app_id` and `app_secret`.
+Create client -
 
 ```js
 var client = new Quarters({
-  key: <APP_ID>,
-  secret: <APP_SECRET>,
-  webSecret: <APP_WEB_SECRET>,
+  appId: <APP_ID>,
+  appKey: <APP_KEY>,
+  serverAPIKey: <SERVER_API_KEY>,
   address: options.address, // Your ethereum account address (from app page)
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
@@ -95,9 +95,9 @@ client.transferQuarters({
 ```js
 // On node server
 var client = new Quarters({
-  key: <APP_ID>,
-  secret: <APP_SECRET>, // Server API key
-  webSecret: <APP_WEB_SECRET>,
+  appId: <APP_ID>,
+  appKey: <APP_KEY>, // Server API key
+  serverAPIKey: <SERVER_API_KEY>,
   address: <APP_ETH_ADDRESS>,
   quartersURL: 'https://dev.pocketfulofquarters.com',
   apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
