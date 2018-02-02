@@ -71,6 +71,18 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/apis/user/</loc>
+     <lastmod>2018-02-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/apis/transfer-requests/</loc>
+     <lastmod>2018-02-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
