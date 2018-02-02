@@ -1,5 +1,7 @@
 # OAuth APIs
 
+OAuth APIS are standard OAuth2 APIs.
+
 * **Authorize URL**: `https://dev.pocketfulofquarters.com/oauth/authorize`
 * **Access Token URL**: `https://dev.pocketfulofquarters.com/oauth/token`
 
@@ -26,13 +28,13 @@ On user approval, Quarters will redirect user to `redirect_uri` with following c
 | ----------- | ----------------------------------------- |
 | `code`      | Temporary `code` to retrieve access token |
 
-### Access token
+### Refresh token
 
 ```CURL
 POST https://api.dev.pocketfulofquarters/v1/oauth/token
 ```
 
-With following parameters:
+with following parameters:
 
 | Parameter       | Description                                                              |
 | --------------- | ------------------------------------------------------------------------ |
@@ -64,17 +66,53 @@ After a successful request, a valid access token will be returned in the respons
 
      `access_token` is short lived token. It will expire in 30 minutes. Use `refresh_token` to retrieve new `access_token`.
 
+You can know more about `refresh_token` here: [Refresh tokens and access tokens](../oauth/refresh-tokens.md)
+
+### Access token
+
+Use `refresh_token` to retrieve `access_token`
+
+```CURL
+POST https://api.dev.pocketfulofquarters/v1/oauth/token
+```
+
+with following parameters:
+
+| Parameter       | Description                                                              |
+| --------------- | ------------------------------------------------------------------------ |
+| `grant_type`    | **Required** Value `refresh_token`                                       |
+| `refresh_token` | **Required** Value of refresh_token                                      |
+| `client_id`     | **Required** The APP ID you received after registering your application  |
+| `client_secret` | **Required** The APP_KEY you received after registering your application |
+
+```CURL
+curl https://api.dev.pocketfulofquarters.com/v1/oauth/token \
+  -X POST \
+  -H 'Content-Type: application/json;charset=UTF-8' \
+  --data-binary '{"client_id":"Lpk5sPrA7P59HFlN7obS","client_secret":"1s4x2v8h3b9ollw1pt2afj8knheamvmvv","grant_type":"refresh_token","refresh_token":"eyJhbGciOiJIUzI1Ni....kSTwCpK8zNq8YGrVk_AQu6u4c"}'
+```
+
+After a successful request, a valid access token will be returned in the response:
+
+```json
+{
+  "client_id": "Lpk5sPrA7P59HFlN7obS",
+  "refresh_token": "d832e7c419869...5918b96",
+  "access_token": "eyJhbGciOiJIU...81plg"
+}
+```
+
 ### Make an authenticated API call
 
 ```
-POST https://api.dev.pocketfulofquarters.com/v1/me
+GET https://api.dev.pocketfulofquarters.com/v1/me
 ```
 
-With following headers:
+with following headers:
 
-| Parameter       | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| `Authorization` | **Required** Use following format \n `Bearer <access-token>` |
+| Parameter       | Description                                   |
+| --------------- | --------------------------------------------- |
+| `Authorization` | **Required** Format - `Bearer <access-token>` |
 
 Example request:
 

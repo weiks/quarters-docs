@@ -6,7 +6,7 @@ Javascript SDK provides helpers for Quarters APIs and OAuth2. It requires
 The first thing you'll need to do is sign up for [Quarters](https://dev.pocketfulofquarters.com) to [create app](../guides/create-app.md)
 
 !!! Warning
-    Do not use `server_api_key` (Server API Key). Anyone can see parameters passed to Javascript SDK as it will be used on browser.
+Do not use `server_api_key` (Server API Key). Anyone can see parameters passed to Javascript SDK as it will be used on browser.
 
 ### Features
 
@@ -146,7 +146,8 @@ client
 ```
 
 !!! info
-You can use [Quarters Buttons](../quarters-buttons.md) to get `txId` and `requestId` without creating `requestTransfer` and `authorizeTransfer`. In much complex apps, this might comes handy.
+
+    You can use [Quarters Buttons](../quarters-buttons.md) to get `txId` and `requestId` without creating `requestTransfer` and `authorizeTransfer`. In much complex apps, this might comes handy.
 
 ### Examples
 

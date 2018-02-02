@@ -21,7 +21,7 @@ npm install --save node-quarters
 
 ### Get started
 
-Create client -
+Create a client -
 
 ```js
 var client = new Quarters({

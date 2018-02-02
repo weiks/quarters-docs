@@ -25,6 +25,8 @@ pages:
     - Node (server): 'sdk/node.md'
   - APIs:
     - OAuth: 'apis/oauth.md'
+    - Users & accounts: 'apis/user.md'
+    - Transfers: 'apis/transfer-requests.md'
   - Guides:
     - Create App: 'guides/create-app.md'
     - Login with Quarters (oauth v2): 'guides/login-quarters.md'
