@@ -6,7 +6,8 @@ Before integrating Quarters OAuth, you'll need to register a new OAuth2 applicat
 * **Access Token URL**: `https://dev.pocketfulofquarters.com/oauth/token`
 
 !!! warning
-    Quarters is still in beta. API may change in stable version.
+
+      Quarters is still in beta. API may change in stable version.
 
 To integrate your third-party web server application with Quarters, use the following flow:
 
@@ -18,13 +19,12 @@ GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&clien
 
 When redirecting a user to Quarters to authorize access to your application, you'll need to construct the authorization URL with the correct parameters. Here's a list of parameters you should always specify:
 
-Parameter | Description
---- | ---
-`response_type` | **Required** Value `code`
-`client_id` | **Required** The client ID you received after registering your application.
-`inline` | **Required** Value `true`
-`redirect_uri` | **Optional** The URL (encoded) in your app where users will be sent after authorization.
-
+| Parameter       | Description                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------- |
+| `response_type` | **Required** Value `code`                                                                |
+| `client_id`     | **Required** The client ID you received after registering your application.              |
+| `inline`        | **Required** Value `true`                                                                |
+| `redirect_uri`  | **Optional** The URL (encoded) in your app where users will be sent after authorization. |
 
 Example of an authorization URL:
 
@@ -56,12 +56,12 @@ POST https://api.dev.pocketfulofquarters/v1/oauth/token
 
 With following parameters:
 
-Parameter | Description
---- | ---
-`grant_type` | **Required** Value `authorization_code`
-`code` | **Required** Value from step 2
-`client_id` | **Required** The app ID you received after registering your application
-`client_secret` | **Required** The **web secret** you received after registering your application
+| Parameter       | Description                                                                     |
+| --------------- | ------------------------------------------------------------------------------- |
+| `grant_type`    | **Required** Value `authorization_code`                                         |
+| `code`          | **Required** Value from step 2                                                  |
+| `client_id`     | **Required** The app ID you received after registering your application         |
+| `client_secret` | **Required** The **web secret** you received after registering your application |
 
 Example request:
 
@@ -76,9 +76,9 @@ After a successful request, a valid access token will be returned in the respons
 
 ```json
 {
-  "client_id":"Lpk5sPrA7P59HFlN7obS",
-  "refresh_token":"d832e7c419869...5918b96",
-  "access_token":"eyJhbGciOiJIU...81plg"
+  "client_id": "Lpk5sPrA7P59HFlN7obS",
+  "refresh_token": "d832e7c419869...5918b96",
+  "access_token": "eyJhbGciOiJIU...81plg"
 }
 ```
 
@@ -95,10 +95,10 @@ Example response:
 
 ```json
 {
-  "id":"vGiLGvwPDXTu3VyEBTrJcIu2a702",
-  "userId":"vGiLGvwPDXTu3VyEBTrJcIu2a702",
-  "displayName":"User1",
-  "email":"user1@example.com",
-  "emailVerified":true
+  "id": "vGiLGvwPDXTu3VyEBTrJcIu2a702",
+  "userId": "vGiLGvwPDXTu3VyEBTrJcIu2a702",
+  "displayName": "User1",
+  "email": "user1@example.com",
+  "emailVerified": true
 }
 ```

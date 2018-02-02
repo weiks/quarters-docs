@@ -23,6 +23,8 @@ pages:
   - Libraries (SDK):
     - Javascript (client): 'sdk/js.md'
     - Node (server): 'sdk/node.md'
+  - APIs:
+    - OAuth: 'apis/oauth.md'
   - Guides:
     - Create App: 'guides/create-app.md'
     - Login with Quarters (oauth v2): 'guides/login-quarters.md'
