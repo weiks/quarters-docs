@@ -34,7 +34,7 @@
     
     
       
-        <title>Integrating - Quarters</title>
+        <title>OAuth - Quarters</title>
       
     
     
@@ -98,7 +98,7 @@
                 Quarters
               </span>
               <span class="md-header-nav__topic">
-                Integrating
+                OAuth
               </span>
             
           
@@ -235,12 +235,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Quarters OAuth
@@ -258,7 +256,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../oauth/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -268,68 +266,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Integrating
-      </label>
-    
-    <a href="./" title="Integrating" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../oauth/integrating/" title="Integrating" class="md-nav__link">
       Integrating
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-redirect-users-to-request-quarters-access" title="1. Redirect users to request Quarters access" class="md-nav__link">
-    1. Redirect users to request Quarters access
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-quarters-redirects-back-to-your-site" title="2. Quarters redirects back to your site" class="md-nav__link">
-    2. Quarters redirects back to your site
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-exchange-code-for-an-access-token" title="3. Exchange code for an access token" class="md-nav__link">
-    3. Exchange code for an access token
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-make-an-api-call" title="4. Make an API call" class="md-nav__link">
-    4. Make an API call
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -339,7 +280,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../refresh-tokens/" title="Refresh tokens" class="md-nav__link">
+    <a href="../../oauth/refresh-tokens/" title="Refresh tokens" class="md-nav__link">
       Refresh tokens
     </a>
   </li>
@@ -414,10 +355,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       APIs
@@ -433,11 +376,68 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../apis/oauth/" title="OAuth" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        OAuth
+      </label>
+    
+    <a href="./" title="OAuth" class="md-nav__link md-nav__link--active">
       OAuth
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authorize" title="Authorize" class="md-nav__link">
+    Authorize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-retrieval" title="Code retrieval" class="md-nav__link">
+    Code retrieval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-token" title="Access token" class="md-nav__link">
+    Access token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-an-authenticated-api-call" title="Make an authenticated API call" class="md-nav__link">
+    Make an authenticated API call
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -527,29 +527,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-redirect-users-to-request-quarters-access" title="1. Redirect users to request Quarters access" class="md-nav__link">
-    1. Redirect users to request Quarters access
+  <a href="#authorize" title="Authorize" class="md-nav__link">
+    Authorize
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-quarters-redirects-back-to-your-site" title="2. Quarters redirects back to your site" class="md-nav__link">
-    2. Quarters redirects back to your site
+  <a href="#code-retrieval" title="Code retrieval" class="md-nav__link">
+    Code retrieval
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-exchange-code-for-an-access-token" title="3. Exchange code for an access token" class="md-nav__link">
-    3. Exchange code for an access token
+  <a href="#access-token" title="Access token" class="md-nav__link">
+    Access token
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-make-an-api-call" title="4. Make an API call" class="md-nav__link">
-    4. Make an API call
+  <a href="#make-an-authenticated-api-call" title="Make an authenticated API call" class="md-nav__link">
+    Make an authenticated API call
   </a>
   
 </li>
@@ -568,26 +568,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/weiks/quarters-docs/edit/master/docs/oauth/integrating.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/weiks/quarters-docs/edit/master/docs/apis/oauth.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="integrating-quarters-oauth-with-your-web-game-apps">Integrating Quarters OAuth with your web game apps</h1>
-<p>Before integrating Quarters OAuth, you'll need to register a new OAuth2 application under <a href="https://dev.pocketfulofquarters.com/apps/new">your profile</a>. If you're using a previous OAuth2 implementation, you may need to configure the following settings:</p>
+                <h1 id="oauth-apis">OAuth APIs</h1>
 <ul>
 <li><strong>Authorize URL</strong>: <code>https://dev.pocketfulofquarters.com/oauth/authorize</code></li>
 <li><strong>Access Token URL</strong>: <code>https://dev.pocketfulofquarters.com/oauth/token</code></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Quarters is still in beta. API may change in stable version.</p>
-</div>
-<p>To integrate your third-party web server application with Quarters, use the following flow:</p>
-<h3 id="1-redirect-users-to-request-quarters-access">1. Redirect users to request Quarters access</h3>
+<h3 id="authorize">Authorize</h3>
 <div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_REDIRECT_URL&amp;inline=true
 </pre></div>
 
 
-<p>When redirecting a user to Quarters to authorize access to your application, you'll need to construct the authorization URL with the correct parameters. Here's a list of parameters you should always specify:</p>
+<p>Parameters:</p>
 <table>
 <thead>
 <tr>
@@ -614,22 +608,23 @@
 </tr>
 </tbody>
 </table>
-<p>Example of an authorization URL:</p>
-<div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=Lpk5sPrA7P59HFlN7obS&amp;inline=true&amp;redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
-</pre></div>
-
-
-<h3 id="2-quarters-redirects-back-to-your-site">2. Quarters redirects back to your site</h3>
-<p>If the user approves your application, Quarters will redirect them back to your <code>redirect_uri</code> with a temporary code parameter.</p>
-<p>Example of the redirect:</p>
-<div class="codehilite"><pre><span></span>GET https://example.com/oauth/callback?success=true&amp;code=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiNmFkODI2ZjAtZDY1ZS0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsInRva2VuVHlwZSI6Imp3dDphdXRob3JpemF0aW9uX2NvZGUiLCJpYXQiOjE1MTIxMDg2NjYsImV4cCI6MTUxMjEwODcyNn0.Pwl3Mt_RN5Qut5VpCshP32FkZ_lES84PrDnzIGDG8J0
-</pre></div>
-
-
-<p><strong>OAuth2 Redirect URI</strong></p>
-<p>For added security, all <code>redirect_uri</code> must use SSL (i.e. begin with <code>https://</code>). URIs without SSL can only be used for development and testing and will not be supported in production.</p>
-<h3 id="3-exchange-code-for-an-access-token">3. Exchange code for an access token</h3>
-<p>After you have received the temporary code, you can exchange it for valid access and refresh tokens. This can be done by making a <code>POST</code> call:</p>
+<h3 id="code-retrieval">Code retrieval</h3>
+<p>On user approval, Quarters will redirect user to <code>redirect_uri</code> with following code as query params:</p>
+<table>
+<thead>
+<tr>
+<th>Query param</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td>Temporary <code>code</code> to retrieve access token</td>
+</tr>
+</tbody>
+</table>
+<h3 id="access-token">Access token</h3>
 <div class="codehilite"><pre><span></span>POST https://api.dev.pocketfulofquarters/v1/oauth/token
 </pre></div>
 
@@ -653,11 +648,11 @@
 </tr>
 <tr>
 <td><code>client_id</code></td>
-<td><strong>Required</strong> The app ID you received after registering your application</td>
+<td><strong>Required</strong> The APP ID you received after registering your application</td>
 </tr>
 <tr>
 <td><code>client_secret</code></td>
-<td><strong>Required</strong> The <strong>web secret</strong> you received after registering your application</td>
+<td><strong>Required</strong> The APP_KEY you received after registering your application</td>
 </tr>
 </tbody>
 </table>
@@ -678,8 +673,31 @@
 </pre></div>
 
 
-<h3 id="4-make-an-api-call">4. Make an API call</h3>
-<p>After you have a valid access token, you can make your first API call:</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>access_token</code> is short lived token. It will expire in 30 minutes. Use <code>refresh_token</code> to retrieve new <code>access_token</code>.</p>
+</div>
+<h3 id="make-an-authenticated-api-call">Make an authenticated API call</h3>
+<div class="codehilite"><pre><span></span>POST https://api.dev.pocketfulofquarters.com/v1/me
+</pre></div>
+
+
+<p>With following headers:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td><strong>Required</strong> Use following format \n <code>Bearer &lt;access-token&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
 <div class="codehilite"><pre><span></span>curl https://api.dev.pocketfulofquarters.com/v1/me \
   -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMWE5Njk3YzAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsImFkbWluIjpmYWxzZSwiZGV2ZWxvcGVyIjpmYWxzZSwidG9rZW5UeXBlIjoiand0OnVzZXIiLCJpYXQiOjE1MTIxMTExMDgsImV4cCI6MTUxMjExMTcwOH0.PFlJjGoN3xza1Qk3ZIBaOzMPyYbrQvnjyvyvQf81plg&#39;
 </pre></div>
@@ -694,6 +712,9 @@
   <span class="nt">&quot;emailVerified&quot;</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
+
+
+<p>All quarters related APIs are private APIs. Use <code>access_token</code> to access them.</p>
                 
                   
                 
@@ -712,7 +733,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../introduction/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../sdk/node/" title="Node (server)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -721,19 +742,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction
+                Node (server)
               </span>
             </div>
           </a>
         
         
-          <a href="../refresh-tokens/" title="Refresh tokens" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../guides/create-app/" title="Create App" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Refresh tokens
+                Create App
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
