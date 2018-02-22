@@ -97,7 +97,6 @@ After a successful request, a valid access token will be returned in the respons
 ```json
 {
   "client_id": "Lpk5sPrA7P59HFlN7obS",
-  "refresh_token": "d832e7c419869...5918b96",
   "access_token": "eyJhbGciOiJIU...81plg"
 }
 ```
