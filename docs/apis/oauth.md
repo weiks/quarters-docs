@@ -3,7 +3,7 @@
 OAuth APIS are standard OAuth2 APIs.
 
 * **Authorize URL**: `https://dev.pocketfulofquarters.com/oauth/authorize`
-* **Access Token URL**: `https://dev.pocketfulofquarters.com/oauth/token`
+* **Access Token URL**: `https://api.dev.pocketfulofquarters.com/v1/oauth/token`
 
 ### Authorize
 
@@ -73,7 +73,7 @@ You can know more about `refresh_token` here: [Refresh tokens and access tokens]
 Use `refresh_token` to retrieve `access_token`
 
 ```CURL
-POST https://api.dev.pocketfulofquarters/v1/oauth/token
+POST https://api.dev.pocketfulofquarters.com/v1/oauth/token
 ```
 
 with following parameters:
