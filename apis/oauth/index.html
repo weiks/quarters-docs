@@ -613,7 +613,7 @@
 <p>OAuth APIS are standard OAuth2 APIs.</p>
 <ul>
 <li><strong>Authorize URL</strong>: <code>https://dev.pocketfulofquarters.com/oauth/authorize</code></li>
-<li><strong>Access Token URL</strong>: <code>https://dev.pocketfulofquarters.com/oauth/token</code></li>
+<li><strong>Access Token URL</strong>: <code>https://api.dev.pocketfulofquarters.com/v1/oauth/token</code></li>
 </ul>
 <h3 id="authorize">Authorize</h3>
 <div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_REDIRECT_URL&amp;inline=true
@@ -719,7 +719,7 @@
 <p>You can know more about <code>refresh_token</code> here: <a href="../../oauth/refresh-tokens/">Refresh tokens and access tokens</a></p>
 <h3 id="access-token">Access token</h3>
 <p>Use <code>refresh_token</code> to retrieve <code>access_token</code></p>
-<div class="codehilite"><pre><span></span>POST https://api.dev.pocketfulofquarters/v1/oauth/token
+<div class="codehilite"><pre><span></span>POST https://api.dev.pocketfulofquarters.com/v1/oauth/token
 </pre></div>
 
 
