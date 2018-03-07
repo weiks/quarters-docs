@@ -28,7 +28,7 @@ with following headers:
 Request example:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters/v1/oauth/token \
+curl https://api.dev.pocketfulofquarters/v1/requests \
   -X POST \
   -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
   -H 'Content-Type: application/json;charset=UTF-8' \
