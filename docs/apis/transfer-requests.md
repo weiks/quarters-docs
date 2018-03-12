@@ -39,17 +39,18 @@ Response example:
 
 ```json
 {
-  "txId": "0xd832e7c419869...5918b96",
-  "requestId": "01be8a20-04bb-11e8-94b8-91a2ba7c5972"
+  "id": "01be8a20-04bb-11e8-94b8-91a2ba7c5972",
+  "tokens": 10,
+  "appId": "Lpk5sPrA7P59HFlN7obS",
+  "appAddress": "0x1e2aa0184dcde9502568593d6c5da68966a3275a",
+  "embedCode": "01be8a20-04bb-11e8-94b8-91a2ba7c5972",
+  "description": "Power ups",
+  "type": "transfer",
+  "endpoint": "/v1/requests/01be8a20-04bb-11e8-94b8-91a2ba7c5972",
+  "created": {},
+  "userId": "Lpk5sPrA7P59HFlN7obS"
 }
 ```
-
-Response fields:
-
-| Field       | Description                                     |
-| ----------- | ----------------------------------------------- |
-| `txId`      | Ethereum transaction hash of quarters transfers |
-| `requestId` | Transfer request id                             |
 
 #### Authorization
 
@@ -60,6 +61,16 @@ You can redirect to following URL to get approval from user.
 | URL params   | Description                                                              |
 | ------------ | ------------------------------------------------------------------------ |
 | `request_id` | **Required** Request id from [step 1](#create-transfer-request-for-user) |
+
+
+Response fields will be in query params in case of redirection, and `window.onQuartersCallback` in case of iframe.
+
+Response fields:
+
+| Field       | Description                                     |
+| ----------- | ----------------------------------------------- |
+| `txId`      | Ethereum transaction hash of quarters transfers |
+| `requestId` | Transfer request id                             |
 
 ### Transfer quarters (Available only for server-to-server)
 
