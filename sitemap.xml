@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/getting-started/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>/oauth/introduction/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/oauth/integrating/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/oauth/refresh-tokens/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -42,7 +42,7 @@
     
     <url>
      <loc>/quarters-buttons/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -51,13 +51,13 @@
         
     <url>
      <loc>/sdk/js/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/sdk/node/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -67,19 +67,19 @@
         
     <url>
      <loc>/apis/oauth/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/apis/user/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/apis/transfer-requests/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -89,19 +89,19 @@
         
     <url>
      <loc>/guides/create-app/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/guides/login-quarters/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/guides/transfer-quarters/</loc>
-     <lastmod>2018-03-07</lastmod>
+     <lastmod>2018-03-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

@@ -653,31 +653,20 @@
 
 <p>Response example:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;txId&quot;</span><span class="p">:</span> <span class="s2">&quot;0xd832e7c419869...5918b96&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;requestId&quot;</span><span class="p">:</span> <span class="s2">&quot;01be8a20-04bb-11e8-94b8-91a2ba7c5972&quot;</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;01be8a20-04bb-11e8-94b8-91a2ba7c5972&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;tokens&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nt">&quot;appId&quot;</span><span class="p">:</span> <span class="s2">&quot;Lpk5sPrA7P59HFlN7obS&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;appAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;0x1e2aa0184dcde9502568593d6c5da68966a3275a&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;embedCode&quot;</span><span class="p">:</span> <span class="s2">&quot;01be8a20-04bb-11e8-94b8-91a2ba7c5972&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Power ups&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;transfer&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;endpoint&quot;</span><span class="p">:</span> <span class="s2">&quot;/v1/requests/01be8a20-04bb-11e8-94b8-91a2ba7c5972&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span> <span class="s2">&quot;Lpk5sPrA7P59HFlN7obS&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p>Response fields:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>txId</code></td>
-<td>Ethereum transaction hash of quarters transfers</td>
-</tr>
-<tr>
-<td><code>requestId</code></td>
-<td>Transfer request id</td>
-</tr>
-</tbody>
-</table>
 <h4 id="authorization">Authorization</h4>
 <p>You can redirect to following URL to get approval from user.</p>
 <ul>
@@ -694,6 +683,26 @@
 <tr>
 <td><code>request_id</code></td>
 <td><strong>Required</strong> Request id from <a href="#create-transfer-request-for-user">step 1</a></td>
+</tr>
+</tbody>
+</table>
+<p>Response fields will be in query params in case of redirection, and <code>window.onQuartersCallback</code> in case of iframe.</p>
+<p>Response fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>txId</code></td>
+<td>Ethereum transaction hash of quarters transfers</td>
+</tr>
+<tr>
+<td><code>requestId</code></td>
+<td>Transfer request id</td>
 </tr>
 </tbody>
 </table>
