@@ -61,6 +61,18 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/sdk/unity/</loc>
+     <lastmod>2018-05-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/sdk/unity-playfab/</loc>
+     <lastmod>2018-05-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
