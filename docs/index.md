@@ -74,3 +74,13 @@ Node SDK provides helpers to interact with Quarters server and contract.
 ```
 
 To check complete documentation, [visit Node SDK](sdk/node.md).
+
+**Unity SDK**
+
+To check complete documentation, [visit Unity SDK](sdk/unity.md).
+
+**Unity SDK - PlayFab Module**
+
+PlayFab Module allows transferring quarters from the Quarters app to the users through PlayFab cloud script.
+
+To check complete documentation, [visit Unity SDK](sdk/unity-playfab.md).

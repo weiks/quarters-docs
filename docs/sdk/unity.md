@@ -1,19 +1,18 @@
-﻿
-# Quarters Unity SDK - v0.7.0
+﻿# Quarters Unity SDK - v0.7.0
 
 Supported platforms:
 * iOS
 * Android
 
-## Configuration
-Follow Getting Started guide to create your Quarter App.
-https://weiks.github.io/quarters-docs/getting-started/
+[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/0.8.0.unitypackage)
 
+## Configuration
+Follow [Getting Started guide](/getting-started) to create your Quarter App.
 
 ## Unity integration
-Import Quarters SDK from Unity Asset Store
-Add QuartersSDK/Prefab/QuartersInit.prefab to your first scene
-Copy your APP_ID and APP_KEY to QuartersInit inspector 
+Import `Quarters SDK` from `Unity Asset Store`
+Add `QuartersSDK/Prefab/QuartersInit.prefab` to your first scene
+Copy your `APP_ID` and `APP_KEY` to QuartersInit inspector
 
 
 ## Platform specific setup
@@ -37,18 +36,18 @@ Before you can use Quarters API you must authorise users session.
 Example:
 
     using QuartersSDK;
-    
+
     Quarters.Instance.Authorize(OnAuthorizationSuccess, OnAuthorizationFailed);
-    
-    
+
+
     public void OnAuthorizationSuccess() {
     	Debug.Log("OnAuthorizationSuccess");
     }
-    
-    
+
+
     public void OnAuthorizationFailed(string error) {
     	Debug.LogError("OnAuthorizationFailed: " + error);
-    
+
     }
 
 Quarters is using OAuth in external browser. This means your user will be sent outside the app for OAuth in the browser. After successful or failed authorisation user is seamlessly deep linked back to the app.
@@ -62,13 +61,13 @@ Get user details can be only called after successful authorization. Success dele
 Example:
 
     using QuartersSDK;
-    
+
     Quarters.Instance.GetUserDetails(delegate(User user) {
     	Debug.Log("User loaded");
-    
+
     } , delegate (string error) {
     	Debug.LogError("Cannot load the user details: " + error);
-    
+
     } );
 
 
@@ -83,15 +82,15 @@ Example:
 ----
 
     using QuartersSDK;
-    
+
     Quarters.Instance.GetAccounts(delegate (List<User.Account> accounts) {
-    
+
     //success
-                    
+
     }, delegate (string error) {
-    
+
     //failed
-    
+
     });
 
 
@@ -103,11 +102,11 @@ Get account balance can be only called after successful authorization. On succes
 Example:
 
     using QuartersSDK;
-    
+
     Quarters.Instance.GetAccountBalance(delegate (User.Account.Balance balance) {
-    
+
     }, delegate (string error) {
-    
+
      });
 
 
@@ -120,17 +119,17 @@ Transfer request can be only called after successful authorization. This call al
 Example:
 
     using QuartersSDK;
-    
+
     TransferAPIRequest request = new TransferAPIRequest(int.Parse(tokensInput.text), descriptionInput.text, delegate (string transactionHash) {
-                
+
     //success
-    
+
     }, delegate (string error) {
-    
+
     //failed
-                
+
     });
-    
+
     //start transfer
     Quarters.Instance.CreateTransfer(request);
 
@@ -228,14 +227,3 @@ Known issues:
 - QuartersInit App ID and App key arent serialised into Unity scene - fixed in 0.2.0
 
 #####
-
-
-
-
-
-
-
-
-
-
-
