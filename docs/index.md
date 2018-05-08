@@ -83,4 +83,4 @@ To check complete documentation, [visit Unity SDK](sdk/unity.md).
 
 PlayFab Module allows transferring quarters from the Quarters app to the users through PlayFab cloud script.
 
-To check complete documentation, [visit Unity SDK](sdk/unity-playfab.md).
+To check complete documentation, [visit Unity SDK - PlayFab Module](sdk/unity-playfab.md).
