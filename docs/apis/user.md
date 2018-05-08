@@ -3,7 +3,7 @@
 ### User details
 
 ```
-GET https://api.dev.pocketfulofquarters.com/v1/me
+GET https://api.pocketfulofquarters.com/v1/me
 ```
 
 with following headers:
@@ -18,7 +18,7 @@ to know how to retrieve `access_token`.
 Example request:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/me \
+curl https://api.pocketfulofquarters.com/v1/me \
   -H 'Authorization: Bearer eyJhbGci...YbrQvnjyvyvQf81plg'
 ```
 
@@ -37,7 +37,7 @@ Example response:
 ### Accounts
 
 ```
-GET https://api.dev.pocketfulofquarters.com/v1/accounts
+GET https://api.pocketfulofquarters.com/v1/accounts
 ```
 
 with following headers:
@@ -51,7 +51,7 @@ Currently response will have only one account in account list.
 Example request:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/accounts \
+curl https://api.pocketfulofquarters.com/v1/accounts \
   -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
 ```
 
@@ -71,7 +71,7 @@ Example response:
 ### Account balance
 
 ```
-GET https://api.dev.pocketfulofquarters.com/v1/accounts/{account-address}/balance
+GET https://api.pocketfulofquarters.com/v1/accounts/{account-address}/balance
 ```
 
 with following url params:
@@ -89,7 +89,7 @@ with following headers:
 Example request:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/accounts/0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359/balance \
+curl https://api.pocketfulofquarters.com/v1/accounts/0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359/balance \
   -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
 ```
 
@@ -109,7 +109,7 @@ Example response:
 ### Account reward
 
 ```
-GET https://api.dev.pocketfulofquarters.com/v1/accounts/{account-address}/rewards
+GET https://api.pocketfulofquarters.com/v1/accounts/{account-address}/rewards
 ```
 
 with following url params:
@@ -127,7 +127,7 @@ with following headers:
 Example request:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/accounts/0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359/rewards \
+curl https://api.pocketfulofquarters.com/v1/accounts/0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359/rewards \
   -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
 ```
 

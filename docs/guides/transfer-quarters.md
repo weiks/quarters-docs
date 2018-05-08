@@ -25,8 +25,8 @@ Create client using `app id` and `web secret` like this:
 var quarterOptions = {
   appId: <APP_ID>,
   appKey: <APP_KEY>,
-  quartersURL: 'https://dev.pocketfulofquarters.com',
-  apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
+  quartersURL: 'https://pocketfulofquarters.com',
+  apiURL: 'https://api.pocketfulofquarters.com/v1/'
 }
 var client = new Quarters(quarterOptions);
 ```
@@ -62,8 +62,8 @@ var quartersClient = new Quarters({
   appKey: <APP_KEY>,
   serverAPIKey: <SERVER_API_KEY>,
   address: <APP_ETH_ADDRESS>,
-  quartersURL: 'https://dev.pocketfulofquarters.com',
-  apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
+  quartersURL: 'https://pocketfulofquarters.com',
+  apiURL: 'https://api.pocketfulofquarters.com/v1/'
 });
 ```
 
@@ -130,8 +130,8 @@ Add `Javscript SDK` and add login button into `index.html`
 var quarterOptions = {
   appId: <APP_ID>,
   appKey: <APP_KEY>,
-  quartersURL: 'https://dev.pocketfulofquarters.com',
-  apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
+  quartersURL: 'https://pocketfulofquarters.com',
+  apiURL: 'https://api.pocketfulofquarters.com/v1/'
 }
 var client = new Quarters(quarterOptions);
 
@@ -182,8 +182,8 @@ var quartersClient = new Quarters({
   appId: <APP_ID>,
   appKey: <APP_KEY>,
   address: <APP_ETH_ADDRESS>,
-  quartersURL: 'https://dev.pocketfulofquarters.com',
-  apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
+  quartersURL: 'https://pocketfulofquarters.com',
+  apiURL: 'https://api.pocketfulofquarters.com/v1/'
 });
 
 ...

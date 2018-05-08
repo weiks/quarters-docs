@@ -8,7 +8,7 @@ Quarters allows you to create "transfer requests" and provide a way to ask users
 ### Create transfer request for user
 
 ```CURL
-POST https://api.dev.pocketfulofquarters/v1/oauth/token
+POST https://api.pocketfulofquarters/v1/oauth/token
 ```
 
 with following parameters:
@@ -28,7 +28,7 @@ with following headers:
 Request example:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters/v1/requests \
+curl https://api.pocketfulofquarters/v1/requests \
   -X POST \
   -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
   -H 'Content-Type: application/json;charset=UTF-8' \
@@ -56,7 +56,7 @@ Response example:
 
 You can redirect to following URL to get approval from user.
 
-* **URL to Authorize transfer** `https://dev.pocketfulofquarters.com/requests/{request_id}?inline=true`
+* **URL to Authorize transfer** `https://pocketfulofquarters.com/requests/{request_id}?inline=true`
 
 | URL params   | Description                                                              |
 | ------------ | ------------------------------------------------------------------------ |
@@ -75,7 +75,7 @@ Response fields:
 ### Transfer quarters (Available only for server-to-server)
 
 ```
-POST https://api.dev.pocketfulofquarters.com/v1/accounts/{app-account-address}/transfer
+POST https://api.pocketfulofquarters.com/v1/accounts/{app-account-address}/transfer
 ```
 
 with following url params:
@@ -100,7 +100,7 @@ with following parameters:
 Request example:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters/v1/accounts/0x898...89/transfer \
+curl https://api.pocketfulofquarters/v1/accounts/0x898...89/transfer \
   -X POST \
   -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
   -H 'Content-Type: application/json;charset=UTF-8' \

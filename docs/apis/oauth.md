@@ -2,13 +2,13 @@
 
 OAuth APIS are standard OAuth2 APIs.
 
-* **Authorize URL**: `https://dev.pocketfulofquarters.com/oauth/authorize`
-* **Access Token URL**: `https://api.dev.pocketfulofquarters.com/v1/oauth/token`
+* **Authorize URL**: `https://pocketfulofquarters.com/oauth/authorize`
+* **Access Token URL**: `https://api.pocketfulofquarters.com/v1/oauth/token`
 
 ### Authorize
 
 ```CURL
-GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URL&inline=true
+GET https://pocketfulofquarters.com/oauth/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URL&inline=true
 ```
 
 Parameters:
@@ -31,7 +31,7 @@ On user approval, Quarters will redirect user to `redirect_uri` with following c
 ### Refresh token
 
 ```CURL
-POST https://api.dev.pocketfulofquarters/v1/oauth/token
+POST https://api.pocketfulofquarters/v1/oauth/token
 ```
 
 with following parameters:
@@ -46,7 +46,7 @@ with following parameters:
 Example request:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/oauth/token \
+curl https://api.pocketfulofquarters.com/v1/oauth/token \
   -X POST \
   -H 'Content-Type: application/json;charset=UTF-8' \
   --data-binary '{"client_id":"Lpk5sPrA7P59HFlN7obS","client_secret":"1s4x2v8h3b9ollw1pt2afj8knheamvmvv","grant_type":"authorization_code","code":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMDgxMmMxNTAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsInRva2VuVHlwZSI6Imp3dDphdXRob3JpemF0aW9uX2NvZGUiLCJpYXQiOjE1MTIxMTEwNzcsImV4cCI6MTUxMjExMTEzN30.Jljjd7yjk-cr1uYSq0kSTwCpK8zNq8YGrVk_AQu6u4c"}'
@@ -73,7 +73,7 @@ You can know more about `refresh_token` here: [Refresh tokens and access tokens]
 Use `refresh_token` to retrieve `access_token`
 
 ```CURL
-POST https://api.dev.pocketfulofquarters.com/v1/oauth/token
+POST https://api.pocketfulofquarters.com/v1/oauth/token
 ```
 
 with following parameters:
@@ -86,7 +86,7 @@ with following parameters:
 | `client_secret` | **Required** The APP_KEY you received after registering your application |
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/oauth/token \
+curl https://api.pocketfulofquarters.com/v1/oauth/token \
   -X POST \
   -H 'Content-Type: application/json;charset=UTF-8' \
   --data-binary '{"client_id":"Lpk5sPrA7P59HFlN7obS","client_secret":"1s4x2v8h3b9ollw1pt2afj8knheamvmvv","grant_type":"refresh_token","refresh_token":"eyJhbGciOiJIUzI1Ni....kSTwCpK8zNq8YGrVk_AQu6u4c"}'
@@ -104,7 +104,7 @@ After a successful request, a valid access token will be returned in the respons
 ### Make an authenticated API call
 
 ```
-GET https://api.dev.pocketfulofquarters.com/v1/me
+GET https://api.pocketfulofquarters.com/v1/me
 ```
 
 with following headers:
@@ -116,7 +116,7 @@ with following headers:
 Example request:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/me \
+curl https://api.pocketfulofquarters.com/v1/me \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMWE5Njk3YzAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsImFkbWluIjpmYWxzZSwiZGV2ZWxvcGVyIjpmYWxzZSwidG9rZW5UeXBlIjoiand0OnVzZXIiLCJpYXQiOjE1MTIxMTExMDgsImV4cCI6MTUxMjExMTcwOH0.PFlJjGoN3xza1Qk3ZIBaOzMPyYbrQvnjyvyvQf81plg'
 ```
 

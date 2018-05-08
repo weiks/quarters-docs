@@ -18,7 +18,7 @@
   Play with quarters
 </button>
 
-<script src="https://dev.pocketfulofquarters.com/embeds/button.js"
+<script src="https://pocketfulofquarters.com/embeds/button.js"
     data-script-name="quarters-embeds"
     data-app-id="KAYR7bXS3116XyV9vs6u"
     data-app-key="qg05u8p50lof20z9y6b1jb6kf4hcfbdl"
@@ -41,7 +41,7 @@ When you create an quarters button, it will give you code like this example.
   Play with quarters
 </button>
 
-<script src="https://dev.pocketfulofquarters.com/embeds/button.js"
+<script src="https://pocketfulofquarters.com/embeds/button.js"
     data-script-name="quarters-embeds"
     data-app-id="KAYR7bXS3116XyV9vs6u"
     data-app-key="qg05u8p50lof20z9y6b1jb6kf4hcfbdl"
@@ -99,7 +99,7 @@ Parameter | Description
 
 #### Customizing the Embed HTML
 
-The embed html consists of one script tag referencing `https://dev.pocketfulofquarters.com/embeds/button.js` and an element with class `buy-quarters-button` with `data-widget-type='button'`.
+The embed html consists of one script tag referencing `https://pocketfulofquarters.com/embeds/button.js` and an element with class `buy-quarters-button` with `data-widget-type='button'`.
 
 You can have one or more elements with class `buy-quarters-button` on the page (if you’re including multiple buttons), but only one script tag is ever needed.
 

@@ -9,7 +9,7 @@ free to submit a [Pull Request](https://github.com/weiks/quarters-docs/pulls) at
 [https://github.com/weiks/quarters-docs](https://github.com/weiks/quarters-docs)
 
 For our website visit
-[Pocketful of Quarters](https://dev.pocketfulofquarters.com).
+[Pocketful of Quarters](https://pocketfulofquarters.com).
 
 ### Development tools and library
 
@@ -35,7 +35,7 @@ any web based game to accept Quarters.
 
 ```html
 <script
-    src="https://dev.pocketfulofquarters.com/embeds/button.js"
+    src="https://pocketfulofquarters.com/embeds/button.js"
     data-script-name="quarters-embeds"
     data-app-id="<APP-ID>"
     data-app-key="<APP-KEY>"

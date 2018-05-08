@@ -4,7 +4,7 @@ Node SDK provides helpers for Quarters APIs and OAuth2. It requires `appId`
 (`client_id`) and `app_secret` (Server API key).
 
 The first thing you'll need to do is sign up for
-[Quarters](https://dev.pocketfulofquarters.com) to
+[Quarters](https://pocketfulofquarters.com) to
 [create app](../guides/create-app.md)
 
 ### Features
@@ -29,8 +29,8 @@ var client = new Quarters({
   appKey: <APP_KEY>,
   serverAPIKey: <SERVER_API_KEY>,
   address: options.address, // Your ethereum account address (from app page)
-  quartersURL: 'https://dev.pocketfulofquarters.com',
-  apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
+  quartersURL: 'https://pocketfulofquarters.com',
+  apiURL: 'https://api.pocketfulofquarters.com/v1/'
 });
 ```
 
@@ -99,8 +99,8 @@ var client = new Quarters({
   webSecret: <APP_KEY>, // Server API key
   secret: <SERVER_API_KEY>,
   address: <APP_ETH_ADDRESS>,
-  quartersURL: 'https://dev.pocketfulofquarters.com',
-  apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
+  quartersURL: 'https://pocketfulofquarters.com',
+  apiURL: 'https://api.pocketfulofquarters.com/v1/'
 });
 
 // Validate code and fetch refresh token for user

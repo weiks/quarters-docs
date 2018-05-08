@@ -7,7 +7,7 @@ This process adds some complexity for Quarters Connect integrations, but provide
 To get a new access token, you'll need to do a POST request to `/oauth/token` just like before, but this time you must include your `refresh_token` and change the `grant_type` to `refresh_token`.
 
 ```curl
-curl https://api.dev.pocketfulofquarters.com/v1/oauth/token \
+curl https://api.pocketfulofquarters.com/v1/oauth/token \
   -X POST \
   -d 'grant_type=refresh_token&
       client_id=YOUR_APP_ID&

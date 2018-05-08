@@ -3,7 +3,7 @@
 Javascript SDK provides helpers for Quarters APIs and OAuth2. It requires
 `appId` (`client_id`) and `app_key`.
 
-The first thing you'll need to do is sign up for [Quarters](https://dev.pocketfulofquarters.com) to [create app](../guides/create-app.md)
+The first thing you'll need to do is sign up for [Quarters](https://pocketfulofquarters.com) to [create app](../guides/create-app.md)
 
 !!! Warning
 Do not use `server_api_key` (Server API Key). Anyone can see parameters passed to Javascript SDK as it will be used on browser.
@@ -36,8 +36,8 @@ Create client using `app_id` and `app_key`.
 var client = new Quarters({
   appId: <APP_ID>,
   appKey: <APP_KEY>,
-  quartersURL: 'https://dev.pocketfulofquarters.com',
-  apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
+  quartersURL: 'https://pocketfulofquarters.com',
+  apiURL: 'https://api.pocketfulofquarters.com/v1/'
 });
 ```
 
@@ -157,8 +157,8 @@ client
 var client = new Quarters({
   appId: <APP_ID>,
   appKey: <APP_KEY>,
-  quartersURL: 'https://dev.pocketfulofquarters.com',
-  apiURL: 'https://api.dev.pocketfulofquarters.com/v1/'
+  quartersURL: 'https://pocketfulofquarters.com',
+  apiURL: 'https://api.pocketfulofquarters.com/v1/'
 });
 
 client.authorize('iframe', function(data) {

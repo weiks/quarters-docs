@@ -1,9 +1,9 @@
 # Integrating Quarters OAuth with your web game apps
 
-Before integrating Quarters OAuth, you'll need to register a new OAuth2 application under [your profile](https://dev.pocketfulofquarters.com/apps/new). If you're using a previous OAuth2 implementation, you may need to configure the following settings:
+Before integrating Quarters OAuth, you'll need to register a new OAuth2 application under [your profile](https://pocketfulofquarters.com/apps/new). If you're using a previous OAuth2 implementation, you may need to configure the following settings:
 
-* **Authorize URL**: `https://dev.pocketfulofquarters.com/oauth/authorize`
-* **Access Token URL**: `https://dev.pocketfulofquarters.com/oauth/token`
+* **Authorize URL**: `https://pocketfulofquarters.com/oauth/authorize`
+* **Access Token URL**: `https://pocketfulofquarters.com/oauth/token`
 
 !!! warning
 
@@ -14,7 +14,7 @@ To integrate your third-party web server application with Quarters, use the foll
 ### 1. Redirect users to request Quarters access
 
 ```CURL
-GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URL&inline=true
+GET https://pocketfulofquarters.com/oauth/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URL&inline=true
 ```
 
 When redirecting a user to Quarters to authorize access to your application, you'll need to construct the authorization URL with the correct parameters. Here's a list of parameters you should always specify:
@@ -29,7 +29,7 @@ When redirecting a user to Quarters to authorize access to your application, you
 Example of an authorization URL:
 
 ```CURL
-GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&client_id=Lpk5sPrA7P59HFlN7obS&inline=true&redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
+GET https://pocketfulofquarters.com/oauth/authorize?response_type=code&client_id=Lpk5sPrA7P59HFlN7obS&inline=true&redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
 ```
 
 ### 2. Quarters redirects back to your site
@@ -51,7 +51,7 @@ For added security, all `redirect_uri` must use SSL (i.e. begin with `https://`)
 After you have received the temporary code, you can exchange it for valid access and refresh tokens. This can be done by making a `POST` call:
 
 ```CURL
-POST https://api.dev.pocketfulofquarters/v1/oauth/token
+POST https://api.pocketfulofquarters/v1/oauth/token
 ```
 
 With following parameters:
@@ -66,7 +66,7 @@ With following parameters:
 Example request:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/oauth/token \
+curl https://api.pocketfulofquarters.com/v1/oauth/token \
   -X POST \
   -H 'Content-Type: application/json;charset=UTF-8' \
   --data-binary '{"client_id":"Lpk5sPrA7P59HFlN7obS","client_secret":"1s4x2v8h3b9ollw1pt2afj8knheamvmvv","grant_type":"authorization_code","code":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMDgxMmMxNTAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsInRva2VuVHlwZSI6Imp3dDphdXRob3JpemF0aW9uX2NvZGUiLCJpYXQiOjE1MTIxMTEwNzcsImV4cCI6MTUxMjExMTEzN30.Jljjd7yjk-cr1uYSq0kSTwCpK8zNq8YGrVk_AQu6u4c"}'
@@ -87,7 +87,7 @@ After a successful request, a valid access token will be returned in the respons
 After you have a valid access token, you can make your first API call:
 
 ```CURL
-curl https://api.dev.pocketfulofquarters.com/v1/me \
+curl https://api.pocketfulofquarters.com/v1/me \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMWE5Njk3YzAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsImFkbWluIjpmYWxzZSwiZGV2ZWxvcGVyIjpmYWxzZSwidG9rZW5UeXBlIjoiand0OnVzZXIiLCJpYXQiOjE1MTIxMTExMDgsImV4cCI6MTUxMjExMTcwOH0.PFlJjGoN3xza1Qk3ZIBaOzMPyYbrQvnjyvyvQf81plg'
 ```
 

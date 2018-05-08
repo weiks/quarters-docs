@@ -2,7 +2,7 @@
 
 In this short guide, you'll learn how to create app, how to retrieve app information.
 
-To create new app, visit [create new app](https://dev.pocketfulofquarters.com/apps/new). You will be greeted following screen:
+To create new app, visit [create new app](https://pocketfulofquarters.com/apps/new). You will be greeted following screen:
 
 ![Create app](../img/create-app.png)
 
