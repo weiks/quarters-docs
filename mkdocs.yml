@@ -21,7 +21,7 @@ pages:
     - Refresh tokens: 'oauth/refresh-tokens.md'
   - Quarters buttons: 'quarters-buttons.md'
   - Libraries (SDK):
-    - Javascript (client): 'sdk/js.md'
+    - JavaScript (client): 'sdk/js.md'
     - Node (server): 'sdk/node.md'
     - Unity: 'sdk/unity.md'
     - Unity PlayFab: 'sdk/unity-playfab.md'

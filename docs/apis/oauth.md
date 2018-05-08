@@ -66,7 +66,7 @@ After a successful request, a valid access token will be returned in the respons
 
      `access_token` is short lived token. It will expire in 30 minutes. Use `refresh_token` to retrieve new `access_token`.
 
-You can know more about `refresh_token` here: [Refresh tokens and access tokens](../oauth/refresh-tokens.md)
+You can know more about `refresh_token` here: [Refresh tokens and access tokens](../oauth/refresh-tokens.md).
 
 ### Access token
 

@@ -8,6 +8,6 @@ To create new app, visit [create new app](https://pocketfulofquarters.com/apps/n
 
 App name, description, url and image is required to publish app. This info will be shown to users while authorizing quarters transfer or during OAuth.
 
-Once you enter all the information needed and click "create new app", you will be greeted with following app details screen with app id (`client_id`), app web secret (`client_web_secret`) and server API key (`client_secret`).
+Once you enter all the information needed and click `create new app`, you will be greeted with following app details screen with app id (`client_id`), app web secret (`client_web_secret`) and server API key (`client_secret`).
 
 ![Create app](../img/edit-app.png)

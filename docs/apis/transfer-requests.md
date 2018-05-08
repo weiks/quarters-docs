@@ -1,6 +1,6 @@
 # Transfer request APIs
 
-Quarters allows you to create "transfer requests" and provide a way to ask users for approval. Typical flow for transfer requests:
+Quarters allows you to create `transfer requests` and provide a way to ask users for approval. Typical flow for transfer requests:
 
 1. Create a "transfer request". It generates a `requestId`. It requires user `access_token` for given user.
 2. User approves or declines the request manually on Quarters user-interface (UI). And quarters server will handle transfers.

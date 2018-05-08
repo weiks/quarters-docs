@@ -1,8 +1,6 @@
-﻿# Quarters Unity SDK - v0.7.0
+# Quarters Unity SDK - v0.7.0
 
-Supported platforms:
-* iOS
-* Android
+**Supported platforms**: `iOS` and `Android`.
 
 » **[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/0.8.0.unitypackage)**
 
@@ -10,20 +8,18 @@ Supported platforms:
 Follow [Getting Started guide](/getting-started) to create your Quarter App.
 
 ## Unity integration
-Import `Quarters SDK` from `Unity Asset Store`
-Add `QuartersSDK/Prefab/QuartersInit.prefab` to your first scene
-Copy your `APP_ID` and `APP_KEY` to QuartersInit inspector
+Import `Quarters SDK` from `Unity Asset Store`, add `QuartersSDK/Prefab/QuartersInit.prefab` to your first scene, then copy your `APP_ID` and `APP_KEY` to QuartersInit inspector.
 
 
 ## Platform specific setup
 
 ### iOS
-No platform specific setup is needed for iOS. Deep linking setup is handled automatically by a post process
+No platform specific setup is needed for iOS. Deep linking setup is handled automatically by a post process.
 
 ---
 
 ### Android
-In Unity top menu go Quarters/Android/Generate Android Manifest. Android Manifest will automatically generate enabling deep linking.
+In Unity top menu go `Quarters/Android/Generate Android Manifest`. Android Manifest will automatically generate enabling deep linking.
 
 If your project contain Android Manifest already, manual manifest will be required.
 
@@ -55,7 +51,7 @@ Quarters is using OAuth in external browser. This means your user will be sent o
 
 Get User Details
 ----
-Get user details can be only called after successful authorization. Success delegate returns User object with basic user details.
+Get user details can be only called after successful authorization. Success delegate returns `User` object with basic user details.
 
 
 Example:
@@ -75,7 +71,7 @@ Example:
 
 Get accounts
 ----
-Get account can be only called after successful authorization. On success delegate will be called with a list of user accounts. (Note: only one user account is currently supported by the API)
+Get account can be only called after successful authorization. On success delegate will be called with a list of user accounts. (Note: Only one user account is currently supported by the API).
 
 
 Example:
@@ -96,7 +92,7 @@ Example:
 
 Get Account Balance
 ----
-Get account balance can be only called after successful authorization. On success delegate is fired with User.Account.Balance object
+Get account balance can be only called after successful authorization. On success delegate is fired with `User.Account.Balance` object.
 
 
 Example:
@@ -194,8 +190,8 @@ GetAccountBalance can be called right away without need of calling GetUserDetail
 #####
 0.3.0
 - added seamless support for GetAccounts call
-- added seamless support for GetAcdountBalance
-- basic one way support for Transfering quarters added
+- added seamless support for GetAccountBalance
+- basic one way support for Transferring quarters added
 
 known issues:
 - no deep linking with parameters support for TransferRequest. Doe to lack of API support for this functionality. Its coming in next release.
@@ -224,6 +220,6 @@ known issues:
 
 
 Known issues:
-- QuartersInit App ID and App key arent serialised into Unity scene - fixed in 0.2.0
+- QuartersInit App ID and App key aren't serialised into Unity scene - fixed in 0.2.0
 
 #####

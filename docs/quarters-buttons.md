@@ -60,7 +60,7 @@ This will create code like this.
 
 ![Button embedded code](img/button-generator-code.png)
 
-The only required parameters amount. The rest can be set when you create the button or later via the `data-*` attributes in the embed HTML. `data-*` attributes will override any attributes you set in the button generator.
+The only required parameter is `amount`. The rest can be set when you create the button or later via the `data-*` attributes in the embed HTML. `data-*` attributes will override any attributes you set in the button generator.
 
 Once a button is generated, you'll be given a few lines of HTML code to copy and paste into your website. This will add the button to your page.
 
@@ -111,6 +111,6 @@ Field | Description
 --- | ---
 `data-amount` | **Required** Integer amount of quarters for order.
 `data-button-size` | **Optional** one of `medium`, `large` or `small`. <br>These different button styles can be previewed in the button generator. <br>Default is `medium`.
-`data-button-type` | **Optional** one of `black`, `green`, 'red' or `grey`. <br>These different button types can be previewed in the button generator. <br>Default is `black`.
-`data-order-name` | **Optional** Order name which be shown to user
+`data-button-type` | **Optional** one of `black`, `green`, `red` or `grey`. <br>These different button types can be previewed in the button generator. <br>Default is `black`.
+`data-order-name` | **Optional** Order name which will be shown to user.
 `data-order-code` | **Optional** Unique code per page. <br>It will be used to identify multiple orders on same page.

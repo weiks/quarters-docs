@@ -1,18 +1,18 @@
-# Javascript SDK
+# JavaScript SDK
 
-Javascript SDK provides helpers for Quarters APIs and OAuth2. It requires
+JavaScript SDK provides helpers for Quarters APIs and OAuth2. It requires
 `appId` (`client_id`) and `app_key`.
 
-The first thing you'll need to do is sign up for [Quarters](https://pocketfulofquarters.com) to [create app](../guides/create-app.md)
+The first thing you'll need to do is sign up for [Quarters](https://pocketfulofquarters.com) to [create an app](../guides/create-app.md).
 
 !!! Warning
-Do not use `server_api_key` (Server API Key). Anyone can see parameters passed to Javascript SDK as it will be used on browser.
+  Do not use `server_api_key` (Server API Key). Anyone can see parameters passed to JavaScript SDK as it will be used on browser.
 
 ### Features
 
 * Support for both API Key + Secret and OAuth 2 authentication.
 * Convenient methods for making calls to the API.
-* Automatic parsing of API responses into relevant Javascript objects.
+* Automatic parsing of API responses into relevant JavaScript objects.
 
 ### Installation
 
@@ -66,7 +66,7 @@ client.setAuthCode(code).then(function(data) {
 ```
 
 !!! Warning
-Setting `code` directly through SDK without validating at server is not safe. Use this method only for web-only applications. For server based applications, use server (Node SDK or APIs) to validate and get `refresh_token` and `access_token` from quarters server. Then, use `setRefreshToken` to set `refresh_token` to quarters client object.
+  Setting `code` directly through SDK without validating at server is not safe. Use this method only for web-only applications. For server based applications, use server (Node SDK or APIs) to validate and get `refresh_token` and `access_token` from quarters server. Then, use `setRefreshToken` to set `refresh_token` to quarters client object.
 
 ### APIs
 
@@ -119,7 +119,7 @@ client.getBalance().then(function(balance) {
 
 #### Transfer request
 
-When you want a player to transfer quarters while playing game. You can create "transfer request"; it creates new `requestId` and then, you can ask the player to authorize the transfer.
+When you want a player to transfer quarters while playing game. You can create a `transfer request`; it creates a new `requestId` and then, you can ask the player to authorize the transfer.
 
 ```js
 client
@@ -166,7 +166,7 @@ client.authorize('iframe', function(data) {
     // show alert (data.message contains error message)
   } else if (data.code) {
     client.setAuthCode(code).then(function() {
-      // Get refresh token and store into local storage/cookie (optional)
+      // get refresh token and store into local storage/cookie (optional)
       var refreshToken = client.getRefreshToken();
       window.localStorage.setItem('quarters-refresh-token', refreshToken);
 

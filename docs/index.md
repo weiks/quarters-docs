@@ -53,9 +53,9 @@ any web based game to accept Quarters.
 
 To check complete documentation, [visit Quarters Buttons](quarters-buttons.md).
 
-**Javascript SDK**
+**JavaScript SDK**
 
-Javascript SDK provides rich API interface to help build oauth on Quarters.
+JavaScript SDK provides rich API interface to help build oauth on Quarters.
 Developers can use `Quarters oauth` to add authentication to the game and
 retrieve information for client-only games.
 
@@ -63,7 +63,7 @@ retrieve information for client-only games.
   npm install --save quarters-js
 ```
 
-To check complete documentation, [visit Javascript SDK](sdk/js.md).
+To check complete documentation, [visit JavaScript SDK](sdk/js.md).
 
 **Node SDK (for server)**
 

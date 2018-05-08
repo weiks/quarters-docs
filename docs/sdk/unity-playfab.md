@@ -15,8 +15,8 @@ This allows custom logic to be injected to the PlayFab server to verify if trans
 2.  Add `QUARTERS_MODULE_PLAYFAB` scripting define in Player Settings. If you are supporting more
     than one platform add `QUARTERS_MODULE_PLAYFAB` scripting define to each platform tab in Player Settings
 3.  Open `QuartersSDK/Modules/PlayFab/QuartersPlayFabModuleServer.txt`,
-    copy `SERVER_TOKEN` for your Quarters App
-    copy `APP_ADDRESS` for your Quarters App (found in Quarters app settings/Edit app)
+    copy `SERVER_TOKEN` for your Quarters App,
+    copy `APP_ADDRESS` for your Quarters App (found in `Quarters app settings/Edit app`)
 
 Example:
 

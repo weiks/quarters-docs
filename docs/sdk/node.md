@@ -5,13 +5,13 @@ Node SDK provides helpers for Quarters APIs and OAuth2. It requires `appId`
 
 The first thing you'll need to do is sign up for
 [Quarters](https://pocketfulofquarters.com) to
-[create app](../guides/create-app.md)
+[create an app](../guides/create-app.md).
 
 ### Features
 
 * Support for both API Key + Secret and OAuth 2 authentication.
 * Convenient methods for making calls to the API.
-* Automatic parsing of API responses into relevant Javascript objects.
+* Automatic parsing of API responses into relevant JavaScript objects.
 
 ### Installation
 

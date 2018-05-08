@@ -9,10 +9,10 @@ We are going to use OAuth for authentication. If you want to know more about how
 OAuth works, check out
 [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2).
 
-If you can want to know how to add "Login with Quarters" in your app,
+If you want to know how to add `Login with Quarters` in your app,
 [checkout our guide here](./login-quarters.md).
 
-Let's start with client side. First add [Quarters Javascript SDK](../sdk/js.md)
+Let's start with client side. First add [Quarters JavaScript SDK](../sdk/js.md)
 in `index.html`:
 
 ```html
@@ -53,7 +53,7 @@ npm install --save node-quarters
 ```
 
 Create `quartersClient` on server. This uses `app secret` (Server API key), not
-`app web secret`
+`app web secret`.
 
 ```js
 // Create quarters client
@@ -68,7 +68,7 @@ var quartersClient = new Quarters({
 ```
 
 Create `POST` `route` in `express` app to generate refresh token using OAuth
-generated `code`
+generated `code`.
 
 ```js
 // POST route
@@ -100,7 +100,7 @@ Here is full example.
 
 ##### index.html
 
-Add `Javscript SDK` and add login button into `index.html`
+Add `Javscript SDK` and add login button into `index.html`.
 
 ```html
 <!DOCTYPE html>
