@@ -38,7 +38,7 @@
     
     
       
-        <title>Javascript (client) - Quarters</title>
+        <title>JavaScript (client) - Quarters</title>
       
     
     
@@ -123,7 +123,7 @@
                 Quarters
               </span>
               <span class="md-header-nav__topic">
-                Javascript (client)
+                JavaScript (client)
               </span>
             
           
@@ -366,11 +366,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Javascript (client)
+        JavaScript (client)
       </label>
     
-    <a href="./" title="Javascript (client)" class="md-nav__link md-nav__link--active">
-      Javascript (client)
+    <a href="./" title="JavaScript (client)" class="md-nav__link md-nav__link--active">
+      JavaScript (client)
     </a>
     
       
@@ -786,19 +786,19 @@
                   <a href="https://github.com/weiks/quarters-docs/edit/master/docs/sdk/js.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="javascript-sdk">Javascript SDK</h1>
-<p>Javascript SDK provides helpers for Quarters APIs and OAuth2. It requires
+                <h1 id="javascript-sdk">JavaScript SDK</h1>
+<p>JavaScript SDK provides helpers for Quarters APIs and OAuth2. It requires
 <code>appId</code> (<code>client_id</code>) and <code>app_key</code>.</p>
-<p>The first thing you'll need to do is sign up for <a href="https://dev.pocketfulofquarters.com">Quarters</a> to <a href="../../guides/create-app/">create app</a></p>
+<p>The first thing you'll need to do is sign up for <a href="https://pocketfulofquarters.com">Quarters</a> to <a href="../../guides/create-app/">create an app</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 </div>
-<p>Do not use <code>server_api_key</code> (Server API Key). Anyone can see parameters passed to Javascript SDK as it will be used on browser.</p>
+<p>Do not use <code>server_api_key</code> (Server API Key). Anyone can see parameters passed to JavaScript SDK as it will be used on browser.</p>
 <h3 id="features">Features</h3>
 <ul>
 <li>Support for both API Key + Secret and OAuth 2 authentication.</li>
 <li>Convenient methods for making calls to the API.</li>
-<li>Automatic parsing of API responses into relevant Javascript objects.</li>
+<li>Automatic parsing of API responses into relevant JavaScript objects.</li>
 </ul>
 <h3 id="installation">Installation</h3>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://raw.githubusercontent.com/weiks/quarters-js/master/lib/Quarters.min.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -817,8 +817,8 @@
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">({</span>
   <span class="nx">appId</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_KEY</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
-  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
+  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://pocketfulofquarters.com&#39;</span><span class="p">,</span>
+  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.pocketfulofquarters.com/v1/&#39;</span>
 <span class="p">});</span>
 </pre></div>
 
@@ -888,7 +888,7 @@
 
 
 <h4 id="transfer-request">Transfer request</h4>
-<p>When you want a player to transfer quarters while playing game. You can create "transfer request"; it creates new <code>requestId</code> and then, you can ask the player to authorize the transfer.</p>
+<p>When you want a player to transfer quarters while playing game. You can create a <code>transfer request</code>; it creates a new <code>requestId</code> and then, you can ask the player to authorize the transfer.</p>
 <div class="codehilite"><pre><span></span><span class="nx">client</span>
   <span class="p">.</span><span class="nx">requestTransfer</span><span class="p">({</span>
     <span class="nx">tokens</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 10 quarters</span>
@@ -922,8 +922,8 @@
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">({</span>
   <span class="nx">appId</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_KEY</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
-  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
+  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://pocketfulofquarters.com&#39;</span><span class="p">,</span>
+  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.pocketfulofquarters.com/v1/&#39;</span>
 <span class="p">});</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">&#39;iframe&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -931,7 +931,7 @@
     <span class="c1">// show alert (data.message contains error message)</span>
   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">client</span><span class="p">.</span><span class="nx">setAuthCode</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="c1">// Get refresh token and store into local storage/cookie (optional)</span>
+      <span class="c1">// get refresh token and store into local storage/cookie (optional)</span>
       <span class="kd">var</span> <span class="nx">refreshToken</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getRefreshToken</span><span class="p">();</span>
       <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;quarters-refresh-token&#39;</span><span class="p">,</span> <span class="nx">refreshToken</span><span class="p">);</span>
 

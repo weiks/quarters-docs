@@ -357,8 +357,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../js/" title="Javascript (client)" class="md-nav__link">
-      Javascript (client)
+    <a href="../js/" title="JavaScript (client)" class="md-nav__link">
+      JavaScript (client)
     </a>
   </li>
 
@@ -775,22 +775,18 @@
                 
                 
                 <h1 id="quarters-unity-sdk-v070">Quarters Unity SDK - v0.7.0</h1>
-<p>Supported platforms:
-<em> iOS
-</em> Android</p>
-<p><a href="http://downloads.pocketfulofquarters.com/0.8.0.unitypackage">Download Quarters Unity SDK.</a></p>
+<p><strong>Supported platforms</strong>: <code>iOS</code> and <code>Android</code>.</p>
+<p>» <strong><a href="http://downloads.pocketfulofquarters.com/0.8.0.unitypackage">Download Quarters Unity SDK.</a></strong></p>
 <h2 id="configuration">Configuration</h2>
 <p>Follow <a href="../../getting-started">Getting Started guide</a> to create your Quarter App.</p>
 <h2 id="unity-integration">Unity integration</h2>
-<p>Import <code>Quarters SDK</code> from <code>Unity Asset Store</code>
-Add <code>QuartersSDK/Prefab/QuartersInit.prefab</code> to your first scene
-Copy your <code>APP_ID</code> and <code>APP_KEY</code> to QuartersInit inspector</p>
+<p>Import <code>Quarters SDK</code> from <code>Unity Asset Store</code>, add <code>QuartersSDK/Prefab/QuartersInit.prefab</code> to your first scene, then copy your <code>APP_ID</code> and <code>APP_KEY</code> to QuartersInit inspector.</p>
 <h2 id="platform-specific-setup">Platform specific setup</h2>
 <h3 id="ios">iOS</h3>
-<p>No platform specific setup is needed for iOS. Deep linking setup is handled automatically by a post process</p>
+<p>No platform specific setup is needed for iOS. Deep linking setup is handled automatically by a post process.</p>
 <hr />
 <h3 id="android">Android</h3>
-<p>In Unity top menu go Quarters/Android/Generate Android Manifest. Android Manifest will automatically generate enabling deep linking.</p>
+<p>In Unity top menu go <code>Quarters/Android/Generate Android Manifest</code>. Android Manifest will automatically generate enabling deep linking.</p>
 <p>If your project contain Android Manifest already, manual manifest will be required.</p>
 <h2 id="authorization">Authorization</h2>
 <p>Before you can use Quarters API you must authorise users session.</p>
@@ -814,7 +810,7 @@ Copy your <code>APP_ID</code> and <code>APP_KEY</code> to QuartersInit inspector
 
 <p>Quarters is using OAuth in external browser. This means your user will be sent outside the app for OAuth in the browser. After successful or failed authorisation user is seamlessly deep linked back to the app.</p>
 <h2 id="get-user-details">Get User Details</h2>
-<p>Get user details can be only called after successful authorization. Success delegate returns User object with basic user details.</p>
+<p>Get user details can be only called after successful authorization. Success delegate returns <code>User</code> object with basic user details.</p>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span><span class="nt">using</span> <span class="nt">QuartersSDK</span><span class="o">;</span>
 
@@ -829,7 +825,7 @@ Copy your <code>APP_ID</code> and <code>APP_KEY</code> to QuartersInit inspector
 
 
 <h2 id="get-accounts">Get accounts</h2>
-<p>Get account can be only called after successful authorization. On success delegate will be called with a list of user accounts. (Note: only one user account is currently supported by the API)</p>
+<p>Get account can be only called after successful authorization. On success delegate will be called with a list of user accounts. (Note: Only one user account is currently supported by the API).</p>
 <h2 id="example">Example:</h2>
 <div class="codehilite"><pre><span></span>using QuartersSDK;
 
@@ -846,7 +842,7 @@ Quarters.Instance.GetAccounts(delegate (List&lt;User.Account&gt; accounts) {
 
 
 <h2 id="get-account-balance">Get Account Balance</h2>
-<p>Get account balance can be only called after successful authorization. On success delegate is fired with User.Account.Balance object</p>
+<p>Get account balance can be only called after successful authorization. On success delegate is fired with <code>User.Account.Balance</code> object.</p>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span>using QuartersSDK;
 
@@ -912,8 +908,8 @@ GetAccountBalance can be called right away without need of calling GetUserDetail
 <h5 id="_11"></h5>
 <p>0.3.0
 - added seamless support for GetAccounts call
-- added seamless support for GetAcdountBalance
-- basic one way support for Transfering quarters added</p>
+- added seamless support for GetAccountBalance
+- basic one way support for Transferring quarters added</p>
 <p>known issues:
 - no deep linking with parameters support for TransferRequest. Doe to lack of API support for this functionality. Its coming in next release.</p>
 <h5 id="_12"></h5>
@@ -931,7 +927,7 @@ GetAccountBalance can be called right away without need of calling GetUserDetail
 - Refresh and access token are handled during Authorization
 - Added GetUserDetails API call with refreshing access token if expired</p>
 <p>Known issues:
-- QuartersInit App ID and App key arent serialised into Unity scene - fixed in 0.2.0</p>
+- QuartersInit App ID and App key aren't serialised into Unity scene - fixed in 0.2.0</p>
 <h5 id="_16"></h5>
                 
                   

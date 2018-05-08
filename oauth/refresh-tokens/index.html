@@ -366,8 +366,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sdk/js/" title="Javascript (client)" class="md-nav__link">
-      Javascript (client)
+    <a href="../../sdk/js/" title="JavaScript (client)" class="md-nav__link">
+      JavaScript (client)
     </a>
   </li>
 
@@ -567,7 +567,7 @@
 <p>Quarters uses security feature of OAuth2 called refresh tokens. When you first authenticate, your app will be given an <code>access_token</code> and a <code>refresh_token</code>. The access token is used to authenticate all your requests, but expires in 10 minutes. Once an access token has expired, you will need to use the refresh token to obtain a new access token and a new refresh token. The refresh token never expires but it can only be exchanged once for a new set of access and refresh tokens. If you try to make a call with an expired access token, a 401 response will be returned.</p>
 <p>This process adds some complexity for Quarters Connect integrations, but provides an valuable layer of security since a compromised access token is automatically revoked after 10 minutes.</p>
 <p>To get a new access token, you'll need to do a POST request to <code>/oauth/token</code> just like before, but this time you must include your <code>refresh_token</code> and change the <code>grant_type</code> to <code>refresh_token</code>.</p>
-<div class="codehilite"><pre><span></span>curl https://api.dev.pocketfulofquarters.com/v1/oauth/token \
+<div class="codehilite"><pre><span></span>curl https://api.pocketfulofquarters.com/v1/oauth/token \
   -X POST \
   -d &#39;grant_type=refresh_token&amp;
       client_id=YOUR_APP_ID&amp;

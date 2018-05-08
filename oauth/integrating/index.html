@@ -416,8 +416,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sdk/js/" title="Javascript (client)" class="md-nav__link">
-      Javascript (client)
+    <a href="../../sdk/js/" title="JavaScript (client)" class="md-nav__link">
+      JavaScript (client)
     </a>
   </li>
 
@@ -651,10 +651,10 @@
                 
                 
                 <h1 id="integrating-quarters-oauth-with-your-web-game-apps">Integrating Quarters OAuth with your web game apps</h1>
-<p>Before integrating Quarters OAuth, you'll need to register a new OAuth2 application under <a href="https://dev.pocketfulofquarters.com/apps/new">your profile</a>. If you're using a previous OAuth2 implementation, you may need to configure the following settings:</p>
+<p>Before integrating Quarters OAuth, you'll need to register a new OAuth2 application under <a href="https://pocketfulofquarters.com/apps/new">your profile</a>. If you're using a previous OAuth2 implementation, you may need to configure the following settings:</p>
 <ul>
-<li><strong>Authorize URL</strong>: <code>https://dev.pocketfulofquarters.com/oauth/authorize</code></li>
-<li><strong>Access Token URL</strong>: <code>https://dev.pocketfulofquarters.com/oauth/token</code></li>
+<li><strong>Authorize URL</strong>: <code>https://pocketfulofquarters.com/oauth/authorize</code></li>
+<li><strong>Access Token URL</strong>: <code>https://pocketfulofquarters.com/oauth/token</code></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -662,7 +662,7 @@
 </div>
 <p>To integrate your third-party web server application with Quarters, use the following flow:</p>
 <h3 id="1-redirect-users-to-request-quarters-access">1. Redirect users to request Quarters access</h3>
-<div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_REDIRECT_URL&amp;inline=true
+<div class="codehilite"><pre><span></span>GET https://pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_REDIRECT_URL&amp;inline=true
 </pre></div>
 
 
@@ -694,7 +694,7 @@
 </tbody>
 </table>
 <p>Example of an authorization URL:</p>
-<div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=Lpk5sPrA7P59HFlN7obS&amp;inline=true&amp;redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
+<div class="codehilite"><pre><span></span>GET https://pocketfulofquarters.com/oauth/authorize?response_type=code&amp;client_id=Lpk5sPrA7P59HFlN7obS&amp;inline=true&amp;redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
 </pre></div>
 
 
@@ -709,7 +709,7 @@
 <p>For added security, all <code>redirect_uri</code> must use SSL (i.e. begin with <code>https://</code>). URIs without SSL can only be used for development and testing and will not be supported in production.</p>
 <h3 id="3-exchange-code-for-an-access-token">3. Exchange code for an access token</h3>
 <p>After you have received the temporary code, you can exchange it for valid access and refresh tokens. This can be done by making a <code>POST</code> call:</p>
-<div class="codehilite"><pre><span></span>POST https://api.dev.pocketfulofquarters/v1/oauth/token
+<div class="codehilite"><pre><span></span>POST https://api.pocketfulofquarters/v1/oauth/token
 </pre></div>
 
 
@@ -741,7 +741,7 @@
 </tbody>
 </table>
 <p>Example request:</p>
-<div class="codehilite"><pre><span></span><span class="nt">curl</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">dev</span><span class="p">.</span><span class="nc">pocketfulofquarters</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span><span class="nt">v1</span><span class="o">/</span><span class="nt">oauth</span><span class="o">/</span><span class="nt">token</span> <span class="err">\</span>
+<div class="codehilite"><pre><span></span><span class="nt">curl</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">pocketfulofquarters</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span><span class="nt">v1</span><span class="o">/</span><span class="nt">oauth</span><span class="o">/</span><span class="nt">token</span> <span class="err">\</span>
   <span class="nt">-X</span> <span class="nt">POST</span> <span class="err">\</span>
   <span class="nt">-H</span> <span class="s1">&#39;Content-Type: application/json;charset=UTF-8&#39;</span> <span class="err">\</span>
   <span class="nt">--data-binary</span> <span class="s1">&#39;{&quot;client_id&quot;:&quot;Lpk5sPrA7P59HFlN7obS&quot;,&quot;client_secret&quot;:&quot;1s4x2v8h3b9ollw1pt2afj8knheamvmvv&quot;,&quot;grant_type&quot;:&quot;authorization_code&quot;,&quot;code&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMDgxMmMxNTAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsInRva2VuVHlwZSI6Imp3dDphdXRob3JpemF0aW9uX2NvZGUiLCJpYXQiOjE1MTIxMTEwNzcsImV4cCI6MTUxMjExMTEzN30.Jljjd7yjk-cr1uYSq0kSTwCpK8zNq8YGrVk_AQu6u4c&quot;}&#39;</span>
@@ -759,7 +759,7 @@
 
 <h3 id="4-make-an-api-call">4. Make an API call</h3>
 <p>After you have a valid access token, you can make your first API call:</p>
-<div class="codehilite"><pre><span></span>curl https://api.dev.pocketfulofquarters.com/v1/me \
+<div class="codehilite"><pre><span></span>curl https://api.pocketfulofquarters.com/v1/me \
   -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2R2lMR3Z3UERYVHUzVnlFQlRySmNJdTJhNzAyIiwicmFuZG9tIjoiMWE5Njk3YzAtZDY2NC0xMWU3LTg3Y2UtZjEyMTk1M2I0ZWQxIiwiYXBwSWQiOiJMcGs1c1ByQTdQNTlIRmxON29iUyIsImFkbWluIjpmYWxzZSwiZGV2ZWxvcGVyIjpmYWxzZSwidG9rZW5UeXBlIjoiand0OnVzZXIiLCJpYXQiOjE1MTIxMTExMDgsImV4cCI6MTUxMjExMTcwOH0.PFlJjGoN3xza1Qk3ZIBaOzMPyYbrQvnjyvyvQf81plg&#39;
 </pre></div>
 

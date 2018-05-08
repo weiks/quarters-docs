@@ -355,8 +355,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sdk/js/" title="Javascript (client)" class="md-nav__link">
-      Javascript (client)
+    <a href="../../sdk/js/" title="JavaScript (client)" class="md-nav__link">
+      JavaScript (client)
     </a>
   </li>
 
@@ -729,13 +729,13 @@
                 
                 
                 <h1 id="login-with-quarters">Login with Quarters</h1>
-<p>In this short guide, you'll learn how to add "Login with Quarters" and how to
+<p>In this short guide, you'll learn how to add <code>Login with Quarters</code> and how to
 retrieve player details. We are going to use OAuth for authentication. If you
 want to know more about how OAuth works, check out
 <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2">Digital Ocean's tutorial</a>.</p>
 <p>Now, let's create simple login functionality and fetch user information from
 Quarters server. This example uses node server to validate OAuth generated code.</p>
-<p>Let's start with client side. First add <a href="../../sdk/js/">Quarters Javascript SDK</a>
+<p>Let's start with client side. First add <a href="../../sdk/js/">Quarters JavaScript SDK</a>
 in <code>index.html</code>:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://raw.githubusercontent.com/weiks/quarters-js/master/lib/Quarters.min.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
@@ -745,8 +745,8 @@ in <code>index.html</code>:</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">quarterOptions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">appId</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_KEY</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
-  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
+  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://pocketfulofquarters.com&#39;</span><span class="p">,</span>
+  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.pocketfulofquarters.com/v1/&#39;</span>
 <span class="p">}</span>
 <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">(</span><span class="nx">quarterOptions</span><span class="p">);</span>
 </pre></div>
@@ -787,21 +787,21 @@ npm install --save node-quarters
 
 
 <p>Create <code>quartersClient</code> on server. This uses <code>app secret</code> (Server API key), not
-<code>app web secret</code></p>
+<code>app web secret</code>.</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Create quarters client</span>
 <span class="kd">var</span> <span class="nx">quartersClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">({</span>
   <span class="nx">appId</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_KEY</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">serverAPIKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">SERVER_API_KEY</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">address</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ETH_ADDRESS</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
-  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
+  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://pocketfulofquarters.com&#39;</span><span class="p">,</span>
+  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.pocketfulofquarters.com/v1/&#39;</span>
 <span class="p">});</span>
 </pre></div>
 
 
 <p>Create <code>POST</code> <code>route</code> in <code>express</code> app to generate refresh token using OAuth
-generated <code>code</code></p>
+generated <code>code</code>.</p>
 <div class="codehilite"><pre><span></span><span class="c1">// POST route</span>
 <span class="nx">quartersClient</span><span class="p">.</span><span class="nx">createRefreshToken</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// get refresh_token (and access_token) and return to UI</span>
@@ -817,7 +817,7 @@ generated <code>code</code></p>
 <p>Here is full example.</p>
 <h4 id="client">Client</h4>
 <h5 id="indexhtml">index.html</h5>
-<p>Add <code>Javscript SDK</code> and add login button into <code>index.html</code></p>
+<p>Add <code>Javscript SDK</code> and add login button into <code>index.html</code>.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -844,8 +844,8 @@ generated <code>code</code></p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">quarterOptions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">appId</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_KEY</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
-  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
+  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://pocketfulofquarters.com&#39;</span><span class="p">,</span>
+  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.pocketfulofquarters.com/v1/&#39;</span>
 <span class="p">}</span>
 <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quarters</span><span class="p">(</span><span class="nx">quarterOptions</span><span class="p">);</span>
 
@@ -904,8 +904,8 @@ generated <code>code</code></p>
   <span class="nx">appId</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ID</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">appKey</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_KEY</span><span class="o">&gt;</span><span class="p">,</span>
   <span class="nx">address</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">APP_ETH_ADDRESS</span><span class="o">&gt;</span><span class="p">,</span>
-  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://dev.pocketfulofquarters.com&#39;</span><span class="p">,</span>
-  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.dev.pocketfulofquarters.com/v1/&#39;</span>
+  <span class="nx">quartersURL</span><span class="o">:</span> <span class="s1">&#39;https://pocketfulofquarters.com&#39;</span><span class="p">,</span>
+  <span class="nx">apiURL</span><span class="o">:</span> <span class="s1">&#39;https://api.pocketfulofquarters.com/v1/&#39;</span>
 <span class="p">});</span>
 
 <span class="p">...</span>
