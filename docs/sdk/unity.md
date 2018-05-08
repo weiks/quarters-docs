@@ -4,7 +4,7 @@ Supported platforms:
 * iOS
 * Android
 
-[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/0.8.0.unitypackage)
+» **[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/0.8.0.unitypackage)**
 
 ## Configuration
 Follow [Getting Started guide](/getting-started) to create your Quarter App.

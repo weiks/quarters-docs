@@ -3,7 +3,7 @@
 PlayFab Module allows transferring quarters from the Quarters app to the users through PlayFab cloud script.
 This allows custom logic to be injected to the PlayFab server to verify if transfer request can be authorized.
 
-[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/0.8.0.unitypackage)
+» **[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/0.8.0.unitypackage)**
 
 # Prerequisites:
 - PlayFab SDK must be installed prior to module installation [(download)](https://api.playfab.com/sdks/unity).
