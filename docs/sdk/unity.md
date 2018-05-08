@@ -16,6 +16,8 @@ Import `Quarters SDK` from `Unity Asset Store`, add `QuartersSDK/Prefab/Quarters
 ### iOS
 No platform specific setup is needed for iOS. Deep linking setup is handled automatically by a post process.
 
+[Click here](https://www.youtube.com/watch?v=YJU192xItO0&list=PL0TyRhVVizdBsWYGCcXJ-h43ybYBYm_Gu) to watch a video on how to get started with Quarters SDK for iOS in under 3 mins!
+
 ---
 
 ### Android
@@ -23,6 +25,7 @@ In Unity top menu go `Quarters/Android/Generate Android Manifest`. Android Manif
 
 If your project contain Android Manifest already, manual manifest will be required.
 
+[Click here](https://www.youtube.com/watch?v=YJU192xItO0&list=PL0TyRhVVizdBk-apKTf6lBUAMkEc7E4Y7) to watch a video on how to get started with Quarters SDK for Android!
 
 Authorization
 ----

@@ -11,6 +11,10 @@ free to submit a [Pull Request](https://github.com/weiks/quarters-docs/pulls) at
 For our website visit
 [Pocketful of Quarters](https://pocketfulofquarters.com).
 
+» **For a quick video on how to get started with Quarters, [click here](https://www.youtube.com/watch?v=hxyYOSmfFHc)!**
+
+Alternatively if you are not a developer and accidentally got here [watch a video on How to buy Quarters](https://www.youtube.com/watch?v=ltYgQwfIOlk), or visit our website [Pocketful of Quarters](https://pocketfulofquarters.com).
+
 ### Development tools and library
 
 Here is the list of tools and libraries quarters project provides to get
