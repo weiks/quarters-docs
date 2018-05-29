@@ -1,4 +1,4 @@
-# Quarters Unity SDK - v0.8.1
+# Quarters Unity SDK - v0.9.0
 
 **Supported platforms**: `iOS` and `Android`.
 
@@ -140,6 +140,13 @@ General notes:
 - a post authorization calls can be called at any time. There is no need for calling API in any order. Example: After Authorizing session
 GetAccountBalance can be called right away without need of calling GetUserDetail -> GetAccounts -> GetAccountBalance.
 
+#####
+0.9.0
+- Sessions persistence added. User will wont have to authorize quarters on every login anymore, only first time.
+- Added deauthorize functionality to log user out of quarters
+
+
+#####
 
 
 #####
