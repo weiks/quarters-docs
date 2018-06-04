@@ -1,4 +1,4 @@
-# Quarters Unity SDK - v0.9.0
+# Quarters Unity SDK - v0.10.0
 
 **Supported platforms**: `iOS` and `Android`.
 
@@ -139,6 +139,14 @@ General notes:
 - only one account is currently supported by API, hence Get Accounts and Account balance calls are working with first returned account
 - a post authorization calls can be called at any time. There is no need for calling API in any order. Example: After Authorizing session
 GetAccountBalance can be called right away without need of calling GetUserDetail -> GetAccounts -> GetAccountBalance.
+
+#####
+0.10.0
+- Web view support
+- Authorize and Transfer requests can now be done within the app through webview, not external browser (Supported platforms, iOS, Android, Unity Editor on MacOS)
+- Optional forceExternalBrowser added to Authorize and Transfer calls (false by default)
+
+#####
 
 #####
 0.9.0
