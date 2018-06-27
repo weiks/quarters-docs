@@ -882,66 +882,71 @@ Quarters.Instance.CreateTransfer(request);
 - a post authorization calls can be called at any time. There is no need for calling API in any order. Example: After Authorizing session
 GetAccountBalance can be called right away without need of calling GetUserDetail -&gt; GetAccounts -&gt; GetAccountBalance.</p>
 <h5 id="_1"></h5>
+<p>0.11.0
+- Added Playfab IAP module
+- Added In App Purchases support for iOS</p>
+<h5 id="_2"></h5>
+<h5 id="_3"></h5>
 <p>0.10.0
 - Web view support
 - Authorize and Transfer requests can now be done within the app through webview, not external browser (Supported platforms, iOS, Android, Unity Editor on MacOS)
 - Optional forceExternalBrowser added to Authorize and Transfer calls (false by default)</p>
-<h5 id="_2"></h5>
-<h5 id="_3"></h5>
+<h5 id="_4"></h5>
+<h5 id="_5"></h5>
 <p>0.9.0
 - Sessions persistence added. User will wont have to authorize quarters on every login anymore, only first time.
 - Added deauthorize functionality to log user out of quarters</p>
-<h5 id="_4"></h5>
-<h5 id="_5"></h5>
+<h5 id="_6"></h5>
+<h5 id="_7"></h5>
 <p>0.8.0
 - Added PlayFab module
 - Supporting Playfab server side Quarters apps to user transfers</p>
-<h5 id="_6"></h5>
-<h5 id="_7"></h5>
+<h5 id="_8"></h5>
+<h5 id="_9"></h5>
 <p>0.7.0
 - Quarters UI added
 - Editor scripts are now inheriting from UnityEditor.Editor to avoid potential conflicts with custom Editor namespace</p>
-<h5 id="_8"></h5>
-<h5 id="_9"></h5>
+<h5 id="_10"></h5>
+<h5 id="_11"></h5>
 <p>0.6.0
 - Added automated Android Manifest Generation in Quarters/Android/Generate Android Manifest
 - Android package name can now contain uppercase characters</p>
-<h5 id="_10"></h5>
-<h5 id="_11"></h5>
-<p>0.5.0
-- Deep linking is now dynamic. Multiple apps using Quarters SDK are now supported on single Android or iOS device</p>
 <h5 id="_12"></h5>
 <h5 id="_13"></h5>
+<p>0.5.0
+- Deep linking is now dynamic. Multiple apps using Quarters SDK are now supported on single Android or iOS device</p>
+<h5 id="_14"></h5>
+<h5 id="_15"></h5>
 <p>0.4.0
 - Added URIParser to better deep link parameters handling
 - Full Transfer support on iOS and Android
 - Added automated iOS post process builds
 - iOS deep linking</p>
-<h5 id="_14"></h5>
-<h5 id="_15"></h5>
+<h5 id="_16"></h5>
+<h5 id="_17"></h5>
 <p>0.3.0
 - added seamless support for GetAccounts call
 - added seamless support for GetAccountBalance
 - basic one way support for Transferring quarters added</p>
 <p>known issues:
 - no deep linking with parameters support for TransferRequest. Doe to lack of API support for this functionality. Its coming in next release.</p>
-<h5 id="_16"></h5>
-<h5 id="_17"></h5>
+<h5 id="_18"></h5>
+<h5 id="_19"></h5>
 <p>0.2.0
 - Added Android deep linking. Quarters SDK will now automatically handle URL schemes
 - Android support added for oauth calls outside the app
 - Basic Android Manifest added for handling linking, intents and permissions
 - Android support for Authorize call
 - Example - added simple on screen console</p>
-<h5 id="_18"></h5>
-<h5 id="_19"></h5>
+<h5 id="_20"></h5>
+<h5 id="_21"></h5>
 <p>0.1.0
 - Added simple authorization in editor
 - Refresh and access token are handled during Authorization
 - Added GetUserDetails API call with refreshing access token if expired</p>
 <p>Known issues:
 - QuartersInit App ID and App key aren't serialised into Unity scene - fixed in 0.2.0</p>
-<h5 id="_20"></h5>
+<h5 id="_22"></h5>
                 
                   
                 
