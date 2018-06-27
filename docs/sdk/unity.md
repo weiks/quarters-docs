@@ -141,6 +141,13 @@ General notes:
 GetAccountBalance can be called right away without need of calling GetUserDetail -> GetAccounts -> GetAccountBalance.
 
 #####
+0.11.0
+- Added Playfab IAP module
+- Added In App Purchases support for iOS
+
+#####
+
+#####
 0.10.0
 - Web view support
 - Authorize and Transfer requests can now be done within the app through webview, not external browser (Supported platforms, iOS, Android, Unity Editor on MacOS)
