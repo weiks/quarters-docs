@@ -1,4 +1,4 @@
-# Quarters Unity SDK - v0.10.0
+# Quarters Unity SDK - v0.11.0
 
 **Supported platforms**: `iOS` and `Android`.
 
