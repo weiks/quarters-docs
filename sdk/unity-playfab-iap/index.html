@@ -413,9 +413,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Unity PlayFab IAP
+      </label>
+    
     <a href="./" title="Unity PlayFab IAP" class="md-nav__link md-nav__link--active">
       Unity PlayFab IAP
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites:" class="md-nav__link">
+    Prerequisites:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -562,6 +591,22 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites:" class="md-nav__link">
+    Prerequisites:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -580,40 +625,43 @@
 <hr />
 <p><strong>Supported platforms</strong>: iOS</p>
 <hr />
-<p><strong>Prerequisites:</strong>
-- <code>QuartersPlayFabModule</code> correctly configured and PlayFab Title configured. If you haven't done this step install <code>QuartersSDK/Modules/PlayFab/PlayFabModule.unitypackage</code> and follow the documentation.
-- <code>Unity IAP</code> Package https://docs.unity3d.com/Manual/UnityIAPSettingUp.html
-- For iOS:
-    - iTunes Connect account with valid "Paid Applications" agreements. This step is critical for testing and validating purchases
-    - iTunes Connect App setup with added IAP Consumable products</p>
+<h2 id="prerequisites">Prerequisites:</h2>
+<ul>
+<li><code>QuartersPlayFabModule</code> correctly configured and PlayFab Title configured. If you haven't done this step install <code>QuartersSDK/Modules/PlayFab/PlayFabModule.unitypackage</code> and follow the documentation.</li>
+<li><code>Unity IAP</code> Package https://docs.unity3d.com/Manual/UnityIAPSettingUp.html</li>
+<li>For iOS:<ul>
+<li>iTunes Connect account with valid "Paid Applications" agreements. This step is critical for testing and validating purchases</li>
+<li>iTunes Connect App setup with added IAP Consumable products</li>
+</ul>
+</li>
+</ul>
 <hr />
-<p><strong>Installation:</strong>
-1.  Import content of <code>QuartersSDK/Modules/PlayFab/PlayFabIAPModule.unitypackage</code> to your project
-2.  Add <code>Unity IAP</code> package to your project
-3.  Add content of <code>QuartersSDK/Modules/PlayFabIAP/QuartersPlayFabIAPServer.txt</code> to your existing PlayFab Cloud Script.
-4.  Setup IAP Products on <code>iTunesConnect/&lt;YourApp&gt;/Features</code>
+<h1 id="installation">Installation:</h1>
+<ol>
+<li>Import content of <code>QuartersSDK/Modules/PlayFab/PlayFabIAPModule.unitypackage</code> to your project</li>
+<li>Add <code>Unity IAP</code> package to your project</li>
+<li>Add content of <code>QuartersSDK/Modules/PlayFabIAP/QuartersPlayFabIAPServer.txt</code> to your existing PlayFab Cloud Script.</li>
+<li>
+<p>Setup IAP Products on <code>iTunesConnect/&lt;YourApp&gt;/Features</code>
     Requirements for Quarters IAP products (critical, make sure this is configured correctly)</p>
-<div class="codehilite"><pre><span></span>Example:
-```
-Reference Name: 4 Quarters
+<p>Example:
+<code>Reference Name: 4 Quarters
 Type: Consumable
-Product ID: 4Quarters
-```
+Product ID: 4Quarters</code></p>
+<p><strong>Note:</strong> All quarters IAP product IDs MUST follow this naming convention:</p>
+<div class="codehilite"><pre><span></span>&lt;numberOfQuarters&gt;Quarters
 
-**Note:** All quarters IAP product IDs MUST follow this naming convention:
-
-    &lt;numberOfQuarters&gt;Quarters
-
-    examples:
-        4Quarters   
-        8Quarters
-        ..
-
-To test IAP Purchases with iOS you don&#39;t have to submit Products to review. If &quot;Paid Applications&quot; agreements is valid and product is in &quot;Ready to Submit&quot; status testing purchases
-with Apples sandbox server will work. For more information how to test Apple IAP follow this link: https://developer.apple.com/apple-pay/sandbox-testing/
+examples:
+    4Quarters   
+    8Quarters
+    ..
 </pre></div>
 
 
+<p>To test IAP Purchases with iOS you don't have to submit Products to review. If "Paid Applications" agreements is valid and product is in "Ready to Submit" status testing purchases
+with Apples sandbox server will work. For more information how to test Apple IAP follow this link: https://developer.apple.com/apple-pay/sandbox-testing/</p>
+</li>
+</ol>
 <hr />
 <p>Buying Quarters through PlayFab In App Purchases Module</p>
 <ol>
