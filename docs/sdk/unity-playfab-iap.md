@@ -21,7 +21,7 @@ PlayFab Module allows very simple way for the user to purchase Quarters using pl
 ---
 
 
-#Installation:
+##Installation:
 1.  Import content of `QuartersSDK/Modules/PlayFab/PlayFabIAPModule.unitypackage` to your project
 2.  Add `Unity IAP` package to your project
 3.  Add content of `QuartersSDK/Modules/PlayFabIAP/QuartersPlayFabIAPServer.txt` to your existing PlayFab Cloud Script.
