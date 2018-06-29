@@ -5,12 +5,12 @@ This allows custom logic to be injected to the PlayFab server to verify if trans
 
 » **[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/quarters-sdk-latest.unitypackage)**
 
-# Prerequisites:
+## Prerequisites:
 - PlayFab SDK must be installed prior to module installation [(download)](https://api.playfab.com/sdks/unity).
 
 - Playfab Title
 
-# Installation:
+## Installation:
 1.  Import content of `QuartersSDK/Modules/PlayFab/PlayFabModule.unitypackage` to your project
 2.  Add `QUARTERS_MODULE_PLAYFAB` scripting define in Player Settings. If you are supporting more
     than one platform add `QUARTERS_MODULE_PLAYFAB` scripting define to each platform tab in Player Settings

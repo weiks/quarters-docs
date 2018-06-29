@@ -10,10 +10,10 @@ PlayFab Module allows very simple way for the user to purchase Quarters using pl
 
 ---
 
-**Prerequisites:**
-- `QuartersPlayFabModule` correctly configured and PlayFab Title configured. If you haven't done this step install `QuartersSDK/Modules/PlayFab/PlayFabModule.unitypackage` and follow the documentation.
-- `Unity IAP` Package https://docs.unity3d.com/Manual/UnityIAPSettingUp.html
-- For iOS:
+##Prerequisites:
+* `QuartersPlayFabModule` correctly configured and PlayFab Title configured. If you haven't done this step install `QuartersSDK/Modules/PlayFab/PlayFabModule.unitypackage` and follow the documentation.
+* `Unity IAP` Package https://docs.unity3d.com/Manual/UnityIAPSettingUp.html
+* For iOS:
     - iTunes Connect account with valid "Paid Applications" agreements. This step is critical for testing and validating purchases
     - iTunes Connect App setup with added IAP Consumable products
 
@@ -21,7 +21,7 @@ PlayFab Module allows very simple way for the user to purchase Quarters using pl
 ---
 
 
-**Installation:**
+#Installation:
 1.  Import content of `QuartersSDK/Modules/PlayFab/PlayFabIAPModule.unitypackage` to your project
 2.  Add `Unity IAP` package to your project
 3.  Add content of `QuartersSDK/Modules/PlayFabIAP/QuartersPlayFabIAPServer.txt` to your existing PlayFab Cloud Script.
@@ -55,9 +55,9 @@ PlayFab Module allows very simple way for the user to purchase Quarters using pl
 Buying Quarters through PlayFab In App Purchases Module
 
 
-1. Authorize user with Quarters
-2. Call `Quarters.Instance.GetUserDetails`
-3. Login PlayFab user with PlayFab.
+1.  Authorize user with Quarters
+2.  Call `Quarters.Instance.GetUserDetails`
+3.  Login PlayFab user with PlayFab.
 
     Example:
 
