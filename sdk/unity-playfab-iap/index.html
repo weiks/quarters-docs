@@ -38,7 +38,7 @@
     
     
       
-        <title>Refresh tokens - Quarters</title>
+        <title>Unity PlayFab IAP - Quarters</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#access-tokens-and-refresh-tokens" tabindex="1" class="md-skip">
+      <a href="#quarters-unity-sdk-playfab-in-app-purchases-module" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 Quarters
               </span>
               <span class="md-header-nav__topic">
-                Refresh tokens
+                Unity PlayFab IAP
               </span>
             
           
@@ -262,12 +262,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Quarters OAuth
@@ -285,7 +283,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../oauth/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -297,7 +295,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../integrating/" title="Integrating" class="md-nav__link">
+    <a href="../../oauth/integrating/" title="Integrating" class="md-nav__link">
       Integrating
     </a>
   </li>
@@ -307,20 +305,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="Refresh tokens" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../oauth/refresh-tokens/" title="Refresh tokens" class="md-nav__link">
       Refresh tokens
     </a>
-    
   </li>
 
         
@@ -345,10 +334,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Libraries (SDK)
@@ -366,7 +357,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sdk/js/" title="JavaScript (client)" class="md-nav__link">
+    <a href="../js/" title="JavaScript (client)" class="md-nav__link">
       JavaScript (client)
     </a>
   </li>
@@ -378,7 +369,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sdk/node/" title="Node (server)" class="md-nav__link">
+    <a href="../node/" title="Node (server)" class="md-nav__link">
       Node (server)
     </a>
   </li>
@@ -390,7 +381,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sdk/unity/" title="Unity" class="md-nav__link">
+    <a href="../unity/" title="Unity" class="md-nav__link">
       Unity
     </a>
   </li>
@@ -402,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sdk/unity-playfab/" title="Unity PlayFab" class="md-nav__link">
+    <a href="../unity-playfab/" title="Unity PlayFab" class="md-nav__link">
       Unity PlayFab
     </a>
   </li>
@@ -412,11 +403,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../sdk/unity-playfab-iap/" title="Unity PlayFab IAP" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Unity PlayFab IAP" class="md-nav__link md-nav__link--active">
       Unity PlayFab IAP
     </a>
+    
   </li>
 
         
@@ -572,32 +572,104 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/weiks/quarters-docs/edit/master/docs/oauth/refresh-tokens.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/weiks/quarters-docs/edit/master/docs/sdk/unity-playfab-iap.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="access-tokens-and-refresh-tokens">Access tokens and Refresh tokens</h1>
-<p>Quarters uses security feature of OAuth2 called refresh tokens. When you first authenticate, your app will be given an <code>access_token</code> and a <code>refresh_token</code>. The access token is used to authenticate all your requests, but expires in 10 minutes. Once an access token has expired, you will need to use the refresh token to obtain a new access token and a new refresh token. The refresh token never expires but it can only be exchanged once for a new set of access and refresh tokens. If you try to make a call with an expired access token, a 401 response will be returned.</p>
-<p>This process adds some complexity for Quarters Connect integrations, but provides an valuable layer of security since a compromised access token is automatically revoked after 10 minutes.</p>
-<p>To get a new access token, you'll need to do a POST request to <code>/oauth/token</code> just like before, but this time you must include your <code>refresh_token</code> and change the <code>grant_type</code> to <code>refresh_token</code>.</p>
-<div class="codehilite"><pre><span></span>curl https://api.pocketfulofquarters.com/v1/oauth/token \
-  -X POST \
-  -d &#39;grant_type=refresh_token&amp;
-      client_id=YOUR_APP_ID&amp;
-      client_secret=YOUR_WEB_SECRET&amp;
-      refresh_token=REFRESH_TOKEN&#39;
+                <h1 id="quarters-unity-sdk-playfab-in-app-purchases-module">Quarters Unity SDK - PlayFab In App Purchases Module</h1>
+<p>PlayFab Module allows very simple way for the user to purchase Quarters using platform native In App Purchases process</p>
+<hr />
+<p><strong>Supported platforms</strong>: iOS</p>
+<hr />
+<p><strong>Prerequisites:</strong>
+- <code>QuartersPlayFabModule</code> correctly configured and PlayFab Title configured. If you haven't done this step install <code>QuartersSDK/Modules/PlayFab/PlayFabModule.unitypackage</code> and follow the documentation.
+- <code>Unity IAP</code> Package https://docs.unity3d.com/Manual/UnityIAPSettingUp.html
+- For iOS:
+    - iTunes Connect account with valid "Paid Applications" agreements. This step is critical for testing and validating purchases
+    - iTunes Connect App setup with added IAP Consumable products</p>
+<hr />
+<p><strong>Installation:</strong>
+1.  Import content of <code>QuartersSDK/Modules/PlayFab/PlayFabIAPModule.unitypackage</code> to your project
+2.  Add <code>Unity IAP</code> package to your project
+3.  Add content of <code>QuartersSDK/Modules/PlayFabIAP/QuartersPlayFabIAPServer.txt</code> to your existing PlayFab Cloud Script.
+4.  Setup IAP Products on <code>iTunesConnect/&lt;YourApp&gt;/Features</code>
+    Requirements for Quarters IAP products (critical, make sure this is configured correctly)</p>
+<div class="codehilite"><pre><span></span>Example:
+```
+Reference Name: 4 Quarters
+Type: Consumable
+Product ID: 4Quarters
+```
+
+**Note:** All quarters IAP product IDs MUST follow this naming convention:
+
+    &lt;numberOfQuarters&gt;Quarters
+
+    examples:
+        4Quarters   
+        8Quarters
+        ..
+
+To test IAP Purchases with iOS you don&#39;t have to submit Products to review. If &quot;Paid Applications&quot; agreements is valid and product is in &quot;Ready to Submit&quot; status testing purchases
+with Apples sandbox server will work. For more information how to test Apple IAP follow this link: https://developer.apple.com/apple-pay/sandbox-testing/
 </pre></div>
 
 
-<p>The expected result is a response containing the access token, as before:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;client_id&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;refresh_token&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span>
-<span class="p">}</span>
+<hr />
+<p>Buying Quarters through PlayFab In App Purchases Module</p>
+<ol>
+<li>Authorize user with Quarters</li>
+<li>Call <code>Quarters.Instance.GetUserDetails</code></li>
+<li>
+<p>Login PlayFab user with PlayFab.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><span class="o">//</span><span class="nt">login</span> <span class="nt">user</span> <span class="nt">to</span> <span class="nt">playfab</span> <span class="nt">title</span> <span class="nt">using</span> <span class="nt">device</span> <span class="nt">id</span>
+<span class="nt">LoginWithCustomIDRequest</span> <span class="nt">loginRequest</span> <span class="o">=</span> <span class="nt">new</span> <span class="nt">LoginWithCustomIDRequest</span><span class="o">();</span>
+<span class="nt">loginRequest</span><span class="p">.</span><span class="nc">CustomId</span> <span class="o">=</span> <span class="nt">SystemInfo</span><span class="p">.</span><span class="nc">deviceUniqueIdentifier</span><span class="o">;</span>
+<span class="nt">loginRequest</span><span class="p">.</span><span class="nc">CreateAccount</span> <span class="o">=</span> <span class="nt">true</span><span class="o">;</span>
+
+<span class="nt">PlayFabClientAPI</span><span class="p">.</span><span class="nc">LoginWithCustomID</span><span class="o">(</span><span class="nt">loginRequest</span><span class="o">,</span> <span class="nt">delegate</span><span class="o">(</span><span class="nt">LoginResult</span> <span class="nt">result</span><span class="o">)</span> <span class="p">{</span>
+
+    <span class="err">Debug.Log(&quot;Playfab</span> <span class="err">user</span> <span class="err">logged</span> <span class="n">in</span><span class="p">:</span> <span class="err">&quot;</span> <span class="o">+</span> <span class="n">result</span><span class="o">.</span><span class="n">PlayFabId</span><span class="p">);</span>
+
+<span class="p">}</span><span class="o">,</span> <span class="nt">delegate</span> <span class="o">(</span><span class="nt">PlayFabError</span> <span class="nt">error</span><span class="o">)</span><span class="p">{</span>
+    <span class="err">Debug.LogError(error.ErrorMessage)</span><span class="p">;</span>
+<span class="p">}</span><span class="o">);</span>
 </pre></div>
 
 
-<p>Note: If you are using an OAuth2 library that supports refresh tokens, you’re in luck - the library will automatically take care of these details.</p>
+</li>
+<li>
+<p>Call <code>QuartersIAP.Initialize</code> - All products data will be pulled from store server</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span>QuartersIAP.Instance.Initialize(testProducts, delegate(Product[] products) {
+
+//products loaded
+
+}, delegate(InitializationFailureReason reason) {
+    Debug.LogError(reason.ToString());
+});
+</pre></div>
+
+
+</li>
+<li>
+<p>You can now call QuartersIAP.Instance.BuyProduct - Native popup will be presented to the user to confirm the purchase. After successful payment Playfab IAP module will validate transaction and
+   automatically transfer quarters to user account.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><span class="nt">QuartersIAP</span><span class="p">.</span><span class="nc">Instance</span><span class="p">.</span><span class="nc">BuyProduct</span><span class="o">(</span><span class="nt">QuartersIAP</span><span class="p">.</span><span class="nc">Instance</span><span class="p">.</span><span class="nc">products</span><span class="cp">[</span><span class="mi">0</span><span class="cp">]</span><span class="o">,</span> <span class="o">(</span><span class="nt">Product</span> <span class="nt">product</span><span class="o">,</span> <span class="nt">string</span> <span class="nt">txId</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="err">Debug.Log(&quot;Purchase</span> <span class="err">complete&quot;)</span><span class="p">;</span>
+
+<span class="p">}</span><span class="o">,(</span><span class="nt">string</span> <span class="nt">error</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="err">Debug.LogError(&quot;Purchase</span> <span class="n">error</span><span class="p">:</span> <span class="err">&quot;</span> <span class="o">+</span> <span class="n">error</span><span class="p">);</span>
+
+<span class="p">}</span><span class="o">);</span>
+</pre></div>
+
+
+</li>
+</ol>
+<p>For another example look at <code>Assets/QuartersSDK/Example/Example scene</code></p>
                 
                   
                 
@@ -618,7 +690,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../integrating/" title="Integrating" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../unity-playfab/" title="Unity PlayFab" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -627,19 +699,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Integrating
+                Unity PlayFab
               </span>
             </div>
           </a>
         
         
-          <a href="../../quarters-buttons/" title="Quarters buttons" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../apis/oauth/" title="OAuth" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Quarters buttons
+                OAuth
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
