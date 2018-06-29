@@ -25,6 +25,7 @@ pages:
     - Node (server): 'sdk/node.md'
     - Unity: 'sdk/unity.md'
     - Unity PlayFab: 'sdk/unity-playfab.md'
+    - Unity PlayFab IAP: 'sdk/unity-playfab-iap.md'
   - APIs:
     - OAuth: 'apis/oauth.md'
     - Users & accounts: 'apis/user.md'
