@@ -10,7 +10,7 @@ Quarters IAP APIs allows for a very simple way for developers to integrate In Ap
 
 The first thing you'll need to do is sign up for
 [Quarters](https://dev.pocketfulofquarters.com) to
-[create an app](../guides/create-app.md).
+[create an app](../guides/create-app.md) and then set `Google Public Key` and `Apple Shared Secret` on app settings.
 
 ### Unity
 
