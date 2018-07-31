@@ -30,6 +30,7 @@ pages:
     - OAuth: 'apis/oauth.md'
     - Users & accounts: 'apis/user.md'
     - Transfers: 'apis/transfer-requests.md'
+    - IAP: 'apis/iap.md'
   - Guides:
     - Create App: 'guides/create-app.md'
     - Login with Quarters (oauth v2): 'guides/login-quarters.md'

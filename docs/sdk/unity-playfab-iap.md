@@ -1,5 +1,3 @@
-
-
 # Quarters Unity SDK - PlayFab In App Purchases Module
 
 PlayFab Module allows very simple way for the user to purchase Quarters using platform native In App Purchases process
