@@ -42,9 +42,9 @@ Request example:
 ```CURL
 curl https://api.dev.pocketfulofquarters.com/v1/apps/{appId}/verifyReceipt/unity \
   -X POST \
-  -H 'Authorization: Bearer foo...bar'
+  -H 'Authorization: Bearer foo...bar' \
   -H 'Content-Type: application/json;charset=UTF-8' \
-  --data-binary '{"receipt": {...}, "user": "<userId>"}'
+  --data-binary '{"receipt": {...}, "user": "<buyerId>"}'
 ```
 
 Response example:
