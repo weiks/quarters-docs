@@ -17,7 +17,7 @@ with following parameters:
 | ------------- | ------------------------------------------------------------------------------- |
 | `tokens`      | **Required** Number of quarters to transfer                                     |
 | `description` | **Optional** Transfer description - will be shown on screen while user approval |
-| `app_id`      | **Required** The APP ID you received after registering your application         |
+| `appId`      | **Required** The APP ID you received after registering your application         |
 
 with following headers:
 
@@ -32,7 +32,7 @@ curl https://api.pocketfulofquarters/v1/requests \
   -X POST \
   -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
   -H 'Content-Type: application/json;charset=UTF-8' \
-  --data-binary '{"tokens": 10,"description":"Power ups","app_id":"Lpk5sPrA7P59HFlN7obS"}'
+  --data-binary '{"tokens": 10,"description":"Power ups","appId":"Lpk5sPrA7P59HFlN7obS"}'
 ```
 
 Response example:
