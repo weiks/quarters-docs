@@ -518,6 +518,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#auto-approve-transfer-request-for-users" title="Auto Approve Transfer Request For Users" class="md-nav__link">
+    Auto Approve Transfer Request For Users
+  </a>
+  
+</li>
+      
       
       
       
@@ -649,6 +656,13 @@
         <li class="md-nav__item">
   <a href="#transfer-quarters-available-only-for-server-to-server" title="Transfer quarters (Available only for server-to-server)" class="md-nav__link">
     Transfer quarters (Available only for server-to-server)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-approve-transfer-request-for-users" title="Auto Approve Transfer Request For Users" class="md-nav__link">
+    Auto Approve Transfer Request For Users
   </a>
   
 </li>
@@ -850,6 +864,7 @@
 
 <p>Response example:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;requestId&quot;</span><span class="p">:</span> <span class="s2">&quot;01be8a20-04bb-11e8-94b8-91a2ba7c5972&quot;</span><span class="p">,</span>
   <span class="nt">&quot;txId&quot;</span><span class="p">:</span> <span class="s2">&quot;0xd832e7c419869...5918b96&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -870,6 +885,66 @@
 </tr>
 </tbody>
 </table>
+<h3 id="auto-approve-transfer-request-for-users">Auto Approve Transfer Request For Users</h3>
+<p><strong>Note:</strong> At this moment Transfer Auto Approval is not available for everyone, please contact support if you would like to use it.</p>
+<p><strong>Note 2:</strong> Before trying to auto approve a transfer request for a user. Make sure that the user has approved a normal transaction in prior to your auto approval request.</p>
+<div class="codehilite"><pre><span></span>POST https://api.pocketfulofquarters/v1/requests/&lt;request_id&gt;/autoApprove
+</pre></div>
+
+
+<p>with following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clientId</code></td>
+<td><strong>Required</strong> The APP ID you received after registering your application</td>
+</tr>
+<tr>
+<td><code>userId</code></td>
+<td><strong>Required</strong> User ID of the user that you are trying to auto approve the request for</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td><strong>Required</strong> User account's valid address</td>
+</tr>
+</tbody>
+</table>
+<p>with following headers:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td><strong>Required</strong> Format - <code>Bearer &lt;access_token&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Request example:</p>
+<div class="codehilite"><pre><span></span><span class="nt">curl</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">pocketfulofquarters</span><span class="o">/</span><span class="nt">v1</span><span class="o">/</span><span class="nt">requests</span><span class="o">/&lt;</span><span class="nt">request_id</span><span class="o">&gt;/</span><span class="nt">autoApprove</span> <span class="err">\</span>
+  <span class="nt">-X</span> <span class="nt">POST</span> <span class="err">\</span>
+  <span class="nt">-H</span> <span class="s1">&#39;Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg&#39;</span>
+  <span class="nt">-H</span> <span class="s1">&#39;Content-Type: application/json;charset=UTF-8&#39;</span> <span class="err">\</span>
+  <span class="nt">--data-binary</span> <span class="s1">&#39;{&quot;clientId&quot;: &quot;1c6vP7wNNKkXGxUPBc7k&quot;, &quot;userId&quot;: &quot;eXa0wTZAelWozJ5l7spJwfPrgU42&quot;, &quot;address&quot;: &quot;0x2a36ee4bb7be5a66865812693f44d407c3dbe603&quot; }&#39;</span>
+</pre></div>
+
+
+<p>Response example:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;requestId&quot;</span><span class="p">:</span> <span class="s2">&quot;01be8a20-04bb-11e8-94b8-91a2ba7c5972&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;txId&quot;</span><span class="p">:</span> <span class="s2">&quot;0xd832e7c419869...5918b96&quot;</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
