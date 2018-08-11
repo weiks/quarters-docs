@@ -30,7 +30,7 @@ Request example:
 ```CURL
 curl https://api.pocketfulofquarters/v1/requests \
   -X POST \
-  -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
+  -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg' \
   -H 'Content-Type: application/json;charset=UTF-8' \
   --data-binary '{"tokens": 10,"description":"Power ups","appId":"Lpk5sPrA7P59HFlN7obS"}'
 ```
@@ -102,7 +102,7 @@ Request example:
 ```CURL
 curl https://api.pocketfulofquarters/v1/accounts/0x898...89/transfer \
   -X POST \
-  -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
+  -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg' \
   -H 'Content-Type: application/json;charset=UTF-8' \
   --data-binary '{"amount":10,"user":"Lpk5sPrA7P59HFlN7obS"}'
 ```
@@ -151,7 +151,7 @@ Request example:
 ```CURL
 curl https://api.pocketfulofquarters/v1/requests/<request_id>/autoApprove \
   -X POST \
-  -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
+  -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg' \
   -H 'Content-Type: application/json;charset=UTF-8' \
   --data-binary '{"clientId": "1c6vP7wNNKkXGxUPBc7k", "userId": "eXa0wTZAelWozJ5l7spJwfPrgU42", "address": "0x2a36ee4bb7be5a66865812693f44d407c3dbe603" }'
 ```
