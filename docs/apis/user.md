@@ -141,3 +141,41 @@ Example response:
   }
 ]
 ```
+
+### Creating new guest accounts
+
+```
+POST https://api.dev.pocketfulofquarters.com/v1/new-guest
+```
+
+with following headers:
+
+| Parameter       | Description                                   |
+| --------------- | --------------------------------------------- |
+| `Authorization` | **Required** Format - `Bearer <access_token>` |
+
+Example request:
+
+```CURL
+curl https://api.dev.pocketfulofquarters.com/v1/new-guest \
+  -H 'Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg'
+```
+
+Example response:
+
+```json
+[
+  {
+    "user_id": "123",
+    "access_token": "foo...bar"
+  }
+]
+```
+
+### Converting guest accounts
+
+Linking a guest account with their email and password is pretty simple.
+
+You simply need to redirect your users to `https://dev.pocketfulofquarters.com/guest?token=<guestAccessToken>`.
+
+**Note:** After your users link their guest account with their email and password, you need to prompt them for [authorization](./oauth.md) as the guest token gets invalidated.
