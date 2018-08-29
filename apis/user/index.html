@@ -507,6 +507,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creating-new-guest-accounts" title="Creating new guest accounts" class="md-nav__link">
+    Creating new guest accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converting-guest-accounts" title="Converting guest accounts" class="md-nav__link">
+    Converting guest accounts
+  </a>
+  
+</li>
+      
       
       
       
@@ -651,6 +665,20 @@
         <li class="md-nav__item">
   <a href="#account-reward" title="Account reward" class="md-nav__link">
     Account reward
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-new-guest-accounts" title="Creating new guest accounts" class="md-nav__link">
+    Creating new guest accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converting-guest-accounts" title="Converting guest accounts" class="md-nav__link">
+    Converting guest accounts
   </a>
   
 </li>
@@ -855,6 +883,48 @@ to know how to retrieve <code>access_token</code>.</p>
   <span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
+
+
+<h3 id="creating-new-guest-accounts">Creating new guest accounts</h3>
+<div class="codehilite"><pre><span></span>POST https://api.dev.pocketfulofquarters.com/v1/new-guest
+</pre></div>
+
+
+<p>with following headers:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td><strong>Required</strong> Format - <code>Bearer &lt;access_token&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<div class="codehilite"><pre><span></span>curl https://api.dev.pocketfulofquarters.com/v1/new-guest \
+  -H &#39;Authorization: Bearer eyJhbGciOiJIU...vyvQf81plg&#39;
+</pre></div>
+
+
+<p>Example response:</p>
+<div class="codehilite"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;foo...bar&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<h3 id="converting-guest-accounts">Converting guest accounts</h3>
+<p>Linking a guest account with their email and password is pretty simple.</p>
+<p>You simply need to redirect your users to <code>https://dev.pocketfulofquarters.com/guest?token=&lt;guestAccessToken&gt;</code>.</p>
+<p><strong>Note:</strong> After your users link their guest account with their email and password, you need to prompt them for <a href="../oauth/">authorization</a> as the guest token gets invalidated.</p>
                 
                   
                 
