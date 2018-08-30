@@ -150,9 +150,9 @@ POST https://api.dev.pocketfulofquarters.com/v1/new-guest
 
 with following headers:
 
-| Parameter       | Description                                   |
-| --------------- | --------------------------------------------- |
-| `Authorization` | **Required** Format - `Bearer <access_token>` |
+| Parameter       | Description                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------ |
+| `Authorization` | **Required** `Bearer <SERVER-API-KEY>` <br/> Server API key which you received after app registrations |
 
 Example request:
 
