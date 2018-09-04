@@ -175,8 +175,32 @@ Example response:
 
 ### Converting guest accounts
 
-Linking a guest account with their email and password is pretty simple.
+```CURL
+GET https://dev.pocketfulofquarters.com/guest?response_type=code&client_id=YOUR_CLIENT_ID&token=GUEST_ACCESS_TOKEN&redirect_uri=YOUR_REDIRECT_URL&inline=true
+```
 
-You simply need to redirect your users to `https://dev.pocketfulofquarters.com/guest?token=<guestAccessToken>`.
+When redirecting a user to Quarters guest signup page, you'll need to construct the URL with the correct parameters. Here's a list of parameters you should always specify:
 
-**Note:** After your users link their guest account with their email and password, you need to prompt them for [authorization](./oauth.md) as the guest token gets invalidated.
+| Parameter       | Description                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------- |
+| `token`         | **Required** Guest access token you received after creating the guest user account.      |
+| `response_type` | **Required** Value `code`                                                                |
+| `client_id`     | **Required** The client ID you received after registering your application.              |
+| `inline`        | **Required** Value `true`                                                                |
+| `redirect_uri`  | **Optional** The URL (encoded) in your app where users will be sent after authorization. |
+
+Example of a guest signup URL:
+
+```CURL
+GET https://dev.pocketfulofquarters.com/guest?response_type=code&client_id=Lpk5sPrA7P59HFlN7obS&token=foobar&inline=true&redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
+```
+
+**Code retrieval**
+
+On successful guest signup, Quarters will redirect user to `redirect_uri` with following code as query params:
+
+| Query param | Description                               |
+| ----------- | ----------------------------------------- |
+| `code`      | Temporary `code` to retrieve access token |
+
+**Note:** After your users link their guest account with their email and password, you need to retrieve a [OAuth Token](./oauth.md) for them using the `code` from `redirect_uri` as the guest tokens gets invalidated.
