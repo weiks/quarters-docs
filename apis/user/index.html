@@ -923,9 +923,63 @@ to know how to retrieve <code>access_token</code>.</p>
 
 
 <h3 id="converting-guest-accounts">Converting guest accounts</h3>
-<p>Linking a guest account with their email and password is pretty simple.</p>
-<p>You simply need to redirect your users to <code>https://dev.pocketfulofquarters.com/guest?token=&lt;guestAccessToken&gt;</code>.</p>
-<p><strong>Note:</strong> After your users link their guest account with their email and password, you need to prompt them for <a href="../oauth/">authorization</a> as the guest token gets invalidated.</p>
+<div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/guest?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;token=GUEST_ACCESS_TOKEN&amp;redirect_uri=YOUR_REDIRECT_URL&amp;inline=true
+</pre></div>
+
+
+<p>When redirecting a user to Quarters guest signup page, you'll need to construct the URL with the correct parameters. Here's a list of parameters you should always specify:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>token</code></td>
+<td><strong>Required</strong> Guest access token you received after creating the guest user account.</td>
+</tr>
+<tr>
+<td><code>response_type</code></td>
+<td><strong>Required</strong> Value <code>code</code></td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><strong>Required</strong> The client ID you received after registering your application.</td>
+</tr>
+<tr>
+<td><code>inline</code></td>
+<td><strong>Required</strong> Value <code>true</code></td>
+</tr>
+<tr>
+<td><code>redirect_uri</code></td>
+<td><strong>Optional</strong> The URL (encoded) in your app where users will be sent after authorization.</td>
+</tr>
+</tbody>
+</table>
+<p>Example of a guest signup URL:</p>
+<div class="codehilite"><pre><span></span>GET https://dev.pocketfulofquarters.com/guest?response_type=code&amp;client_id=Lpk5sPrA7P59HFlN7obS&amp;token=foobar&amp;inline=true&amp;redirect_uri=https%3A%2F%2Fexample.com%2Foauth%2Fcallback
+</pre></div>
+
+
+<p><strong>Code retrieval</strong></p>
+<p>On successful guest signup, Quarters will redirect user to <code>redirect_uri</code> with following code as query params:</p>
+<table>
+<thead>
+<tr>
+<th>Query param</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td>Temporary <code>code</code> to retrieve access token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> After your users link their guest account with their email and password, you need to retrieve a <a href="../oauth/">OAuth Token</a> for them using the <code>code</code> from <code>redirect_uri</code> as the guest tokens gets invalidated.</p>
                 
                   
                 
