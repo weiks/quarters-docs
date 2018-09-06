@@ -27,88 +27,99 @@ If your project contain Android Manifest already, manual manifest will be requir
 
 [Click here](https://www.youtube.com/watch?v=YJU192xItO0&list=PL0TyRhVVizdBk-apKTf6lBUAMkEc7E4Y7) to watch a video on how to get started with Quarters SDK for Android!
 
+
 Authorization
 ----
-Before you can use Quarters API you must authorise users session.
-
+Before you can use Quarters API you must authorize users session. From version 0.20.0 Quarters Unity SDK support guest mode. This allows to authorize user as guest and give full access
+to Quarters features. Guest users can be converted to email users through Quarters.SignUp method. This workflow is required by Apple to conform to their user guidelines.
 
 Example:
 
-    using QuartersSDK;
+```
+using QuartersSDK;
 
-    Quarters.Instance.Authorize(OnAuthorizationSuccess, OnAuthorizationFailed);
+Quarters.Instance.AuthorizeGuest(OnAuthorizationSuccess, OnAuthorizationFailed);
 
+ public void OnAuthorizationSuccess() {
+      Debug.Log("OnAuthorizationSuccess");
+}
+   public void OnAuthorizationFailed(string error) { 
+      Debug.LogError("OnAuthorizationFailed: " + error);  
+}
+```
 
-    public void OnAuthorizationSuccess() {
-    	Debug.Log("OnAuthorizationSuccess");
-    }
+----
+From this point user is able to buy, spend and get rewarded with Quarters. At some point user should be prompted by the app for signing up to create password protected Quarters account.
+Only fully signed up users are able to use Quarters account between apps.
 
+Example of converting guest user to signed up account:
 
-    public void OnAuthorizationFailed(string error) {
-    	Debug.LogError("OnAuthorizationFailed: " + error);
+```
+Quarters.Instance.SignUp(OnAuthorizationSuccess, OnAuthorizationFailed);
 
-    }
+public void OnAuthorizationSuccess() {
+    Debug.Log("OnAuthorizationSuccess");
+}
 
-Quarters is using OAuth in external browser. This means your user will be sent outside the app for OAuth in the browser. After successful or failed authorisation user is seamlessly deep linked back to the app.
-
+public void OnAuthorizationFailed(string error) {
+    Debug.LogError("OnAuthorizationFailed: " + error);
+} 
+```
 
 Get User Details
 ----
-Get user details can be only called after successful authorization. Success delegate returns `User` object with basic user details.
+Get user details can be only called after successful authorization. Success delegate returns User object with basic user details.
 
 
 Example:
 
-    using QuartersSDK;
+```
+using QuartersSDK;
 
-    Quarters.Instance.GetUserDetails(delegate(User user) {
-    	Debug.Log("User loaded");
-
-    } , delegate (string error) {
-    	Debug.LogError("Cannot load the user details: " + error);
-
-    } );
-
-
-
+Quarters.Instance.GetUserDetails(
+    delegate(User user) { 
+        Debug.Log("User loaded");  
+    }, delegate (string error) { 
+        Debug.LogError("Cannot load the user details: " + error);  
+    }
+);  
+```
 
 Get accounts
 ----
-Get account can be only called after successful authorization. On success delegate will be called with a list of user accounts. (Note: Only one user account is currently supported by the API).
+Get account can be only called after successful authorization. On success delegate will be called with a list of user accounts. (Note: only one user account is currently supported by the API)
 
 
 Example:
 ----
 
-    using QuartersSDK;
+```
+using QuartersSDK;
 
-    Quarters.Instance.GetAccounts(delegate (List<User.Account> accounts) {
-
-    //success
-
-    }, delegate (string error) {
-
-    //failed
-
-    });
-
+Quarters.Instance.GetAccounts(
+    delegate (List<User.Account> accounts) { 
+        //success 
+    }, delegate (string error) { 
+        //failed  
+    }
+);
+```
 
 Get Account Balance
 ----
-Get account balance can be only called after successful authorization. On success delegate is fired with `User.Account.Balance` object.
+Get account balance can be only called after successful authorization. On success delegate is fired with User.Account.Balance object
 
 
 Example:
 
-    using QuartersSDK;
+```
+using QuartersSDK;
 
-    Quarters.Instance.GetAccountBalance(delegate (User.Account.Balance balance) {
-
-    }, delegate (string error) {
-
-     });
-
-
+Quarters.Instance.GetAccountBalance(
+    delegate (User.Account.Balance balance) {  },
+    delegate (string error) {   }
+); 
+```
 
 Transfer
 ----
@@ -117,50 +128,68 @@ Transfer request can be only called after successful authorization. This call al
 
 Example:
 
-    using QuartersSDK;
+```
+using QuartersSDK;
 
-    TransferAPIRequest request = new TransferAPIRequest(int.Parse(tokensInput.text), descriptionInput.text, delegate (string transactionHash) {
-
-    //success
-
+TransferAPIRequest request = new TransferAPIRequest(
+    int.Parse(tokensInput.text),
+    descriptionInput.text,
+    delegate (string transactionHash) {             
+        //success  
     }, delegate (string error) {
-
-    //failed
-
-    });
-
-    //start transfer
-    Quarters.Instance.CreateTransfer(request);
+        //failed 
+    }
+); 
+transfer Quarters.Instance.CreateTransfer(request); //start
+  ```
 
 
-## RELEASE NOTES
+*************
+RELEASE NOTES
+*************
 
 General notes:
 - only one account is currently supported by API, hence Get Accounts and Account balance calls are working with first returned account
-- a post authorization calls can be called at any time. There is no need for calling API in any order. Example: After Authorizing session
-GetAccountBalance can be called right away without need of calling GetUserDetail -> GetAccounts -> GetAccountBalance.
+
+
+#####
+0.20.0
+- added guest mode for frictionless authentication
+#####
+
+
+#####
+0.12.0
+- easier to integrate iOS and Android In App Purchases
+#####
+
 
 #####
 0.11.0
 - Added Playfab IAP module
 - Added In App Purchases support for iOS
-
 #####
+
 
 #####
 0.10.0
 - Web view support
 - Authorize and Transfer requests can now be done within the app through webview, not external browser (Supported platforms, iOS, Android, Unity Editor on MacOS)
 - Optional forceExternalBrowser added to Authorize and Transfer calls (false by default)
-
+false
 #####
+
 
 #####
 0.9.0
-- Sessions persistence added. User will wont have to authorize quarters on every login anymore, only first time.
+- Sessions persistance added. User will wont have to authorize quarters on every login anymore, only first time.
 - Added deauthorize functionality to log user out of quarters
+#####
 
 
+#####
+0.8.1
+- Fixed out of range exception when calling GetAccountBalance right after GetUserDetails
 #####
 
 
@@ -168,19 +197,13 @@ GetAccountBalance can be called right away without need of calling GetUserDetail
 0.8.0
 - Added PlayFab module
 - Supporting Playfab server side Quarters apps to user transfers
-
-
 #####
-
-
 
 
 #####
 0.7.0
 - Quarters UI added
 - Editor scripts are now inheriting from UnityEditor.Editor to avoid potential conflicts with custom Editor namespace
-
-
 #####
 
 
@@ -188,16 +211,12 @@ GetAccountBalance can be called right away without need of calling GetUserDetail
 0.6.0
 - Added automated Android Manifest Generation in Quarters/Android/Generate Android Manifest
 - Android package name can now contain uppercase characters
-
-
 #####
 
 
 #####
 0.5.0
 - Deep linking is now dynamic. Multiple apps using Quarters SDK are now supported on single Android or iOS device
-
-
 #####
 
 
@@ -207,22 +226,19 @@ GetAccountBalance can be called right away without need of calling GetUserDetail
 - Full Transfer support on iOS and Android
 - Added automated iOS post process builds
 - iOS deep linking
-
-
 #####
 
 
 #####
 0.3.0
 - added seamless support for GetAccounts call
-- added seamless support for GetAccountBalance
-- basic one way support for Transferring quarters added
+- added seamless support for GetAcdountBalance
+- basic one way support for Transfering quarters added
 
 known issues:
 - no deep linking with parameters support for TransferRequest. Doe to lack of API support for this functionality. Its coming in next release.
-
-
 #####
+
 
 #####
 0.2.0
@@ -231,8 +247,6 @@ known issues:
 - Basic Android Manifest added for handling linking, intents and permissions
 - Android support for Authorize call
 - Example - added simple on screen console
-
-
 #####
 
 
@@ -241,10 +255,4 @@ known issues:
 - Added simple authorization in editor
 - Refresh and access token are handled during Authorization
 - Added GetUserDetails API call with refreshing access token if expired
-
-
-
-Known issues:
-- QuartersInit App ID and App key aren't serialised into Unity scene - fixed in 0.2.0
-
 #####
