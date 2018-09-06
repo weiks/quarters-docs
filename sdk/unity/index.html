@@ -878,19 +878,21 @@ Quarters.Instance.GetAccountBalance(
 <h2 id="transfer">Transfer</h2>
 <p>Transfer request can be only called after successful authorization. This call allows to charge user quarters that will be transferred to your Quarters app. Transfer request is done through external browser, similar to Authorize call. On Success transaction hash is returned. Please note it can take up to 3 minutes for your transfer to appear.</p>
 <p>Example:</p>
-<p>```
-using QuartersSDK;</p>
-<p>TransferAPIRequest request = new TransferAPIRequest(
+<div class="codehilite"><pre><span></span>using QuartersSDK;
+
+TransferAPIRequest request = new TransferAPIRequest(
     int.Parse(tokensInput.text),
     descriptionInput.text,
-    delegate (string transactionHash) {           <br />
+    delegate (string transactionHash) {             
         //success  
     }, delegate (string error) {
         //failed 
     }
 ); 
 transfer Quarters.Instance.CreateTransfer(request); //start
-  ```</p>
+</pre></div>
+
+
 <hr />
 <p>RELEASE NOTES</p>
 <hr />
