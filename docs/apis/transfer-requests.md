@@ -8,7 +8,7 @@ Quarters allows you to create `transfer requests` and provide a way to ask users
 ### Create transfer request for user
 
 ```CURL
-POST https://api.pocketfulofquarters/v1/oauth/token
+POST https://api.pocketfulofquarters/v1/requests
 ```
 
 with following parameters:
@@ -17,7 +17,7 @@ with following parameters:
 | ------------- | ------------------------------------------------------------------------------- |
 | `tokens`      | **Required** Number of quarters to transfer                                     |
 | `description` | **Optional** Transfer description - will be shown on screen while user approval |
-| `appId`      | **Required** The APP ID you received after registering your application         |
+| `appId`       | **Required** The APP ID you received after registering your application         |
 
 with following headers:
 
@@ -56,11 +56,12 @@ Response example:
 
 You can redirect to following URL to get approval from user.
 
-* **URL to Authorize transfer** `https://pocketfulofquarters.com/requests/{request_id}?inline=true`
+* **URL to Authorize transfer** `https://pocketfulofquarters.com/requests/{request_id}?inline=true&firebase_token=foo...bar`
 
-| URL params   | Description                                                              |
-| ------------ | ------------------------------------------------------------------------ |
-| `request_id` | **Required** Request id from [step 1](#create-transfer-request-for-user) |
+| URL params       | Description                                                              |
+| ---------------- | ------------------------------------------------------------------------ |
+| `request_id`     | **Required** Request id from [step 1](#create-transfer-request-for-user) |
+| `firebase_token` | **Optional** Firebase token only for guest users                         |
 
 
 Response fields will be in query params in case of redirection, and `window.onQuartersCallback` in case of iframe.
@@ -134,11 +135,11 @@ POST https://api.pocketfulofquarters/v1/requests/<request_id>/autoApprove
 
 with following parameters:
 
-| Parameter     | Description                                                                     |
-| ------------- | ------------------------------------------------------------------------------- |
-| `clientId`| **Required** The APP ID you received after registering your application                                     |
-| `userId`  | **Required** User ID of the user that you are trying to auto approve the request for |
-| `address` | **Required** User account's valid address |
+| Parameter        | Description                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| `clientId`       | **Required** The APP ID you received after registering your application              |
+| `userId`         | **Required** User ID of the user that you are trying to auto approve the request for |
+| `address`        | **Required** User account's valid address                                            |
 
 with following headers:
 
