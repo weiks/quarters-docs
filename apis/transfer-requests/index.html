@@ -693,7 +693,7 @@
 <li>User approves or declines the request manually on Quarters user-interface (UI). And quarters server will handle transfers.</li>
 </ol>
 <h3 id="create-transfer-request-for-user">Create transfer request for user</h3>
-<div class="codehilite"><pre><span></span>POST https://api.pocketfulofquarters/v1/oauth/token
+<div class="codehilite"><pre><span></span>POST https://api.pocketfulofquarters/v1/requests
 </pre></div>
 
 
@@ -763,7 +763,7 @@
 <h4 id="authorization">Authorization</h4>
 <p>You can redirect to following URL to get approval from user.</p>
 <ul>
-<li><strong>URL to Authorize transfer</strong> <code>https://pocketfulofquarters.com/requests/{request_id}?inline=true</code></li>
+<li><strong>URL to Authorize transfer</strong> <code>https://pocketfulofquarters.com/requests/{request_id}?inline=true&amp;firebase_token=foo...bar</code></li>
 </ul>
 <table>
 <thead>
@@ -776,6 +776,10 @@
 <tr>
 <td><code>request_id</code></td>
 <td><strong>Required</strong> Request id from <a href="#create-transfer-request-for-user">step 1</a></td>
+</tr>
+<tr>
+<td><code>firebase_token</code></td>
+<td><strong>Optional</strong> Firebase token only for guest users</td>
 </tr>
 </tbody>
 </table>
