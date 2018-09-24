@@ -1,4 +1,4 @@
-# Quarters Unity SDK - v0.20.0
+# Quarters Unity SDK - v0.20.2
 
 **Supported platforms**: `iOS` and `Android`.
 
@@ -150,6 +150,17 @@ RELEASE NOTES
 
 General notes:
 - only one account is currently supported by API, hence Get Accounts and Account balance calls are working with first returned account
+
+#####
+0.20.2
+- fixed transfer issues when using guest account
+#####
+
+
+#####
+0.20.1
+- fixed issue with missing callback when using SignUp
+#####
 
 
 #####
