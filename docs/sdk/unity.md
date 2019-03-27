@@ -1,5 +1,7 @@
 # Quarters Unity SDK - v0.20.2
 
+**Supported versions**: Unity 2017+
+
 **Supported platforms**: `iOS` and `Android`.
 
 » **[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/quarters-sdk-latest.unitypackage)**
