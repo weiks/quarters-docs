@@ -6,6 +6,9 @@
 
 » **[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/quarters-sdk-latest.unitypackage)**
 
+## Videos
+Make sure to check out our step-by-step SDK setup videos on our [Youtube channel](https://www.youtube.com/channel/UCLo7viliyZV7p_GxOZf_MMw/playlists)
+
 ## Example
 [A sample project](https://github.com/weiks/q-slots) to play slots on mobile with Quarters.
 
