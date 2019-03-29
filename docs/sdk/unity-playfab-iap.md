@@ -4,6 +4,9 @@ PlayFab Module allows very simple way for the user to purchase Quarters using pl
 
 ---
 
+## Videos
+Make sure to check out our step-by-step SDK setup videos on our [Youtube channel](https://www.youtube.com/channel/UCLo7viliyZV7p_GxOZf_MMw/playlists)
+
 **Supported platforms**: iOS
 
 ---
