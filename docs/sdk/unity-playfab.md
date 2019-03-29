@@ -5,6 +5,9 @@ This allows custom logic to be injected to the PlayFab server to verify if trans
 
 » **[Download Quarters Unity SDK.](http://downloads.pocketfulofquarters.com/quarters-sdk-latest.unitypackage)**
 
+## Videos
+Make sure to check out our step-by-step SDK setup videos on our [Youtube channel](https://www.youtube.com/channel/UCLo7viliyZV7p_GxOZf_MMw/playlists)
+
 ## Prerequisites:
 - PlayFab SDK must be installed prior to module installation [(download)](https://api.playfab.com/sdks/unity).
 
