@@ -1,4 +1,4 @@
-# Quarters Unity SDK - v0.20.2
+# Quarters Unity SDK - v0.50.0
 
 **Supported versions**: Unity 2017+
 
